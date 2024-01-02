@@ -1,5 +1,200 @@
-@import url("https://fonts.googleapis.com/css2?family=Aboreto&family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Noto+Sans&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .btn {
+    @apply bg-white border-2 border-black inline-block my-2 px-8 py-2 cursor-pointer;
+  }
+}
+
+body {
+  position: relative;
+  margin: 0;
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  flex-direction: column;
+  box-sizing: inherit;
+  overflow: scroll;
+}
+
+main {
+  padding-bottom: 200px;
+}
+
+footer {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 120px;
+  bottom: 0;
+  background: black;
+  clear: both;
+  gap: 16px;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 4px;
+}
+
+.socialIcon {
+  width: 30px;
+  height: 30px;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0) 50%, #fbdae7 50%)
+    right;
+  background-size: 200%;
+  border: 2px solid #fff;
+  border-radius: 99px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease-in-out;
+}
+
+.socialIcon:hover {
+  transform: scale(1.1);
+  background-position: left;
+  transition: all 0.2s ease-in-out;
+}
+
+.icon {
+  width: auto;
+  height: 100%;
+  transform: scale(1);
+  transition: all 0.2s ease-in-out;
+}
+
+.dropCap::first-letter {
+  initial-letter: 3;
+  padding-right: 5px;
+}
+
+.justifyText {
+  text-align: justify;
+}
+
+.hidden {
+  display: none;
+}
+
+.button {
+  background: white;
+  color: #064b0d;
+}
+
+.button:hover {
+  background: #fbdae7;
+  text-decoration: none;
+}
+
+.fullHeight {
+  height: 100%;
+}
+
+.verticalCentre {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* HOMEPAGE */
+
+#container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  overflow: hidden;
+}
+
+#BGimage {
+  opacity: 0;
+  filter: blur(10px);
+  height: 100%;
+  width: auto;
+  max-width: 1000%;
+}
+
+.doors {
+  height: 100%;
+  width: auto;
+  position: absolute;
+  z-index: 4;
+}
+
+#door1,
+#door2 {
+  cursor: pointer;
+  position: absolute;
+}
+
+.rat {
+  position: absolute;
+  height: 100%;
+  width: auto;
+  /* vertical-align: middle; */
+  margin: 0;
+  overflow: hidden;
+  /* z-index: 1; */
+}
+
+.rat svg {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* z-index: 1; */
+}
+
+#services1,
+#about1,
+#contact1,
+#studio1,
+#portfolio1,
+#vinyl {
+  opacity: 0;
+}
+
+#services2,
+#about2,
+#contact2,
+#studio2,
+#portfolio2 {
+  opacity: 0;
+  display: none;
+}
+
+#vinyl {
+  cursor: pointer;
+  filter: blur(120px);
+}
+
+/* #about1 {
+  opacity: 0;
+}
+
+#about2 {
+  opacity: 0;
+  display: none;
+} */
+
+#home2 {
+  opacity: 0;
+}
+
+#home1,
+#home2 {
+  position: static;
+  display: inline-block;
+}
