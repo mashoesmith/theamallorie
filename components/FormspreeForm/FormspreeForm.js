@@ -1,3 +1,4 @@
+"use client";
 import { ValidationError, useForm } from "@formspree/react";
 
 export const FormspreeForm = ({ formId }) => {

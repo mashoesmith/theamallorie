@@ -1,9 +1,11 @@
+"use client";
 import React, { useRef, useEffect, useState, useLayoutEffect } from "react";
 import gsap from "gsap";
 import { Power1 } from "gsap";
 import Link from "next/link";
 import { useGSAP } from "@gsap/react";
 import { motion } from "framer-motion";
+import { Footer } from "components/Footer";
 // import music from "././public/creek.mp3";
 
 export const HomePage = () => {
@@ -332,7 +334,7 @@ export const HomePage = () => {
       </svg>
 
       <svg className="rat" viewBox="0 0 1920 1080" fill="transparent">
-        <Link href="studio">
+        <a href="studio">
           <image
             id="studio2"
             ref={(el) => {
@@ -345,8 +347,8 @@ export const HomePage = () => {
             transform="translate(1386.34 172.23) scale(.11)"
             xlinkHref="http://thea-mallorie.local/wp-content/uploads/2023/12/studio2.png"
           />
-        </Link>
-        <Link href="portfolio">
+        </a>
+        <a href="portfolio">
           <image
             id="portfolio2"
             ref={(el) => {
@@ -359,8 +361,8 @@ export const HomePage = () => {
             transform="translate(402 765) scale(.11)"
             xlinkHref="http://thea-mallorie.local/wp-content/uploads/2023/12/portfolio2.png"
           />
-        </Link>
-        <Link href="about">
+        </a>
+        <a href="about">
           <image
             id="about2"
             ref={(el) => {
@@ -373,8 +375,8 @@ export const HomePage = () => {
             transform="translate(958 791) scale(.11)"
             xlinkHref="http://thea-mallorie.local/wp-content/uploads/2023/12/about2-1.png"
           />
-        </Link>
-        <Link href="services">
+        </a>
+        <a href="services">
           <image
             id="services2"
             ref={(el) => {
@@ -387,8 +389,8 @@ export const HomePage = () => {
             transform="translate(1305.1 801) scale(.11)"
             xlinkHref="http://thea-mallorie.local/wp-content/uploads/2023/12/services2-1.png"
           />
-        </Link>
-        <Link href="contact">
+        </a>
+        <a href="contact">
           <image
             id="contact2"
             ref={(el) => {
@@ -401,7 +403,7 @@ export const HomePage = () => {
             transform="translate(1327 916.37) scale(.11)"
             xlinkHref="http://thea-mallorie.local/wp-content/uploads/2023/12/contact2.png"
           />
-        </Link>
+        </a>
         <image
           id="vinyl"
           ref={(el) => {
@@ -414,7 +416,7 @@ export const HomePage = () => {
           xlinkHref="http://thea-mallorie.local/wp-content/uploads/2023/12/vinyl.png"
         />
 
-        {/* <Link href="services">
+        {/* <a href="services">
           <image
             id="services2"
             width="377"
@@ -427,8 +429,8 @@ export const HomePage = () => {
             transform="translate(1222.12 735) scale(.45)"
             xlinkHref="http://thea-mallorie.local/wp-content/uploads/2023/12/services2-1.png"
           />
-        </Link>
-        <Link href="about">
+        </a>
+        <a href="about">
           <image
             id="about2"
             width="431"
@@ -441,7 +443,7 @@ export const HomePage = () => {
             transform="translate(880 759) scale(.49)"
             xlinkHref="http://thea-mallorie.local/wp-content/uploads/2023/12/about2-1.png"
           />
-        </Link> */}
+        </a> */}
       </svg>
     </div>
   );

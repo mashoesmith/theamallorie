@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import { useRef } from "react";
 import gsap from "gsap";
@@ -45,7 +46,7 @@ export const MainMenu = ({ items }) => {
           src="http://thea-mallorie.local/wp-content/uploads/2023/12/services1-1.png"
           className="h-20 absolute"
         />
-        <Link href="/" className="absolute">
+        <a href="/" className="absolute">
           <img
             ref={(el) => {
               home2 = el;
@@ -56,7 +57,7 @@ export const MainMenu = ({ items }) => {
             src="http://thea-mallorie.local/wp-content/uploads/2023/12/home_rat.png"
             className="h-20 absolute"
           />
-        </Link>
+        </a>
       </div>
       <div className="flex flex-1 justify-around h-8 items-center gap-20 max-w-5xl">
         {(items || []).map((item) => (
@@ -65,25 +66,25 @@ export const MainMenu = ({ items }) => {
             className="hover:underline hover:decoration-4 cursor-pointer relative group"
           >
             <div>
-              <Link
+              <a
                 // onClick={() => blink()}
                 href={item.destination}
                 className="p-5 block"
                 // onclick="fadeOutIn()"
               >
                 {item.label}
-              </Link>
+              </a>
             </div>
             {!!item.subMenuItems?.length && (
               <div className="group-hover:block hidden bg-slate-800 text-right absolute right-0 top-full -mt-3">
                 {item.subMenuItems.map((subMenuItem) => (
-                  <Link
+                  <a
                     key={subMenuItem.id}
                     href={subMenuItem.destination}
                     className="block whitespace-nowrap p-5 hover:bg-slate-700"
                   >
                     {subMenuItem.label}
-                  </Link>
+                  </a>
                 ))}
               </div>
             )}
