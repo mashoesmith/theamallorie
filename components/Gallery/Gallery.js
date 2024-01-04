@@ -24,11 +24,12 @@ export const Gallery = ({ columns, cropImages, items }) => {
           className="p-1 flex-grow"
         >
           <Image
+            priority
             className="object-cover w-full h-full"
             src={item.attributes.url}
             height={maxHeight || item.attributes.height}
             width={maxWidth || item.attributes.width}
-            alt={item.attributes.alt}
+            alt={item.attributes.alt || ""}
           />
         </div>
       ))}

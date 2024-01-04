@@ -15,6 +15,7 @@ export const Cover = ({ children, background, borderColor, borderWidth }) => {
         alt="cover"
         src={background}
         fill
+        priority
         className="mix-blend-soft-light object-cover"
       />
       <div className="max-w-5xl z-10">{children}</div>

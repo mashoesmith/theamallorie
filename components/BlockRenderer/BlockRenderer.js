@@ -179,8 +179,9 @@ export const BlockRenderer = ({ blocks }) => {
         if (block.attributes.href) {
           return (
             <div className="border-solid border-4 border-black">
-              <Link href={block.attributes.href}>
+              <a href={block.attributes.href}>
                 <Image
+                  priority
                   key={block.id}
                   src={block.attributes.url}
                   height={block.attributes.height}
@@ -188,7 +189,7 @@ export const BlockRenderer = ({ blocks }) => {
                   alt={block.attributes.alt || ""}
                   classNames={block.attributes.className}
                 />
-              </Link>
+              </a>
             </div>
           );
         } else {
