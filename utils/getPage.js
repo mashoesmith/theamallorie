@@ -7,9 +7,6 @@ export const getPage = async (uri) => {
       nodeByUri(uri: $uri) {
         ... on Page {
           blocks
-          mouseHouse {
-            mouseHouse
-          }
         }
         ... on Project {
           blocks
