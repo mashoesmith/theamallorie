@@ -43,7 +43,7 @@ export const MainMenu = ({ items }) => {
             home1 = el;
           }}
           id="home1"
-          src="http://thea-mallorie.local/wp-content/uploads/2023/12/services1-1.png"
+          src="http://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/services1-1.png"
           className="h-20 absolute"
         />
         <a href="/" className="absolute">
@@ -54,7 +54,7 @@ export const MainMenu = ({ items }) => {
             id="home2"
             onMouseOver={() => homeHover()}
             onMouseLeave={() => homeUnHover()}
-            src="http://thea-mallorie.local/wp-content/uploads/2023/12/home_rat.png"
+            src="http://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/home_rat.png"
             className="h-20 absolute"
           />
         </a>
