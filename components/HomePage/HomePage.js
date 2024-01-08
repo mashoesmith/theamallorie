@@ -30,7 +30,7 @@ export const HomePage = () => {
 
   useEffect(() => {
     pauseSound.current = new Audio(
-      "http://thea-mallorie.local/wp-content/uploads/2023/12/record_stop.mp3"
+      "http://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/record_stop.mp3"
     );
   }, []);
 
@@ -38,7 +38,7 @@ export const HomePage = () => {
     if (!audio.current) {
       // Check if audio object exists
       const audioInstance = new Audio(
-        "http://thea-mallorie.local/wp-content/uploads/2023/12/jazz.mp3"
+        "http://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/jazz.mp3"
       );
       audio.current = audioInstance; // Store audio object in ref
     }
@@ -62,13 +62,13 @@ export const HomePage = () => {
 
   function playKnock() {
     new Audio(
-      "http://thea-mallorie.local/wp-content/uploads/2023/12/knock.mp3"
+      "http://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/knock.mp3"
     ).play();
   }
 
   function playCreek() {
     new Audio(
-      "http://thea-mallorie.local/wp-content/uploads/2023/12/door_open.mp3"
+      "http://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/door_open.mp3"
     ).play();
   }
 
@@ -189,7 +189,7 @@ export const HomePage = () => {
         ref={(el) => {
           room = el;
         }}
-        src="http://thea-mallorie.local/wp-content/uploads/2023/12/mouse_house_v2-scaled.jpg"
+        src="http://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/mouse_house_v2-scaled.jpg"
       />
 
       <svg
@@ -207,7 +207,7 @@ export const HomePage = () => {
           }}
           width="1920"
           height="1080"
-          xlinkHref="http://thea-mallorie.local/wp-content/uploads/2023/12/door_frame_picture_v2.png"
+          xlinkHref="http://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/door_frame_picture_v2.png"
         />
         <image
           id="door1"
@@ -224,7 +224,7 @@ export const HomePage = () => {
               playKnock();
           }}
           transform="translate(767.89 262.45) scale(.1009)"
-          xlinkHref="http://thea-mallorie.local/wp-content/uploads/2023/12/door_left_v2.png"
+          xlinkHref="http://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/door_left_v2.png"
         />
         <image
           id="door2"
@@ -241,7 +241,7 @@ export const HomePage = () => {
               playKnock();
           }}
           transform="translate(958.77 262.45) scale(.1011)"
-          xlinkHref="http://thea-mallorie.local/wp-content/uploads/2023/12/door_right_v2.png"
+          xlinkHref="http://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/door_right_v2.png"
         />
 
         {/* <image
@@ -267,7 +267,7 @@ export const HomePage = () => {
           width="1264"
           height="1857"
           transform="translate(1385.87 235) scale(.11)"
-          xlinkHref="http://thea-mallorie.local/wp-content/uploads/2023/12/studio1.png"
+          xlinkHref="http://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/studio1.png"
         />
         <image
           id="portfolio1"
@@ -277,7 +277,7 @@ export const HomePage = () => {
           width="1612"
           height="1714"
           transform="translate(362 776) scale(.11)"
-          xlinkHref="http://thea-mallorie.local/wp-content/uploads/2023/12/portfolio1.png"
+          xlinkHref="http://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/portfolio1.png"
         />
         <image
           id="about1"
@@ -287,7 +287,7 @@ export const HomePage = () => {
           width="1478"
           height="956"
           transform="translate(974 844.78) scale(.11)"
-          xlinkHref="http://thea-mallorie.local/wp-content/uploads/2023/12/about1-1.png"
+          xlinkHref="http://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/about1-1.png"
         />
         <image
           id="services1"
@@ -297,7 +297,7 @@ export const HomePage = () => {
           width="898"
           height="1142"
           transform="translate(1330.5 804) scale(.11)"
-          xlinkHref="http://thea-mallorie.local/wp-content/uploads/2023/12/services1-2.png"
+          xlinkHref="http://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/services1-2.png"
         />
         <image
           id="contact1"
@@ -307,7 +307,7 @@ export const HomePage = () => {
           width="1613"
           height="1030"
           transform="translate(1318.39 947) scale(.11)"
-          xlinkHref="http://thea-mallorie.local/wp-content/uploads/2023/12/contact1.png"
+          xlinkHref="http://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/contact1.png"
         />
 
         {/* <image
@@ -318,7 +318,7 @@ export const HomePage = () => {
             services1 = el;
           }}
           transform="translate(1268 747) scale(.47)"
-          xlinkHref="http://thea-mallorie.local/wp-content/uploads/2023/12/services1-1.png"
+          xlinkHref="http://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/services1-1.png"
         />
         //{" "}
         <image
@@ -329,7 +329,7 @@ export const HomePage = () => {
             about1 = el;
           }}
           transform="translate(902 821) scale(.53)"
-          xlinkHref="http://thea-mallorie.local/wp-content/uploads/2023/12/about1-1.png"
+          xlinkHref="http://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/about1-1.png"
         /> */}
       </svg>
 
@@ -345,7 +345,7 @@ export const HomePage = () => {
             width="1116"
             height="2012"
             transform="translate(1386.34 172.23) scale(.11)"
-            xlinkHref="http://thea-mallorie.local/wp-content/uploads/2023/12/studio2.png"
+            xlinkHref="http://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/studio2.png"
           />
         </a>
         <a href="portfolio">
@@ -359,7 +359,7 @@ export const HomePage = () => {
             width="1974"
             height="1755"
             transform="translate(402 765) scale(.11)"
-            xlinkHref="http://thea-mallorie.local/wp-content/uploads/2023/12/portfolio2.png"
+            xlinkHref="http://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/portfolio2.png"
           />
         </a>
         <a href="about">
@@ -373,7 +373,7 @@ export const HomePage = () => {
             width="1550"
             height="1499"
             transform="translate(958 791) scale(.11)"
-            xlinkHref="http://thea-mallorie.local/wp-content/uploads/2023/12/about2-1.png"
+            xlinkHref="http://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/about2-1.png"
           />
         </a>
         <a href="services">
@@ -387,7 +387,7 @@ export const HomePage = () => {
             width="1196"
             height="1209"
             transform="translate(1305.1 801) scale(.11)"
-            xlinkHref="http://thea-mallorie.local/wp-content/uploads/2023/12/services2-1.png"
+            xlinkHref="http://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/services2-1.png"
           />
         </a>
         <a href="contact">
@@ -401,7 +401,7 @@ export const HomePage = () => {
             width="1722"
             height="995"
             transform="translate(1327 916.37) scale(.11)"
-            xlinkHref="http://thea-mallorie.local/wp-content/uploads/2023/12/contact2.png"
+            xlinkHref="http://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/contact2.png"
           />
         </a>
         <image
@@ -413,7 +413,7 @@ export const HomePage = () => {
           width="1194"
           height="877"
           transform="translate(1134 972) scale(.11)"
-          xlinkHref="http://thea-mallorie.local/wp-content/uploads/2023/12/vinyl.png"
+          xlinkHref="http://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/vinyl.png"
         />
 
         {/* <a href="services">
@@ -427,7 +427,7 @@ export const HomePage = () => {
             onMouseOver={() => servicesHover()}
             onMouseLeave={() => servicesUnHover()}
             transform="translate(1222.12 735) scale(.45)"
-            xlinkHref="http://thea-mallorie.local/wp-content/uploads/2023/12/services2-1.png"
+            xlinkHref="http://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/services2-1.png"
           />
         </a>
         <a href="about">
@@ -441,7 +441,7 @@ export const HomePage = () => {
             onMouseOver={() => aboutHover()}
             onMouseLeave={() => aboutUnHover()}
             transform="translate(880 759) scale(.49)"
-            xlinkHref="http://thea-mallorie.local/wp-content/uploads/2023/12/about2-1.png"
+            xlinkHref="http://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/about2-1.png"
           />
         </a> */}
       </svg>
