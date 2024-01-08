@@ -14,12 +14,8 @@ export default async function Page({ params }) {
   }
   return (
     <div>
-      <nav>
-        <MainMenu items={menu.mainMenuItems} />
-      </nav>
-      <main>
-        <BlockRenderer blocks={data} />
-      </main>
+      <MainMenu items={menu.mainMenuItems} />
+      <BlockRenderer blocks={data} />
       <Footer />
     </div>
   );
