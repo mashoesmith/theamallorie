@@ -14,7 +14,6 @@ import Link from "next/link";
 // import { Image } from "components/Image";
 
 export const BlockRenderer = ({ blocks }) => {
-  postTemplate: false;
   return blocks.map((block) => {
     switch (block.name) {
       case "core/gallery": {
