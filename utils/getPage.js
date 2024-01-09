@@ -24,7 +24,6 @@ export const getPage = async (uri) => {
     headers: {
       "Content-Type": "application/json",
     },
-    postTemplate: false,
     body: JSON.stringify(params),
   });
   const { data } = await response.json();
