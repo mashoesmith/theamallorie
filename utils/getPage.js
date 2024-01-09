@@ -2,7 +2,6 @@ import { cleanAndTransformBlocks } from "./cleanAndTransformBlocks";
 
 export const getPage = async (uri) => {
   const params = {
-    postTemplate: false,
     query: `
     query PageQuery($uri: String!) {
       nodeByUri(uri: $uri) {
