@@ -17,6 +17,7 @@ body {
   flex-direction: column;
   box-sizing: inherit;
   overflow: scroll;
+  overflow-x: hidden;
 }
 
 main {
