@@ -23,7 +23,7 @@ export const Footer = () => {
             />
           </div>
         </a>
-        <a href="tel:07792020714">
+        <a href="tel:07495685568">
           <div className="socialIcon">
             <img
               className="icon"
