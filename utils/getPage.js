@@ -6,10 +6,10 @@ export const getPage = async (uri) => {
     query PageQuery($uri: String!) {
       nodeByUri(uri: $uri) {
         ... on Page {
-          blocks(postTemplate: false)
+          blocks,
         }
         ... on Project {
-          blocks(postTemplate: false)
+          blocks,
         }
       }
     }
