@@ -20,10 +20,10 @@ export const BlockRenderer = ({ blocks }) => {
         return (
           <Gallery
             key={block.id}
-            columns={block.attributes.columns || 3}
-            cropImages={block.attributes.imageCrop}
+            columns={block.attributes?.columns || 3}
+            cropImages={block.attributes?.imageCrop}
             items={block.innerBlocks}
-            classNames={block.attributes.className}
+            classNames={block.attributes?.className}
           />
         );
       }
@@ -31,7 +31,7 @@ export const BlockRenderer = ({ blocks }) => {
         return (
           <FormspreeForm
             key={block.id}
-            formId={block.attributes.data.form_id}
+            formId={block.attributes?.data.form_id}
           />
         );
       }
@@ -39,10 +39,10 @@ export const BlockRenderer = ({ blocks }) => {
         return (
           <CallToActionButton
             key={block.id}
-            buttonLabel={block.attributes.data.label}
-            destination={block.attributes.data.destination || "/"}
-            align={block.attributes.data.align}
-            classNames={block.attributes.className}
+            buttonLabel={block.attributes?.data.label}
+            destination={block.attributes?.data.destination || "/"}
+            align={block.attributes?.data.align}
+            classNames={block.attributes?.className}
           />
         );
       }
@@ -51,14 +51,14 @@ export const BlockRenderer = ({ blocks }) => {
         return (
           <Paragraph
             key={block.id}
-            textAlign={block.attributes.align}
-            content={block.attributes.content}
+            textAlign={block.attributes?.align}
+            content={block.attributes?.content}
             textColor={
-              theme[block.attributes.textColor] ||
-              block.attributes.style?.color?.text
+              theme[block.attributes?.textColor] ||
+              block.attributes?.style?.color?.text
             }
-            dropCap={block.attributes.dropCap}
-            classNames={block.attributes.className}
+            dropCap={block.attributes?.dropCap}
+            classNames={block.attributes?.className}
           />
         );
       }
@@ -67,14 +67,14 @@ export const BlockRenderer = ({ blocks }) => {
         return (
           <Heading
             key={block.id}
-            level={block.attributes.level}
-            content={block.attributes.content}
-            textAlign={block.attributes.textAlign}
+            level={block.attributes?.level}
+            content={block.attributes?.content}
+            textAlign={block.attributes?.textAlign}
             textColor={
-              theme[block.attributes.textColor] ||
-              block.attributes.style?.color?.text
+              theme[block.attributes?.textColor] ||
+              block.attributes?.style?.color?.text
             }
-            classNames={block.attributes.className}
+            classNames={block.attributes?.className}
           />
         );
       }
@@ -83,16 +83,16 @@ export const BlockRenderer = ({ blocks }) => {
         return (
           <Cover
             key={block.id}
-            background={block.attributes.url}
+            background={block.attributes?.url}
             borderColor={
-              theme[block.attributes.borderColor] ||
-              block.attributes.style?.color?.border
+              theme[block.attributes?.borderColor] ||
+              block.attributes?.style?.color?.border
             }
-            borderWidth={block.attributes.style?.border?.width}
+            borderWidth={block.attributes?.style?.border?.width}
           >
             <BlockRenderer
               blocks={block.innerBlocks}
-              classNames={block.attributes.className}
+              classNames={block.attributes?.className}
             />
           </Cover>
         );
@@ -105,29 +105,29 @@ export const BlockRenderer = ({ blocks }) => {
         return (
           <Columns
             key={block.id}
-            isStackedOnMobile={block.attributes.isStackedOnMobile}
+            isStackedOnMobile={block.attributes?.isStackedOnMobile}
             textColor={
-              theme[block.attributes.textColor] ||
-              block.attributes.style?.color?.text
+              theme[block.attributes?.textColor] ||
+              block.attributes?.style?.color?.text
             }
             backgroundColor={
-              theme[block.attributes.backgroundColor] ||
-              block.attributes.style?.color?.background
+              theme[block.attributes?.backgroundColor] ||
+              block.attributes?.style?.color?.background
             }
             borderColor={
-              theme[block.attributes.borderColor] ||
-              block.attributes.style?.color?.border
+              theme[block.attributes?.borderColor] ||
+              block.attributes?.style?.color?.border
             }
-            borderWidth={block.attributes.style?.border?.width}
-            paddingTop={block.attributes.style?.spacing?.padding?.top}
-            paddingBottom={block.attributes.style?.spacing?.padding?.bottom}
-            paddingLeft={block.attributes.style?.spacing?.padding?.left}
-            paddingRight={block.attributes.style?.spacing?.padding?.right}
-            classNames={block.attributes.className}
+            borderWidth={block.attributes?.style?.border?.width}
+            paddingTop={block.attributes?.style?.spacing?.padding?.top}
+            paddingBottom={block.attributes?.style?.spacing?.padding?.bottom}
+            paddingLeft={block.attributes?.style?.spacing?.padding?.left}
+            paddingRight={block.attributes?.style?.spacing?.padding?.right}
+            classNames={block.attributes?.className}
           >
             <BlockRenderer
               blocks={block.innerBlocks}
-              classNames={block.attributes.className}
+              classNames={block.attributes?.className}
             />
           </Columns>
         );
@@ -136,31 +136,31 @@ export const BlockRenderer = ({ blocks }) => {
         return (
           <Column
             key={block.id}
-            width={block.attributes.width}
+            width={block.attributes?.width}
             textColor={
-              theme[block.attributes.textColor] ||
-              block.attributes.style?.color?.text
+              theme[block.attributes?.textColor] ||
+              block.attributes?.style?.color?.text
             }
             backgroundColor={
-              theme[block.attributes.backgroundColor] ||
-              block.attributes.style?.color?.background
+              theme[block.attributes?.backgroundColor] ||
+              block.attributes?.style?.color?.background
             }
             borderColor={
-              theme[block.attributes.borderColor] ||
-              block.attributes.style?.color?.border
+              theme[block.attributes?.borderColor] ||
+              block.attributes?.style?.color?.border
             }
-            borderWidth={block.attributes.style?.border?.width}
-            classNames={block.attributes.className}
+            borderWidth={block.attributes?.style?.border?.width}
+            classNames={block.attributes?.className}
           >
             <BlockRenderer
               blocks={block.innerBlocks}
-              classNames={block.attributes.className}
+              classNames={block.attributes?.className}
             />
           </Column>
         );
       }
       case "core/separator": {
-        return <Separator classNames={block.attributes.className}></Separator>;
+        return <Separator classNames={block.attributes?.className}></Separator>;
       }
       case "core/group":
       case "core/block": {
@@ -168,7 +168,7 @@ export const BlockRenderer = ({ blocks }) => {
           <BlockRenderer
             key={block.id}
             blocks={block.innerBlocks}
-            classNames={block.attributes.className}
+            classNames={block.attributes?.className}
           />
         );
       }
@@ -176,18 +176,18 @@ export const BlockRenderer = ({ blocks }) => {
         // borderColor, borderWidth;
         // const borderColorStyle = borderColor ? { borderColor } : {};
         // const borderWidthStyle = borderWidth ? { borderWidth } : {};
-        if (block.attributes.href) {
+        if (block.attributes?.href) {
           return (
             <div className="border-solid border-4 border-black">
-              <a href={block.attributes.href}>
+              <a href={block.attributes?.href}>
                 <Image
                   priority
                   key={block.id}
-                  src={block.attributes.url}
-                  height={block.attributes.height}
-                  width={block.attributes.width}
-                  alt={block.attributes.alt || ""}
-                  classNames={block.attributes.className}
+                  src={block.attributes?.url}
+                  height={block.attributes?.height}
+                  width={block.attributes?.width}
+                  alt={block.attributes?.alt || ""}
+                  classNames={block.attributes?.className}
                 />
               </a>
             </div>
@@ -197,12 +197,12 @@ export const BlockRenderer = ({ blocks }) => {
             <div className="border-solid border-4 border-black">
               <Image
                 key={block.id}
-                src={block.attributes.url}
-                height={block.attributes.height}
-                width={block.attributes.width}
-                alt={block.attributes.alt || ""}
-                classNames={block.attributes.className}
-                style={block.attributes.style?.border?.width}
+                src={block.attributes?.url}
+                height={block.attributes?.height}
+                width={block.attributes?.width}
+                alt={block.attributes?.alt || ""}
+                classNames={block.attributes?.className}
+                style={block.attributes?.style?.border?.width}
               />
             </div>
           );
