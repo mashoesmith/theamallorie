@@ -12,6 +12,9 @@ export default async function Page({ params }) {
   if (!data) {
     notFound();
   }
+
+  console.log('data', data);
+
   return (
     <div>
       <MainMenu items={menu.mainMenuItems} />
