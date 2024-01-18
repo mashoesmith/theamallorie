@@ -61,10 +61,7 @@ export const MainMenu = ({ items }) => {
       </div>
       <div className="flex flex-1 justify-around h-8 items-center gap-20 max-w-5xl">
         {(items || []).map((item) => (
-          <div
-            key={item.id}
-            className="hover:underline hover:decoration-4 cursor-pointer relative group"
-          >
+          <div key={item.id} className="cursor-pointer relative group">
             <div>
               <a
                 // onClick={() => blink()}

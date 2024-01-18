@@ -182,7 +182,7 @@ export const BlockRenderer = ({ blocks }) => {
         // const borderWidthStyle = borderWidth ? { borderWidth } : {};
         if (block.attributes?.href) {
           return (
-            <div className="border-solid border-4 border-black">
+            <div className="border-solid border-2 border-black">
               <a href={block.attributes?.href}>
                 <Image
                   priority
