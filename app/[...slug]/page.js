@@ -16,7 +16,7 @@ export default async function Page({ params }) {
   console.log("data", data);
 
   return (
-    <div>
+    <div className="pt-[100px] md:pt-0">
       <MainMenu items={menu.mainMenuItems} />
       <BlockRenderer blocks={data} />
       <Footer />
