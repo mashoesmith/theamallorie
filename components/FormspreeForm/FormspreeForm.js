@@ -14,7 +14,7 @@ export const FormspreeForm = ({ formId }) => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col w-[600px] max-w-5xl mx-auto my-5 gap-2"
+      className="flex flex-col md:w-[600px] max-w-5xl mx-auto my-5 gap-2 w-full px-6"
     >
       {/* <label htmlFor="email"></label> */}
       <input

@@ -36,10 +36,15 @@ export const MainMenu = ({ items }) => {
         className="flex flex-1 justify-end md:hidden top-0 fixed h-20 w-full bg-white border-b-2 border-black"
       >
         <div className="w-full h-full flex items-center justify-center">
-          <img
-            src="http://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/services1-1.png"
-            className="h-12 absolute z-10"
-          />
+          <a
+            href="/"
+            className="absolute h-12 w-12 flex items-center justify-center"
+          >
+            <img
+              src="http://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/services1-1.png"
+              className="h-12 absolute z-10"
+            />
+          </a>
         </div>
         <FaBars
           size={30}
@@ -53,7 +58,7 @@ export const MainMenu = ({ items }) => {
             ref={(el) => {
               mobileNavFull = el;
             }}
-            className="w-full h-2/3 fixed overflow-auto max-h-screen bg-black text-white left-0 top-0 flex flex-col items-center justify-center"
+            className="w-full h-3/4 fixed overflow-auto max-h-screen bg-black text-white left-0 top-0 flex flex-col items-center justify-center"
           >
             <FaTimes
               className="cursor-pointer z-10 absolute top-6 right-6"
