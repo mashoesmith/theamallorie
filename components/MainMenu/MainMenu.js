@@ -5,19 +5,35 @@ import gsap from "gsap";
 import { useState } from "react";
 import { useGSAP } from "@gsap/react";
 import { FaBars, FaCross, FaTimes } from "react-icons/fa";
+import React from "react";
 
 export const MainMenu = ({ items }) => {
   console.log("MAIN MENU: ", items);
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // function animateNav() {
-  //   gsap.fromTo(mobileNavFull, { scaleY: 0 }, { scaleY: 1 });
-  // }
+  function animateNav() {
+    gsap.fromTo(mobileNavFull, { opacity: 0 }, { opacity: 1 });
+  }
 
   let home1 = useRef(null);
   let home2 = useRef(null);
   let mobileNavFull = useRef(null);
+  let mobileNav = useRef(null);
+
+  React.useEffect(() => {
+    let lastScrollY = window.scrollY;
+
+    window.addEventListener("scroll", () => {
+      if (lastScrollY < window.scrollY) {
+        gsap.to(mobileNav, { y: -80, duration: 0.4 });
+      } else {
+        gsap.to(mobileNav, { y: 0, duration: 0.4 });
+      }
+
+      lastScrollY = window.scrollY;
+    });
+  });
 
   function homeHover() {
     gsap.to(home2, { opacity: 1, duration: 0 });
@@ -32,6 +48,9 @@ export const MainMenu = ({ items }) => {
   return (
     <>
       <div
+        ref={(el) => {
+          mobileNav = el;
+        }}
         id="mobileNav"
         className="flex flex-1 justify-end md:hidden top-0 fixed h-20 w-full bg-white border-b-2 border-black"
       >
@@ -51,45 +70,55 @@ export const MainMenu = ({ items }) => {
           className="cursor-pointer z-5 absolute top-6 right-6"
           onClick={() => {
             setIsMobileMenuOpen(true);
+            animateNav();
           }}
         />
-        {!!isMobileMenuOpen && (
-          <div
-            ref={(el) => {
-              mobileNavFull = el;
-            }}
-            className="w-full h-3/4 fixed overflow-auto max-h-screen bg-black text-white left-0 top-0 flex flex-col items-center justify-center"
-          >
-            <FaTimes
-              className="cursor-pointer z-10 absolute top-6 right-6"
-              size={30}
-              onClick={() => setIsMobileMenuOpen(false)}
-            />
-            {(items || []).map((item) => (
-              <div key={item.id} className="cursor-pointer relative group">
-                <div>
-                  <a href={item.destination} className="p-5 block">
-                    {item.label}
-                  </a>
-                </div>
-                {!!item.subMenuItems?.length && (
-                  <div className="pl-10">
-                    {item.subMenuItems.map((subMenuItem) => (
-                      <a
-                        key={subMenuItem.id}
-                        href={subMenuItem.destination}
-                        className="block whitespace-nowrap p-5 "
-                      >
-                        {subMenuItem.label}
-                      </a>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        )}
       </div>
+      {!!isMobileMenuOpen && (
+        <div
+          ref={(el) => {
+            mobileNavFull = el;
+          }}
+          className="w-full h-3/4 fixed overflow-auto max-h-screen bg-black text-white left-0 top-0 flex flex-col items-center justify-center"
+        >
+          <FaTimes
+            className="cursor-pointer z-10 absolute top-6 right-6"
+            size={30}
+            onClick={() => setIsMobileMenuOpen(false)}
+          />
+          <a
+            href="/"
+            className="absolute h-12 w-12 flex items-center justify-center top-4"
+          >
+            <img
+              src="http://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/services1-1.png"
+              className="h-12 absolute z-10"
+            />
+          </a>
+          {(items || []).map((item) => (
+            <div key={item.id} className="cursor-pointer relative group">
+              <div>
+                <a href={item.destination} className="p-5 block">
+                  {item.label}
+                </a>
+              </div>
+              {!!item.subMenuItems?.length && (
+                <div className="pl-10">
+                  {item.subMenuItems.map((subMenuItem) => (
+                    <a
+                      key={subMenuItem.id}
+                      href={subMenuItem.destination}
+                      className="block whitespace-nowrap p-5 "
+                    >
+                      {subMenuItem.label}
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      )}
       <div
         id="nav"
         className="bg-white text-black px-5 h-[240px] top-0 z-20 md:flex flex-col justify-center items-center py-10 gap-8 hidden"
