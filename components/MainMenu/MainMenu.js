@@ -24,15 +24,17 @@ export const MainMenu = ({ items }) => {
   React.useEffect(() => {
     let lastScrollY = window.scrollY;
 
-    window.addEventListener("scroll", () => {
-      if (lastScrollY < window.scrollY && window.scrollY > 60) {
-        gsap.to(mobileNav, { y: -80, duration: 0.4 });
-      } else {
-        gsap.to(mobileNav, { y: 0, duration: 0.4 });
-      }
+    if (window.innerWidth < 768) {
+      window.addEventListener("scroll", () => {
+        if (lastScrollY < window.scrollY && window.scrollY > 60) {
+          gsap.to(mobileNav, { y: -80, duration: 0.4 });
+        } else {
+          gsap.to(mobileNav, { y: 0, duration: 0.4 });
+        }
 
-      lastScrollY = window.scrollY;
-    });
+        lastScrollY = window.scrollY;
+      });
+    }
   });
 
   function homeHover() {
