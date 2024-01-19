@@ -22,7 +22,7 @@ export const Columns = ({
     >
       <div
         className={`max-w-5xl mx-auto flex flex-col ${
-          isStackedOnMobile ? "block md:flex-row" : "flex"
+          isStackedOnMobile ? "block md:flex-row md:my-10" : "flex"
         }`}
       >
         {children}
