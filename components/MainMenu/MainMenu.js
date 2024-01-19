@@ -79,7 +79,7 @@ export const MainMenu = ({ items }) => {
           ref={(el) => {
             mobileNavFull = el;
           }}
-          className="w-full h-3/4 fixed overflow-auto max-h-screen bg-black text-white left-0 top-0 flex flex-col items-center justify-center"
+          className="w-full h-[460px] fixed overflow-auto max-h-screen bg-black text-white left-0 top-0 flex flex-col items-center justify-center"
         >
           <FaTimes
             className="cursor-pointer z-10 absolute top-6 right-6"
