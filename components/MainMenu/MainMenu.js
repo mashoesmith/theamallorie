@@ -25,7 +25,7 @@ export const MainMenu = ({ items }) => {
     let lastScrollY = window.scrollY;
 
     window.addEventListener("scroll", () => {
-      if (lastScrollY < window.scrollY) {
+      if (lastScrollY < window.scrollY && window.scrollY > 60) {
         gsap.to(mobileNav, { y: -80, duration: 0.4 });
       } else {
         gsap.to(mobileNav, { y: 0, duration: 0.4 });
