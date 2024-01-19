@@ -24,6 +24,12 @@ main {
   padding-bottom: 150px;
 }
 
+@media only screen and (max-width: 768px) {
+  main {
+    padding-top: 100px;
+  }
+}
+
 footer {
   position: absolute;
   display: flex;
