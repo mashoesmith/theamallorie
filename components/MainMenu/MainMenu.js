@@ -56,7 +56,7 @@ export const MainMenu = ({ items }) => {
           mobileNav = el;
         }}
         id="mobileNav"
-        className="flex flex-1 justify-end md:hidden top-0 fixed h-20 w-full bg-white border-b-2 border-black"
+        className="flex z-20 flex-1 justify-end md:hidden top-0 fixed h-20 w-full bg-white border-b-2 border-black"
       >
         <div className="w-full h-full flex items-center justify-center">
           <a
@@ -83,7 +83,7 @@ export const MainMenu = ({ items }) => {
           ref={(el) => {
             mobileNavFull = el;
           }}
-          className="w-full h-full z-20 fixed overflow-auto max-h-screen bg-black text-white left-0 top-0 flex flex-col items-center justify-center"
+          className="w-full h-full z-30 fixed overflow-auto max-h-screen bg-black text-white left-0 top-0 flex flex-col items-center justify-center"
         >
           <IoCloseSharp
             className="cursor-pointer absolute top-6 right-6"
