@@ -8,7 +8,14 @@ export const ProjectCard = ({ title, destination, image }) => {
       href={destination}
     >
       <div className="flex w-full h-[200px] relative justify-center align-middle">
-        <Image src={image} fill sizes="300px" className="object-cover" alt="" />
+        <Image
+          priority
+          src={image}
+          fill
+          sizes="300px"
+          className="object-cover"
+          alt=""
+        />
       </div>
       <div className="w-300 text-center my-3 text-lg uppercase tracking-wider">
         {title}

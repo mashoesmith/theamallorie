@@ -6,6 +6,8 @@ import { useState } from "react";
 import { useGSAP } from "@gsap/react";
 import { FaBars, FaCross, FaTimes } from "react-icons/fa";
 import React from "react";
+import { IoCloseSharp } from "react-icons/io5";
+import { MdMenu } from "react-icons/md";
 
 export const MainMenu = ({ items }) => {
   console.log("MAIN MENU: ", items);
@@ -67,7 +69,7 @@ export const MainMenu = ({ items }) => {
             />
           </a>
         </div>
-        <FaBars
+        <MdMenu
           size={30}
           className="cursor-pointer z-5 absolute top-6 right-6"
           onClick={() => {
@@ -81,10 +83,10 @@ export const MainMenu = ({ items }) => {
           ref={(el) => {
             mobileNavFull = el;
           }}
-          className="w-full h-[540px] fixed overflow-auto max-h-screen bg-black text-white left-0 top-0 flex flex-col items-center justify-center"
+          className="w-full h-full z-20 fixed overflow-auto max-h-screen bg-black text-white left-0 top-0 flex flex-col items-center justify-center"
         >
-          <FaTimes
-            className="cursor-pointer z-10 absolute top-6 right-6"
+          <IoCloseSharp
+            className="cursor-pointer absolute top-6 right-6"
             size={30}
             onClick={() => setIsMobileMenuOpen(false)}
           />
