@@ -35,6 +35,8 @@ export const MainMenu = ({ items }) => {
         }
 
         lastScrollY = window.scrollY;
+        // console.log("window ", window.scrollY);
+        // console.log("last ", lastScrollY);
       });
     }
   });
