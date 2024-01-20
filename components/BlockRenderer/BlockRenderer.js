@@ -180,37 +180,37 @@ export const BlockRenderer = ({ blocks }) => {
         // borderColor, borderWidth;
         // const borderColorStyle = borderColor ? { borderColor } : {};
         // const borderWidthStyle = borderWidth ? { borderWidth } : {};
-        if (block.attributes?.href) {
-          return (
-            <div className="border-solid border-2 border-black">
-              <a href={block.attributes?.href}>
-                <Image
-                  priority
-                  key={block.id}
-                  src={block.attributes?.url}
-                  height={block.attributes?.height}
-                  width={block.attributes?.width}
-                  alt={block.attributes?.alt || ""}
-                  classNames={block.attributes?.className}
-                />
-              </a>
-            </div>
-          );
-        } else {
-          return (
-            <div className="border-solid border-4 border-black">
+        // if (block.attributes?.href) {
+        return (
+          <div className="border-solid border-2 border-black">
+            <a href={block.attributes?.href}>
               <Image
+                priority
                 key={block.id}
                 src={block.attributes?.url}
                 height={block.attributes?.height}
                 width={block.attributes?.width}
                 alt={block.attributes?.alt || ""}
                 classNames={block.attributes?.className}
-                style={block.attributes?.style?.border?.width}
               />
-            </div>
-          );
-        }
+            </a>
+          </div>
+        );
+        // } else {
+        //   return (
+        //     <div className="border-solid border-4 border-black">
+        //       <Image
+        //         key={block.id}
+        //         src={block.attributes?.url}
+        //         height={block.attributes?.height}
+        //         width={block.attributes?.width}
+        //         alt={block.attributes?.alt || ""}
+        //         classNames={block.attributes?.className}
+        //         style={block.attributes?.style?.border?.width}
+        //       />
+        //     </div>
+        //   );
+        // }
       }
       default: {
         console.log("UNKNOWN: ", block);

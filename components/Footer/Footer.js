@@ -15,14 +15,14 @@ export const Footer = () => {
             />
           </div>
         </a>
-        <a href="https://www.youtube.com" target="blank">
+        {/* <a href="https://www.youtube.com" target="blank">
           <div className="socialIcon">
             <img
               className="icon"
               src="http://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/youtube-white.png"
             />
           </div>
-        </a>
+        </a> */}
         <a href="tel:07495685568">
           <div className="socialIcon">
             <img
