@@ -209,8 +209,15 @@ a:hover {
     left: 50%;
     align-items: center;
   }
+  .hiddenMobile {
+    display: none;
+  }
 }
 
 .dynamicHeight {
   height: 100dvh;
+}
+
+.hiddenDesktop {
+  display: none;
 }
