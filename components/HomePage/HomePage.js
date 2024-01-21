@@ -81,12 +81,12 @@ export const HomePage = () => {
   function animateDoors(delay) {
     gsap.to(door1, {
       scaleX: 0.02,
-      Power1,
+      ease: "Power1.out",
       duration: 1.5,
     });
     gsap.to(door2, {
       scaleX: 0.02,
-      Power1,
+      ease: "Power1.out",
       transformOrigin: "right",
       duration: 1.5,
       onComplete: animateRoom,
@@ -98,14 +98,12 @@ export const HomePage = () => {
       webkitFilter: "blur(10px)",
       opacity: 0,
       zIndex: 0,
-      Power1,
       duration: 0.5,
       delay: 0.5,
     });
     gsap.to([room, vinyl], {
       webkitFilter: "blur(0px)",
       opacity: 1,
-      Power1,
       duration: 0.5,
       delay: 1,
       onComplete: animateRats,

@@ -218,6 +218,12 @@ a:hover {
   height: 100dvh;
 }
 
-.hiddenDesktop {
-  display: none;
+@media only screen and (min-width: 768px) {
+  .hiddenDesktop {
+    display: none;
+  }
+}
+
+#mobileNavFull {
+  opacity: 0;
 }
