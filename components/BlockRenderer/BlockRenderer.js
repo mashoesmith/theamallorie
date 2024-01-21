@@ -27,7 +27,7 @@ export const BlockRenderer = ({ blocks }) => {
             columns={block.attributes?.columns || 3}
             cropImages={block.attributes?.imageCrop}
             items={block.innerBlocks}
-            classNames={block.attributes?.className}
+            classNames={block.attributes?.className || ""}
           />
         );
       }
@@ -61,7 +61,7 @@ export const BlockRenderer = ({ blocks }) => {
               theme[block.attributes?.textColor] ||
               block.attributes?.style?.color?.text
             }
-            dropCap={block.attributes?.dropCap}
+            dropCap={block.attributes?.dropCap || ""}
             classNames={block.attributes?.className}
           />
         );
