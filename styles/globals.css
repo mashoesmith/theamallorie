@@ -203,8 +203,8 @@ a:hover {
 @media only screen and (max-width: 768px) {
   .mobileGallery {
     width: 100% !important;
-    /* padding-left: 10px;
-    padding-right: 10px; */
+    padding-left: 8px;
+    padding-right: 8px;
     height: 460px;
     left: 50%;
     align-items: center;
