@@ -11,6 +11,7 @@ import Image from "next/image";
 import { theme } from "theme";
 import { Separator } from "components/Separator";
 import Link from "next/link";
+import { Spacer } from "components/Spacer";
 // import { Image } from "components/Image";
 
 export const BlockRenderer = ({ blocks }) => {
@@ -165,6 +166,9 @@ export const BlockRenderer = ({ blocks }) => {
       }
       case "core/separator": {
         return <Separator classNames={block.attributes?.className}></Separator>;
+      }
+      case "core/spacer": {
+        return <Spacer classNames={block.attributes?.className}></Spacer>;
       }
       case "core/group":
       case "core/block": {
