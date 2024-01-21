@@ -199,3 +199,14 @@ a:hover {
   position: static;
   display: inline-block;
 }
+
+@media only screen and (max-width: 768px) {
+  .mobileGallery {
+    width: 100% !important;
+    /* padding-left: 10px;
+    padding-right: 10px; */
+    height: 460px;
+    left: 50%;
+    align-items: center;
+  }
+}

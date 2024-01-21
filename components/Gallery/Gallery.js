@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export const Gallery = ({ columns, cropImages, items }) => {
+export const Gallery = ({ columns, cropImages, items, classNames }) => {
   let maxHeight = 0;
   let maxWidth = 0;
 
@@ -16,12 +16,13 @@ export const Gallery = ({ columns, cropImages, items }) => {
   }
   const columnWidth = 100 / columns;
   return (
-    <div className="flex flex-wrap py-4 md:py-0 max-w-5xl mx-auto">
+    <div className="flex flex-wrap flex-col md:flex-row py-4 md:py-0 max-w-5xl mx-auto">
       {items.map((item) => (
         <div
           key={item.id}
           style={{ width: `${columnWidth}%` }}
-          className="p-1 flex-grow"
+          // className=""
+          className={`p-1 flex-grow w-full ${classNames}`}
         >
           <Image
             priority
