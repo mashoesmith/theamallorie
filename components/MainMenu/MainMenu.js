@@ -1,10 +1,7 @@
 "use client";
-import Link from "next/link";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { useState } from "react";
-import { useGSAP } from "@gsap/react";
-import { FaBars, FaCross, FaTimes } from "react-icons/fa";
 import React from "react";
 import { IoCloseSharp } from "react-icons/io5";
 import { MdMenu } from "react-icons/md";
@@ -14,16 +11,13 @@ export const MainMenu = ({ items }) => {
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  function animateNav() {
-    gsap.fromTo(mobileNavFull, { opacity: 0 }, { opacity: 1 });
-  }
-
   let home1 = useRef(null);
   let home2 = useRef(null);
   let mobileNavFull = useRef(null);
   let mobileNav = useRef(null);
+  let burger = useRef(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     let lastScrollY = window.scrollY;
 
     if (window.innerWidth < 768) {
@@ -40,6 +34,16 @@ export const MainMenu = ({ items }) => {
       });
     }
   });
+
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      gsap.to(mobileNavFull, { opacity: 1, duration: 0.3, ease: "power2.in" });
+    }
+  });
+
+  function animateNavOut() {
+    gsap.to(mobileNavFull, { opacity: 0, duration: 0.3, ease: "power2.out" });
+  }
 
   function homeHover() {
     gsap.to(home2, { opacity: 1, duration: 0 });
@@ -72,11 +76,11 @@ export const MainMenu = ({ items }) => {
           </a>
         </div>
         <MdMenu
+          id="burger"
           size={30}
           className="cursor-pointer z-5 absolute top-6 right-6"
           onClick={() => {
             setIsMobileMenuOpen(true);
-            animateNav();
           }}
         />
       </div>
@@ -85,12 +89,20 @@ export const MainMenu = ({ items }) => {
           ref={(el) => {
             mobileNavFull = el;
           }}
+          id="mobileNavFull"
           className="w-full h-screen z-30 fixed overflow-auto max-h-screen bg-black text-white left-0 top-0 flex flex-col items-center justify-center"
         >
           <IoCloseSharp
             className="cursor-pointer absolute top-6 right-6"
             size={30}
-            onClick={() => setIsMobileMenuOpen(false)}
+            onClick={() => {
+              {
+                setTimeout(() => {
+                  setIsMobileMenuOpen(false);
+                }, 400),
+                  animateNavOut();
+              }
+            }}
           />
           <a
             href="/"
