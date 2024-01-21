@@ -21,7 +21,6 @@ export const Gallery = ({ columns, cropImages, items, classNames }) => {
         <div
           key={item.id}
           style={{ width: `${columnWidth}%` }}
-          // className=""
           className={`p-1 flex-grow w-full ${classNames}`}
         >
           <Image
