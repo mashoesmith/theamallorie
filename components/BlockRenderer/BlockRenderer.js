@@ -27,7 +27,7 @@ export const BlockRenderer = ({ blocks }) => {
             columns={block.attributes?.columns || 3}
             cropImages={block.attributes?.imageCrop}
             items={block.innerBlocks}
-            classNames={block.attributes?.className || ""}
+            classNames={block.attributes?.className}
           />
         );
       }
