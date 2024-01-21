@@ -55,7 +55,7 @@ export const BlockRenderer = ({ blocks }) => {
         return (
           <Paragraph
             key={block.id}
-            textAlign={block.attributes?.align}
+            textAlign={block.attributes?.textAlign}
             content={block.attributes?.content}
             textColor={
               theme[block.attributes?.textColor] ||
