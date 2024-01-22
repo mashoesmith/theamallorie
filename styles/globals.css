@@ -226,4 +226,5 @@ a:hover {
 
 #mobileNavFull {
   opacity: 0;
+  height: 100dvh;
 }
