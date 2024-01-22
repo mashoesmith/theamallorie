@@ -110,15 +110,6 @@ export const MainMenu = ({ items }) => {
               }
             }}
           />
-          <a
-            href="/"
-            className="absolute h-12 w-12 flex items-center justify-center top-4"
-          >
-            <img
-              src="http://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/services1-1.png"
-              className="h-12 absolute z-10"
-            />
-          </a>
           {(items || []).map((item) => (
             <div key={item.id} className="cursor-pointer relative group">
               <div>
@@ -141,6 +132,33 @@ export const MainMenu = ({ items }) => {
               )}
             </div>
           ))}
+          <a
+            href="/"
+            className="relative h-20 w-20 flex items-center justify-center"
+          >
+            <img
+              src="http://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/services1-1.png"
+              className="h-12 absolute z-10"
+            />
+          </a>
+          <div className="flex flex-row gap-3 absolute bottom-4">
+            <a href="https://www.instagram.com/thea_mallorie/" target="blank">
+              <div className="socialIcon">
+                <img
+                  className="icon"
+                  src="http://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/instagram-white.png"
+                />
+              </div>
+            </a>
+            <a href="tel:07495685568">
+              <div className="socialIcon">
+                <img
+                  className="icon"
+                  src="http://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/whatsapp-white.png"
+                />
+              </div>
+            </a>
+          </div>
         </div>
       )}
       <div
