@@ -37,7 +37,14 @@ export const MainMenu = ({ items }) => {
 
   useEffect(() => {
     if (isMobileMenuOpen) {
-      gsap.to(mobileNavFull, { opacity: 1, duration: 0.3, ease: "power2.in" });
+      gsap.to(mobileNavFull, {
+        opacity: 0.8,
+        duration: 0.3,
+        ease: "power2.in",
+      });
+      document.body.style.overflowY = "hidden";
+    } else {
+      document.body.style.overflowY = "scroll";
     }
   });
 
