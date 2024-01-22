@@ -75,7 +75,7 @@ export const MainMenu = ({ items }) => {
             className="absolute h-12 w-12 flex items-center justify-center"
           >
             <img
-              src="http://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/services1-1.png"
+              src="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/services1-1.png"
               className="h-12 absolute z-10"
             />
           </a>
@@ -137,7 +137,7 @@ export const MainMenu = ({ items }) => {
             className="relative h-20 w-20 flex items-center justify-center"
           >
             <img
-              src="http://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/home_rat.png"
+              src="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/home_rat.png"
               className="h-16 absolute z-10"
             />
           </a>
@@ -146,7 +146,7 @@ export const MainMenu = ({ items }) => {
               <div className="socialIcon">
                 <img
                   className="icon"
-                  src="http://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/instagram-white.png"
+                  src="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/instagram-white.png"
                 />
               </div>
             </a>
@@ -154,7 +154,7 @@ export const MainMenu = ({ items }) => {
               <div className="socialIcon">
                 <img
                   className="icon"
-                  src="http://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/whatsapp-white.png"
+                  src="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/whatsapp-white.png"
                 />
               </div>
             </a>
@@ -171,7 +171,7 @@ export const MainMenu = ({ items }) => {
               home1 = el;
             }}
             id="home1"
-            src="http://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/services1-1.png"
+            src="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/services1-1.png"
             className="h-20 absolute"
           />
           <a href="/" className="absolute">
@@ -182,7 +182,7 @@ export const MainMenu = ({ items }) => {
               id="home2"
               onMouseOver={() => homeHover()}
               onMouseLeave={() => homeUnHover()}
-              src="http://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/home_rat.png"
+              src="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/home_rat.png"
               className="h-20 absolute"
             />
           </a>

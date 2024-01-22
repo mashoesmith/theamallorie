@@ -11,7 +11,7 @@ export const Footer = () => {
           <div className="socialIcon">
             <img
               className="icon"
-              src="http://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/instagram-white.png"
+              src="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/instagram-white.png"
             />
           </div>
         </a>
@@ -19,7 +19,7 @@ export const Footer = () => {
           <div className="socialIcon">
             <img
               className="icon"
-              src="http://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/whatsapp-white.png"
+              src="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/whatsapp-white.png"
             />
           </div>
         </a>
