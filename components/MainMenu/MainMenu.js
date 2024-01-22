@@ -137,8 +137,8 @@ export const MainMenu = ({ items }) => {
             className="relative h-20 w-20 flex items-center justify-center"
           >
             <img
-              src="http://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/services1-1.png"
-              className="h-12 absolute z-10"
+              src="http://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/home_rat.png"
+              className="h-16 absolute z-10"
             />
           </a>
           <div className="flex flex-row gap-3 absolute bottom-4">
