@@ -11,9 +11,7 @@ const libreBaskerville = Libre_Baskerville({
 export default async function RootLayout({ children }) {
   return (
     <html lang="en" className={`${libreBaskerville.variable}`}>
-      <body className="font-body">
-        <main>{children}</main>
-      </body>
+      <body className="font-body">{children}</body>
     </html>
   );
 }
