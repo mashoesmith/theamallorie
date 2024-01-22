@@ -201,7 +201,7 @@ a:hover {
 }
 
 @media only screen and (max-width: 768px) {
-  .mobileGallery {
+  .stackGallery {
     width: 100% !important;
     padding-left: 8px;
     padding-right: 8px;
