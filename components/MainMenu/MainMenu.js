@@ -142,7 +142,7 @@ export const MainMenu = ({ items }) => {
             />
           </a>
           <div className="flex flex-row gap-3 absolute bottom-4">
-            <a href="https://www.instagram.com/thea_mallorie/" target="blank">
+            <a href="https://www.instagram.com/thea_mallorie" target="blank">
               <div className="socialIcon">
                 <img
                   className="icon"
