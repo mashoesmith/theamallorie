@@ -12,7 +12,6 @@ import { theme } from "theme";
 import { Separator } from "components/Separator";
 import Link from "next/link";
 import { Spacer } from "components/Spacer";
-// import { Image } from "components/Image";
 
 export const BlockRenderer = ({ blocks }) => {
   if (!Array.isArray(blocks)) {
@@ -181,15 +180,8 @@ export const BlockRenderer = ({ blocks }) => {
         );
       }
       case "core/image": {
-        // borderColor, borderWidth;
-        // const borderColorStyle = borderColor ? { borderColor } : {};
-        // const borderWidthStyle = borderWidth ? { borderWidth } : {};
-        // if (block.attributes?.href) {
         return (
           <div
-            className="border-solid border-2 border-black"
-            // borderColor={block.attributes?.style?.border?.color}
-            // border={block.attributes?.style?.border?.width}
             style={{
               border: `${block.attributes?.style?.border?.width || ""} solid ${
                 block.attributes?.style?.border?.color || "black"
@@ -209,21 +201,6 @@ export const BlockRenderer = ({ blocks }) => {
             </a>
           </div>
         );
-        // } else {
-        //   return (
-        //     <div className="border-solid border-4 border-black">
-        //       <Image
-        //         key={block.id}
-        //         src={block.attributes?.url}
-        //         height={block.attributes?.height}
-        //         width={block.attributes?.width}
-        //         alt={block.attributes?.alt || ""}
-        //         classNames={block.attributes?.className}
-        //         style={block.attributes?.style?.border?.width}
-        //       />
-        //     </div>
-        //   );
-        // }
       }
       default: {
         console.log("UNKNOWN: ", block);
