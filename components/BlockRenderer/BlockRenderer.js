@@ -183,9 +183,9 @@ export const BlockRenderer = ({ blocks }) => {
         return (
           <div
             style={{
-              border: `${block.attributes?.style?.border?.width || ""} solid ${
-                block.attributes?.style?.border?.color || "black"
-              }`,
+              border: `${
+                block.attributes?.style?.border?.width || "0px"
+              } solid ${block.attributes?.style?.border?.color || "black"}`,
             }}
           >
             <a href={block.attributes?.href}>
