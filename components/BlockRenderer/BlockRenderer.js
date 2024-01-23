@@ -186,7 +186,16 @@ export const BlockRenderer = ({ blocks }) => {
         // const borderWidthStyle = borderWidth ? { borderWidth } : {};
         // if (block.attributes?.href) {
         return (
-          <div className="border-solid border-2 border-black">
+          <div
+            className="border-solid border-2 border-black"
+            // borderColor={block.attributes?.style?.border?.color}
+            // border={block.attributes?.style?.border?.width}
+            style={{
+              border: `${block.attributes?.style?.border?.width || ""} solid ${
+                block.attributes?.style?.border?.color || "black"
+              }`,
+            }}
+          >
             <a href={block.attributes?.href}>
               <Image
                 priority
@@ -196,9 +205,6 @@ export const BlockRenderer = ({ blocks }) => {
                 width={block.attributes?.width}
                 alt={block.attributes?.alt || ""}
                 classNames={block.attributes?.className}
-                style={{
-                  border: `${block.attributes?.style?.border?.width} solid ${block.attributes?.borderColor}`,
-                }}
               />
             </a>
           </div>
