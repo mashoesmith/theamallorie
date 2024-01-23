@@ -12,7 +12,7 @@ export const Columns = ({
   const borderWidthStyle = borderWidth ? { borderWidth } : {};
   return (
     <div
-      className="md:my-10"
+      className="md:mt-10"
       style={{
         ...textColorStyle,
         ...backgroundColorStyle,
