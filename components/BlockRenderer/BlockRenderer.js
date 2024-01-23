@@ -183,7 +183,9 @@ export const BlockRenderer = ({ blocks }) => {
         return (
           <div
             style={{
-              border: `${block.attributes?.style?.border?.width || ""} solid ${
+              border: `${
+                block.attributes?.style?.border?.width || "0px"
+              } solid ${
                 theme[block.attributes?.style?.border?.color] ||
                 block.attributes?.style?.border?.color
               }`,
