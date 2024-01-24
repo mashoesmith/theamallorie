@@ -12,7 +12,9 @@ export const Columns = ({
   const borderWidthStyle = borderWidth ? { borderWidth } : {};
   return (
     <div
-      className="md:mt-10"
+      className={`columns max-w-5xl mx-auto flex flex-col ${
+        isStackedOnMobile ? "block md:flex-row md:mt-10" : "flex"
+      }`}
       style={{
         ...textColorStyle,
         ...backgroundColorStyle,
@@ -20,13 +22,7 @@ export const Columns = ({
         ...borderWidthStyle,
       }}
     >
-      <div
-        className={`max-w-5xl mx-auto flex flex-col ${
-          isStackedOnMobile ? "block md:flex-row md:my-10" : "flex"
-        }`}
-      >
-        {children}
-      </div>
+      {children}
     </div>
   );
 };
