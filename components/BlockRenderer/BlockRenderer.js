@@ -154,6 +154,10 @@ export const BlockRenderer = ({ blocks }) => {
               block.attributes?.style?.color?.border
             }
             borderWidth={block.attributes?.style?.border?.width}
+            paddingTop={block.attributes?.style?.spacing?.padding?.top}
+            paddingBottom={block.attributes?.style?.spacing?.padding?.bottom}
+            paddingLeft={block.attributes?.style?.spacing?.padding?.left}
+            paddingRight={block.attributes?.style?.spacing?.padding?.right}
             classNames={block.attributes?.className}
           >
             <BlockRenderer
