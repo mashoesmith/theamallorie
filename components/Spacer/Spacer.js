@@ -1,3 +1,3 @@
 export const Spacer = ({ classNames }) => {
-  return <div className={`w-full h-[30px] ${classNames || ""}`}></div>;
+  return <div className={`w-full h-[40px] ${classNames || ""}`}></div>;
 };
