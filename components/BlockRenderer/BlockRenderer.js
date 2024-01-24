@@ -164,7 +164,13 @@ export const BlockRenderer = ({ blocks }) => {
         );
       }
       case "core/separator": {
-        return <Separator classNames={block.attributes?.className}></Separator>;
+        return (
+          <Separator
+            marginTop={block.attributes?.style?.spacing?.margin?.top}
+            marginBottom={block.attributes?.style?.spacing?.margin?.bottom}
+            classNames={block.attributes?.className}
+          ></Separator>
+        );
       }
       case "core/spacer": {
         return <Spacer classNames={block.attributes?.className}></Spacer>;
