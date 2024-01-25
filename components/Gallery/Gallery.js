@@ -16,7 +16,7 @@ export const Gallery = ({ columns, cropImages, items, classNames }) => {
   }
   const columnWidth = 100 / columns;
   return (
-    <div className="flex flex-wrap flex-col md:flex-row pt-4 md:py-0 max-w-5xl mx-auto md:mt-10">
+    <div className="flex flex-wrap flex-col md:flex-row pt-4 md:py-0 max-w-5xl mx-auto md:mt-8">
       {items.map((item) => (
         <div
           key={item.id}
