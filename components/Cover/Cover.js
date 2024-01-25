@@ -9,7 +9,7 @@ export const Cover = ({ children, background, borderColor, borderWidth }) => {
         ...borderColorStyle,
         ...borderWidthStyle,
       }}
-      className="h-4/5 text-white relative min-h-[600px] flex justify-center items-center darkOverlay"
+      className="h-4/5 text-white bg-black bg-opacity-0 relative min-h-[600px] flex justify-center items-center"
     >
       <Image
         alt="cover"
