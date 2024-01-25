@@ -16,7 +16,7 @@ export const Cover = ({ children, background, borderColor, borderWidth }) => {
         src={background}
         fill
         priority
-        className="mix-blend-soft-light object-cover opacity-100"
+        className="mix-blend-overlay object-cover"
       />
       <div className="max-w-5xl z-10">{children}</div>
     </div>
