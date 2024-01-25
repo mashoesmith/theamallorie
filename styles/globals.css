@@ -230,3 +230,7 @@ a:hover {
   opacity: 0;
   height: 100dvh;
 }
+
+.darkOverlay {
+  background: rgba(0, 0, 0, 0.3);
+}
