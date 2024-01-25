@@ -35,7 +35,7 @@ export const Column = ({
         ...paddingLeftStyle,
         ...paddingRightStyle,
       }}
-      className={`column px-4 md:px-5 pt-4 md:pt-0 ${classnames || ""}`}
+      className={`column px-4 pt-4 md:pt-0 ${classnames || ""}`}
     >
       {children}
     </div>
