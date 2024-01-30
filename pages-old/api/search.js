@@ -52,9 +52,8 @@ const handler = async (req, res) => {
         query AllProjectsQuery {
           projects(where: { offsetPagination: { size: 6, offset: ${
             ((filters.page || 1) - 1) * 6
-          } } 
-          metaQuery: 
-          {
+          } }
+          metaQuery: {
             relation: OR
             metaArray: [
               ${illustrationFilter}
