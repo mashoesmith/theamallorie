@@ -13,18 +13,19 @@ export const SearchProjects = () => {
   const pageSize = 6;
 
   const search = async () => {
-    const { page, category } = queryString.parse(window.location.search);
+    const { page, illustration, painting, dollsHouse, stationery } =
+      queryString.parse(window.location.search);
     const filters = {};
-    if (category === "Illustration") {
+    if (illustration === "true") {
       filters.illustration = true;
     }
-    if (category === "Painting") {
+    if (painting === "true") {
       filters.painting = true;
     }
-    if (category === "Dollshouse") {
+    if (dollsHouse === "true") {
       filters.dollsHouse = true;
     }
-    if (category === "Stationery") {
+    if (stationery === "true") {
       filters.stationery = true;
     }
     const response = await fetch("/api/search", {
@@ -70,6 +71,8 @@ export const SearchProjects = () => {
     dollsHouse,
     stationery,
   }) => {
+    console.log("FILTERS ", illustration, painting, dollsHouse, stationery);
+
     await router.push(
       `${router.query.slug.join(
         "/"

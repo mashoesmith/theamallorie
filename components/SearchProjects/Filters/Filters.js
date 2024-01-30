@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
 import queryString from "query-string";
 
-export const Filters = () => {
+export const Filters = ({ onSearch }) => {
   const [stationery, setStationery] = useState(false);
   const [painting, setPainting] = useState(false);
   const [dollsHouse, setDollsHouse] = useState(false);
   const [illustration, setIllustration] = useState(false);
 
-  const handleSearch = ({ onSearch }) => {
+  console.log("FILTERS ", illustration, painting, dollsHouse, stationery);
+
+  const handleSearch = () => {
     onSearch({
       stationery,
       painting,
