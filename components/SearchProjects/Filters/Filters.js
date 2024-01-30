@@ -73,7 +73,7 @@ export const Filters = () => {
             <span className="pl-2">Illustration</span>
           </label>
         </div>
-        <div className="btn" onClick={handleSearch}>
+        <div className="btn button" onClick={handleSearch}>
           Search
         </div>
       </div>
