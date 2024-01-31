@@ -103,4 +103,3 @@ export async function POST(request) {
     console.log("ERROR: ", e);
   }
 }
-console.log(data);
