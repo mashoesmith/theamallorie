@@ -11,7 +11,7 @@ export const ProjectCard = ({
 }) => {
   return (
     <a
-      className="flex flex-row items-center justify-end w-full h-[300px] bg-black bg-opacity-20"
+      className="flex flex-row items-center justify-center w-full h-[300px] bg-black bg-opacity-20"
       href={destination}
     >
       <div className="flex h-full w-full relative justify-center align-middle mix-blend-soft-light">
@@ -24,12 +24,14 @@ export const ProjectCard = ({
           alt=""
         />
       </div>
-      <div className="w-300 absolute text-center my-3 text-white text-xl mr-10">
+      <div className="w-300 absolute text-center my-3 text-white text-xl">
         {title}
       </div>
-      <div className="text-lg">{category}</div>
-      <div className="text-lg">{location}</div>
-      <div className="text-lg">{date}</div>
+      <div className="absolute flex flex-row justify-between gap-24 text-white mt-[260px]">
+        <div className="text-sm">{category}</div>
+        <div className="text-sm">{location}</div>
+        <div className="text-sm">{date}</div>
+      </div>
     </a>
   );
 };

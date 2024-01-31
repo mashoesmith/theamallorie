@@ -4,7 +4,7 @@ export const Pagination = ({ totalPages, onPageClick }) => {
       {Array.from({ length: totalPages }).map((_, i) => (
         <div
           key={i}
-          className="btn"
+          className="btn button"
           onClick={() => {
             onPageClick(i + 1);
           }}
