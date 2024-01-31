@@ -2,6 +2,50 @@ import { NextResponse } from "next/server";
 
 export async function POST(request) {
   try {
+    const filters = await request.json();
+
+    let illustrationFilter = ``;
+    let paintingFilter = ``;
+    let dollsHouseFilter = ``;
+    let stationeryFilter = ``;
+
+    if (filters.illustration) {
+      illustrationFilter = `
+      {
+        key: "category", 
+        compare: LIKE, 
+        value: "Illustration"
+      },
+      `;
+    }
+    if (filters.painting) {
+      paintingFilter = `
+      {
+        key: "category", 
+        compare: LIKE, 
+        value: "Painting"
+      },
+      `;
+    }
+    if (filters.dollsHouse) {
+      dollsHouseFilter = `
+      {
+        key: "category", 
+        compare: LIKE, 
+        value: "Dollshouse"
+      },
+      `;
+    }
+    if (filters.stationery) {
+      stationeryFilter = `
+      {
+        key: "category", 
+        compare: LIKE, 
+        value: "Stationery"
+      },
+      `;
+    }
+
     const response = await fetch(process.env.WP_GRAPHQL_URL, {
       method: "POST",
       headers: {
@@ -10,7 +54,24 @@ export async function POST(request) {
       body: JSON.stringify({
         query: `
         query AllProjectsQuery {
-          projects {
+          projects(where: { offsetPagination: { size: 6, offset: ${
+            ((filters.page || 1) - 1) * 6
+          } }
+          metaQuery: {
+            relation: OR
+            metaArray: [
+              ${illustrationFilter}
+              ${paintingFilter}
+              ${dollsHouseFilter}
+              ${stationeryFilter}
+            ] 
+            }
+          }) {
+            pageInfo {
+              offsetPagination {
+                total
+              }
+            }
             nodes {
               databaseId
               title
@@ -21,6 +82,11 @@ export async function POST(request) {
                   sourceUrl
                 }
               }
+              projectFeatures {
+                category
+                location
+                date
+              }
             }
           }
         }
@@ -30,9 +96,11 @@ export async function POST(request) {
 
     const { data } = await response.json();
     return NextResponse.json({
+      total: data.projects.pageInfo.offsetPagination.total,
       projects: data.projects.nodes,
     });
   } catch (e) {
     console.log("ERROR: ", e);
   }
 }
+console.log(data);
