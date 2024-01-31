@@ -35,9 +35,9 @@ export const SearchProjects = () => {
         page: parseInt(page || "1"),
         ...filters,
       }),
-      headers: {
-        "content-type": "application/json",
-      },
+      // headers: {
+      //   "content-type": "application/json",
+      // },
     });
     const data = await response.json();
     setProjects(data.projects);

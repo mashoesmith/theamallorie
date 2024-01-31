@@ -96,6 +96,6 @@ const handler = async (req, res) => {
     console.log("ERROR: ", e);
   }
 };
-console.log(data);
+// console.log(data);
 
 export default handler;
