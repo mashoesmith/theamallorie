@@ -11,6 +11,7 @@ export const SearchProjects = () => {
   const [totalResults, setTotalResults] = useState(0);
   const router = useRouter();
   const pageSize = 6;
+  const pathName = usePathname();
 
   const search = async () => {
     const { page, illustration, painting, dollsHouse, stationery } =
@@ -39,26 +40,21 @@ export const SearchProjects = () => {
       },
     });
     const data = await response.json();
-    console.log("SEARCH DATA: ", data);
     setProjects(data.projects);
     setTotalResults(data.total);
+    console.log("SEARCH DATA: ", data);
   };
 
   const handlePageClick = async (pageNumber) => {
     const { illustration, painting, dollsHouse, stationery } =
       queryString.parse(window.location.search);
-    await router.push(
-      `${router.query.slug.join("/")}?page=${pageNumber}&illustration=${
+    router.push(
+      `${pathName}?page=${pageNumber}&illustration=${
         illustration === "true"
       }&painting=${painting === "true"}&dollsHouse=${
         dollsHouse === "true"
-      }&stationery=${stationery === "true"}`,
-      null,
-      {
-        shallow: true,
-      }
+      }&stationery=${stationery === "true"}`
     );
-    search();
   };
 
   useEffect(() => {
@@ -73,16 +69,9 @@ export const SearchProjects = () => {
   }) => {
     console.log("FILTERS ", illustration, painting, dollsHouse, stationery);
 
-    await router.push(
-      `${router.query.slug.join(
-        "/"
-      )}?page=1&illustration=${!!illustration}&painting=${!!painting}&dollsHouse=${!!dollsHouse}&stationery=${!!stationery}`,
-      null,
-      {
-        shallow: true,
-      }
+    router.push(
+      `${pathName}?page=1&illustration=${!!illustration}&painting=${!!painting}&dollsHouse=${!!dollsHouse}&stationery=${!!stationery}`
     );
-    search();
   };
 
   return (

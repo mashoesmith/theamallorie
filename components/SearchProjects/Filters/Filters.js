@@ -7,7 +7,17 @@ export const Filters = ({ onSearch }) => {
   const [dollsHouse, setDollsHouse] = useState(false);
   const [illustration, setIllustration] = useState(false);
 
-  console.log("FILTERS ", illustration, painting, dollsHouse, stationery);
+  console.log(
+    "FILTERS ",
+    "illustration: ",
+    illustration,
+    "painting: ",
+    painting,
+    "dollshouse: ",
+    dollsHouse,
+    "stationery: ",
+    stationery
+  );
 
   const handleSearch = () => {
     onSearch({
