@@ -43,50 +43,52 @@ export const Filters = ({ onSearch }) => {
   }, []);
 
   return (
-    <div className="max-w-5xl mx-auto my-5 flex gap-5 border-solid border-black border p-5 bg-pink-50">
-      <div className="flex-1">
-        <div>
-          <label className="cursor-pointer">
-            <input
-              type="checkbox"
-              checked={painting}
-              onChange={() => setPainting((value) => !value)}
-            />
-            <span className="pl-2">Painting</span>
-          </label>
-        </div>
-        <div>
-          <label className="cursor-pointer">
-            <input
-              type="checkbox"
-              checked={dollsHouse}
-              onChange={() => setDollsHouse((value) => !value)}
-            />
-            <span className="pl-2">Dolls House</span>
-          </label>
-        </div>
-        <div>
-          <label className="cursor-pointer">
-            <input
-              type="checkbox"
-              checked={stationery}
-              onChange={() => setStationery((value) => !value)}
-            />
-            <span className="pl-2">Stationery</span>
-          </label>
-        </div>
-        <div>
-          <label className="cursor-pointer">
-            <input
-              type="checkbox"
-              checked={illustration}
-              onChange={() => setIllustration((value) => !value)}
-            />
-            <span className="pl-2">Illustration</span>
-          </label>
-        </div>
-        <div className="btn button" onClick={handleSearch}>
-          Search
+    <div className="max-w-5xl mx-auto my-5 flex gap-5 p-5">
+      <div>
+        <div className="flex-1">
+          <div>
+            <label className="cursor-pointer">
+              <input
+                type="checkbox"
+                checked={painting}
+                onChange={() => setPainting((value) => !value)}
+              />
+              <span className="pl-2">Painting</span>
+            </label>
+          </div>
+          <div>
+            <label className="cursor-pointer">
+              <input
+                type="checkbox"
+                checked={dollsHouse}
+                onChange={() => setDollsHouse((value) => !value)}
+              />
+              <span className="pl-2">Dolls House</span>
+            </label>
+          </div>
+          <div>
+            <label className="cursor-pointer">
+              <input
+                type="checkbox"
+                checked={stationery}
+                onChange={() => setStationery((value) => !value)}
+              />
+              <span className="pl-2">Stationery</span>
+            </label>
+          </div>
+          <div>
+            <label className="cursor-pointer">
+              <input
+                type="checkbox"
+                checked={illustration}
+                onChange={() => setIllustration((value) => !value)}
+              />
+              <span className="pl-2">Illustration</span>
+            </label>
+          </div>
+          <div className="btn button" onClick={handleSearch}>
+            Search
+          </div>
         </div>
       </div>
     </div>
