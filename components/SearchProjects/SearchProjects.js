@@ -67,7 +67,7 @@ export const SearchProjects = () => {
     dollsHouse,
     stationery,
   }) => {
-    console.log("FILTERS ", illustration, painting, dollsHouse, stationery);
+    // console.log("FILTERS ", illustration, painting, dollsHouse, stationery);
 
     router.push(
       `${pathName}?page=1&illustration=${!!illustration}&painting=${!!painting}&dollsHouse=${!!dollsHouse}&stationery=${!!stationery}`
