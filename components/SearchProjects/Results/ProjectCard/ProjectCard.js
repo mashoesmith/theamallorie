@@ -11,7 +11,7 @@ export const ProjectCard = ({
 }) => {
   return (
     <a
-      className="flex flex-col items-center justify-start w-full h-[300px] bg-black bg-opacity-30 hover:no-underline border border-solid border-black"
+      className="flex flex-col items-center justify-start w-full h-[300px] bg-black bg-opacity-50 hover:no-underline border border-solid border-black"
       href={destination}
     >
       <div className="flex h-[270px] w-full mx-5 relative justify-center items-center mix-blend-soft-light">
