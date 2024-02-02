@@ -7,17 +7,17 @@ export const Filters = ({ onSearch }) => {
   const [dollsHouse, setDollsHouse] = useState(false);
   const [illustration, setIllustration] = useState(false);
 
-  console.log(
-    "FILTERS ",
-    "illustration: ",
-    illustration,
-    "painting: ",
-    painting,
-    "dollshouse: ",
-    dollsHouse,
-    "stationery: ",
-    stationery
-  );
+  // console.log(
+  //   "FILTERS ",
+  //   "illustration: ",
+  //   illustration,
+  //   "painting: ",
+  //   painting,
+  //   "dollshouse: ",
+  //   dollsHouse,
+  //   "stationery: ",
+  //   stationery
+  // );
 
   const handleSearch = () => {
     onSearch({
@@ -43,7 +43,7 @@ export const Filters = ({ onSearch }) => {
   }, []);
 
   return (
-    <div className="max-w-5xl mx-auto my-5 flex gap-5 border-solid border-black border-2 p-5 rounded-md">
+    <div className="max-w-5xl mx-auto my-5 flex gap-5 border-solid border-black border p-5 bg-pink-50">
       <div className="flex-1">
         <div>
           <label className="cursor-pointer">

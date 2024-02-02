@@ -98,6 +98,24 @@ a:hover {
   text-decoration: none;
 }
 
+.buttonPage {
+  background: white;
+  color: #000;
+  /* width: 42px; */
+  height: 42px;
+  padding-left: 0;
+  padding-right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.buttonPage:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
 .fullHeight {
   height: 100%;
 }
@@ -231,10 +249,19 @@ a:hover {
   height: 100dvh;
 }
 
-.darkOverlay {
-  background: rgba(0, 0, 0, 0.3);
+.overlay {
+  position: relative;
+}
+
+.overlay::before {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
 }
 
 .projectCard {
   background: (255, 230, 208, 0.5);
+}
+
+.text-xxs {
+  font-size: 0.5rem;
 }
