@@ -11,10 +11,10 @@ export const ProjectCard = ({
 }) => {
   return (
     <a
-      className="flex flex-col items-center justify-start w-full h-[300px] bg-black bg-opacity-50 hover:no-underline border border-solid border-black"
+      className="flex flex-col items-center justify-start w-full h-[250px] md:h-[300px] bg-black bg-opacity-50 hover:no-underline border border-solid border-black"
       href={destination}
     >
-      <div className="flex h-[270px] w-full mx-5 relative justify-center items-center mix-blend-soft-light">
+      <div className="flex h-[220px] md:h-[270px] w-full mx-5 relative justify-center items-center mix-blend-soft-light">
         <Image
           priority
           src={image}
@@ -24,7 +24,7 @@ export const ProjectCard = ({
           alt=""
         />
       </div>
-      <div className="flex h-[270px] w-full max-w-[480px] mx-5 absolute justify-center items-center">
+      <div className="flex h-[220px] md:h-[270px] w-full max-w-[480px] mx-5 absolute justify-center items-center">
         <div className="absolute text-center my-3 text-white text-xl">
           {title}
         </div>
