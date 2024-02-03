@@ -53,7 +53,7 @@ export const Filters = ({ onSearch }) => {
                 checked={painting}
                 onChange={() => setPainting((value) => !value)}
               />
-              <span className="pl-2">Painting</span>
+              <span className="pl-2">Paintings</span>
             </label>
           </div>
           <div>
@@ -63,7 +63,7 @@ export const Filters = ({ onSearch }) => {
                 checked={dollsHouse}
                 onChange={() => setDollsHouse((value) => !value)}
               />
-              <span className="pl-2">Dolls House</span>
+              <span className="pl-2">Dolls Houses</span>
             </label>
           </div>
           <div>
@@ -83,7 +83,7 @@ export const Filters = ({ onSearch }) => {
                 checked={illustration}
                 onChange={() => setIllustration((value) => !value)}
               />
-              <span className="pl-2">Illustration</span>
+              <span className="pl-2">Illustrations</span>
             </label>
           </div>
           <div className="btn button" onClick={handleSearch}>
