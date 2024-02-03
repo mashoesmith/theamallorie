@@ -45,5 +45,3 @@ export const ProjectCard = ({
     </a>
   );
 };
-
-// bg-black bg-opacity-20
