@@ -9,9 +9,17 @@ import { Filters } from "./Filters/Filters";
 export const SearchProjects = () => {
   const [projects, setProjects] = useState([]);
   const [totalResults, setTotalResults] = useState(0);
+  const [currentPage, setCurrentPage] = useState(1);
   const router = useRouter();
   const pageSize = 6;
   const pathName = usePathname();
+
+  useEffect(() => {
+    const currentPageFromUrl = new URLSearchParams(window.location.search).get(
+      "page"
+    );
+    setCurrentPage(parseInt(currentPageFromUrl) || 1);
+  }, []);
 
   const search = async () => {
     const { page, illustration, painting, dollsHouse, stationery } =
@@ -46,6 +54,7 @@ export const SearchProjects = () => {
   };
 
   const handlePageClick = async (pageNumber) => {
+    setCurrentPage(pageNumber);
     const { illustration, painting, dollsHouse, stationery } =
       queryString.parse(window.location.search);
     router.push(
@@ -81,6 +90,7 @@ export const SearchProjects = () => {
       <Pagination
         onPageClick={handlePageClick}
         totalPages={Math.ceil(totalResults / pageSize)}
+        activePage={currentPage}
       />
     </div>
   );
