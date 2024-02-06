@@ -5,7 +5,6 @@ export async function POST(request) {
     const filters = await request.json();
 
     let illustrationFilter = ``;
-    let paintingFilter = ``;
     let dollsHouseFilter = ``;
     let stationeryFilter = ``;
 
@@ -15,15 +14,6 @@ export async function POST(request) {
         key: "category", 
         compare: LIKE, 
         value: "Illustration"
-      },
-      `;
-    }
-    if (filters.painting) {
-      paintingFilter = `
-      {
-        key: "category", 
-        compare: LIKE, 
-        value: "Painting"
       },
       `;
     }
@@ -61,7 +51,6 @@ export async function POST(request) {
             relation: OR
             metaArray: [
               ${illustrationFilter}
-              ${paintingFilter}
               ${dollsHouseFilter}
               ${stationeryFilter}
             ] 
