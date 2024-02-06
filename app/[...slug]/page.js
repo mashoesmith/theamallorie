@@ -5,6 +5,7 @@ import { getSeo } from "utils/getSeo";
 import { Footer } from "components/Footer";
 import { MainMenu } from "components/MainMenu";
 import { getMenu } from "utils/getMenu";
+import { Analytics } from "@vercel/analytics/react";
 
 export default async function Page({ params }) {
   const data = await getPage(params.slug.join("/"));
@@ -24,6 +25,7 @@ export default async function Page({ params }) {
         <BlockRenderer blocks={data} />
       </main>
       <Footer />
+      <Analytics />
     </>
   );
 }
