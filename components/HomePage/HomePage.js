@@ -8,13 +8,13 @@ import { Footer } from "components/Footer";
 // import music from "././public/creek.mp3";
 
 export const HomePage = () => {
-  const [loading, setLoading] = useState(false);
-  useEffect(() => {
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-    }, 8000);
-  }, []);
+  // const [loading, setLoading] = useState(false);
+  // useEffect(() => {
+  //   setLoading(true);
+  //   setTimeout(() => {
+  //     setLoading(false);
+  //   }, 8000);
+  // }, []);
   let services1 = useRef(null);
   let services2 = useRef(null);
   let about1 = useRef(null);
