@@ -5,7 +5,6 @@ import gsap from "gsap";
 import Link from "next/link";
 import { useGSAP } from "@gsap/react";
 import { Footer } from "components/Footer";
-// UPLOAD
 // import music from "././public/creek.mp3";
 
 export const HomePage = () => {
