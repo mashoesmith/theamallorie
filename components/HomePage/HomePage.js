@@ -2,10 +2,10 @@
 import React, { useRef, useEffect, useState, useLayoutEffect } from "react";
 import gsap from "gsap";
 // import mouseHouse from "/images/mouse_house_v3.jpg";
-import { Power1 } from "gsap";
 import Link from "next/link";
 import { useGSAP } from "@gsap/react";
 import { Footer } from "components/Footer";
+// UPLOAD
 // import music from "././public/creek.mp3";
 
 export const HomePage = () => {
