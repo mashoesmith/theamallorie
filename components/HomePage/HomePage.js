@@ -1,14 +1,20 @@
 "use client";
 import React, { useRef, useEffect, useState, useLayoutEffect } from "react";
 import gsap from "gsap";
-import { Power1 } from "gsap";
+// import mouseHouse from "/images/mouse_house_v3.jpg";
 import Link from "next/link";
 import { useGSAP } from "@gsap/react";
-import { motion } from "framer-motion";
 import { Footer } from "components/Footer";
 // import music from "././public/creek.mp3";
 
 export const HomePage = () => {
+  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 8000);
+  }, []);
   let services1 = useRef(null);
   let services2 = useRef(null);
   let about1 = useRef(null);
@@ -27,6 +33,7 @@ export const HomePage = () => {
   let frame = useRef(null);
   let room = useRef(null);
   let doors = useRef(null);
+  // var mouseHouse = require("././public/images/mouse_house_v3.jpg");
 
   useEffect(() => {
     pauseSound.current = new Audio(
@@ -187,7 +194,7 @@ export const HomePage = () => {
         ref={(el) => {
           room = el;
         }}
-        src="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/mouse_house_v2-scaled.jpg"
+        src="/images/whittles_mouse_house.jpg"
       />
 
       <svg
@@ -205,7 +212,7 @@ export const HomePage = () => {
           }}
           width="1920"
           height="1080"
-          xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/door_frame_picture_v2.png"
+          xlinkHref="/images/whittles_mysterious_mouse_house.png"
         />
         <image
           id="door1"
@@ -264,7 +271,7 @@ export const HomePage = () => {
           }}
           width="1264"
           height="1857"
-          transform="translate(1385.87 235) scale(.11)"
+          transform="translate(1378.87 227) scale(.1)"
           xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/studio1.png"
         />
         <image
@@ -274,7 +281,7 @@ export const HomePage = () => {
           }}
           width="1612"
           height="1714"
-          transform="translate(362 776) scale(.11)"
+          transform="translate(351 769) scale(.11)"
           xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/portfolio1.png"
         />
         <image
@@ -284,7 +291,7 @@ export const HomePage = () => {
           }}
           width="1478"
           height="956"
-          transform="translate(974 844.78) scale(.11)"
+          transform="translate(964 843.78) scale(.11)"
           xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/about1-1.png"
         />
         <image
@@ -294,7 +301,7 @@ export const HomePage = () => {
           }}
           width="898"
           height="1142"
-          transform="translate(1330.5 804) scale(.11)"
+          transform="translate(1328.5 804) scale(.11)"
           xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/services1-2.png"
         />
         <image
@@ -304,7 +311,7 @@ export const HomePage = () => {
           }}
           width="1613"
           height="1030"
-          transform="translate(1318.39 947) scale(.11)"
+          transform="translate(1318.39 946) scale(.11)"
           xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/contact1.png"
         />
 
@@ -342,7 +349,7 @@ export const HomePage = () => {
             // onMouseLeave={() => studioUnHover()}
             width="1116"
             height="2012"
-            transform="translate(1386.34 172.23) scale(.11)"
+            transform="translate(1378.34 164.23) scale(.11)"
             xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/studio2.png"
           />
         </a>
@@ -356,7 +363,7 @@ export const HomePage = () => {
             // onMouseLeave={() => portfolioUnHover()}
             width="1974"
             height="1755"
-            transform="translate(402 765) scale(.11)"
+            transform="translate(390 760) scale(.11)"
             xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/portfolio2.png"
           />
         </a>
@@ -370,7 +377,7 @@ export const HomePage = () => {
             // onMouseLeave={() => aboutUnHover()}
             width="1550"
             height="1499"
-            transform="translate(958 791) scale(.11)"
+            transform="translate(947 791) scale(.11)"
             xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/about2-1.png"
           />
         </a>
@@ -384,7 +391,7 @@ export const HomePage = () => {
             // onMouseLeave={() => servicesUnHover()}
             width="1196"
             height="1209"
-            transform="translate(1305.1 801) scale(.11)"
+            transform="translate(1298.1 793) scale(.11)"
             xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/services2-1.png"
           />
         </a>
@@ -398,7 +405,7 @@ export const HomePage = () => {
             // onMouseLeave={() => contactUnHover()}
             width="1722"
             height="995"
-            transform="translate(1327 916.37) scale(.11)"
+            transform="translate(1338 904.37) scale(.11)"
             xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/contact2.png"
           />
         </a>
