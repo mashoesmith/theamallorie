@@ -476,7 +476,7 @@ export const HomePage = () => {
             // onMouseLeave={() => studioUnHover()}
             width="1669"
             height="1652"
-            transform="translate(1043.19 455) scale(.11)"
+            transform="translate(1060.19 455) scale(.1)"
             xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2024/03/studio_mobile_2.png"
           />
         </a>
@@ -518,7 +518,7 @@ export const HomePage = () => {
             // onMouseLeave={() => servicesUnHover()}
             width="1196"
             height="1209"
-            transform="translate(1053.06 658) scale(.18)"
+            transform="translate(990.06 638) scale(.17)"
             xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/services2-1.png"
           />
         </a>
@@ -532,7 +532,7 @@ export const HomePage = () => {
             // onMouseLeave={() => contactUnHover()}
             width="1722"
             height="995"
-            transform="translate(951.62 890) scale(.17)"
+            transform="translate(951.62 870) scale(.17)"
             xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/contact2.png"
           />
         </a>
