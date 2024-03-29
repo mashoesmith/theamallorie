@@ -200,8 +200,8 @@ export const BlockRenderer = ({ blocks }) => {
                 block.attributes?.style?.border?.color ||
                 ""
               }`,
-              width: `${block.attributes?.width || "auto"}`,
-              height: `${block.attributes?.height || "auto"}`,
+              // width: `${block.attributes?.width || "auto"}`,
+              // height: `${block.attributes?.height || "auto"}`,
             }}
           >
             <a href={block.attributes?.href}>
@@ -213,6 +213,10 @@ export const BlockRenderer = ({ blocks }) => {
                 // width={block.attributes?.width}
                 alt={block.attributes?.alt || ""}
                 classNames={block.attributes?.className}
+                style={{
+                  width: `${block.attributes?.width || "auto"}`,
+                  height: `${block.attributes?.height || "auto"}`,
+                }}
               />
             </a>
           </div>
