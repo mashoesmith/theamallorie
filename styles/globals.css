@@ -150,9 +150,9 @@ a:hover {
 #BGimageMobile {
   opacity: 0;
   filter: blur(10px);
-  height: 100%;
-  width: auto;
-  max-width: 1000%;
+  height: auto;
+  width: 100%;
+  max-height: 1000%;
 }
 
 .doors {
@@ -172,6 +172,16 @@ a:hover {
   position: absolute;
   height: 100%;
   width: auto;
+  /* vertical-align: middle; */
+  margin: 0;
+  overflow: hidden;
+  /* z-index: 1; */
+}
+
+.ratMobile {
+  position: absolute;
+  height: auto;
+  width: 100%;
   /* vertical-align: middle; */
   margin: 0;
   overflow: hidden;

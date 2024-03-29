@@ -454,7 +454,11 @@ export const HomePage = () => {
         />
       </svg>
 
-      <svg className="rat md:hidden" viewBox="0 0 1920 1080" fill="transparent">
+      <svg
+        className="ratMobile md:hidden"
+        viewBox="0 0 1080 1920"
+        fill="transparent"
+      >
         <image
           id="vinylMobile"
           ref={(el) => {
@@ -463,7 +467,7 @@ export const HomePage = () => {
           onClick={playMusic}
           width="1194"
           height="877"
-          transform="translate(1204 505) scale(.09)"
+          transform="translate(904 941) scale(.12)"
           xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/vinyl.png"
         />
         <a href="studio">
@@ -476,7 +480,7 @@ export const HomePage = () => {
             // onMouseLeave={() => studioUnHover()}
             width="1669"
             height="1652"
-            transform="translate(1060.19 455) scale(.1)"
+            transform="translate(690.19 857) scale(.15)"
             xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2024/03/studio_mobile_2.png"
           />
         </a>
@@ -490,7 +494,7 @@ export const HomePage = () => {
             // onMouseLeave={() => portfolioUnHover()}
             width="1974"
             height="1755"
-            transform="translate(665 655) scale(.16)"
+            transform="translate(101 1146) scale(.195)"
             xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/portfolio2.png"
           />
         </a>
@@ -504,7 +508,7 @@ export const HomePage = () => {
             // onMouseLeave={() => aboutUnHover()}
             width="1550"
             height="1499"
-            transform="translate(722.06 397.65) rotate(2.04) scale(.15)"
+            transform="translate(193.08 778.83) rotate(2.04) scale(.2)"
             xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/about2-1.png"
           />
         </a>
@@ -518,7 +522,7 @@ export const HomePage = () => {
             // onMouseLeave={() => servicesUnHover()}
             width="1196"
             height="1209"
-            transform="translate(990.06 638) scale(.17)"
+            transform="translate(537.91 1104) scale(.22)"
             xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/services2-1.png"
           />
         </a>
@@ -532,7 +536,7 @@ export const HomePage = () => {
             // onMouseLeave={() => contactUnHover()}
             width="1722"
             height="995"
-            transform="translate(951.62 870) scale(.17)"
+            transform="translate(491.04 1380) scale(.24)"
             xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/contact2.png"
           />
         </a>
