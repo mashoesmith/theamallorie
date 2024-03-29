@@ -200,6 +200,7 @@ export const BlockRenderer = ({ blocks }) => {
                 block.attributes?.style?.border?.color ||
                 ""
               }`,
+              width: `${block.attributes?.width}`,
             }}
           >
             <a href={block.attributes?.href}>
