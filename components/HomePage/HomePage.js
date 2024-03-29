@@ -8,30 +8,30 @@ import { Footer } from "components/Footer";
 // import music from "././public/creek.mp3";
 
 export const HomePage = () => {
-  // const [loading, setLoading] = useState(false);
-  // useEffect(() => {
-  //   setLoading(true);
-  //   setTimeout(() => {
-  //     setLoading(false);
-  //   }, 8000);
-  // }, []);
   let services1 = useRef(null);
   let services2 = useRef(null);
+  let services2Mob = useRef(null);
   let about1 = useRef(null);
   let about2 = useRef(null);
+  let about2Mob = useRef(null);
   let contact1 = useRef(null);
   let contact2 = useRef(null);
+  let contact2Mob = useRef(null);
   let portfolio1 = useRef(null);
   let portfolio2 = useRef(null);
+  let portfolio2Mob = useRef(null);
   let studio1 = useRef(null);
   let studio2 = useRef(null);
+  let studio2Mob = useRef(null);
   let vinyl = useRef(null);
+  let vinylMob = useRef(null);
   let audio = useRef(null); // Create a reference to store the audio object
   const pauseSound = useRef(null);
   let door1 = useRef(null);
   let door2 = useRef(null);
   let frame = useRef(null);
   let room = useRef(null);
+  let roomMobile = useRef(null);
   let doors = useRef(null);
   // var mouseHouse = require("././public/images/mouse_house_v3.jpg");
 
@@ -108,7 +108,7 @@ export const HomePage = () => {
       duration: 0.5,
       delay: 0.5,
     });
-    gsap.to([room, vinyl], {
+    gsap.to([room, roomMobile, vinyl, vinylMob], {
       webkitFilter: "blur(0px)",
       opacity: 1,
       duration: 0.5,
@@ -118,12 +118,26 @@ export const HomePage = () => {
   }
 
   function animateRats() {
-    gsap.to([services1, about1, contact1, studio1, portfolio1], {
-      opacity: 1,
-      delay: 1,
-      duration: 0.5,
-      onComplete: allowHover,
-    });
+    gsap.to(
+      [
+        services1,
+        about1,
+        contact1,
+        studio1,
+        portfolio1,
+        services2Mob,
+        about2Mob,
+        contact2Mob,
+        studio2Mob,
+        portfolio2Mob,
+      ],
+      {
+        opacity: 1,
+        delay: 1,
+        duration: 0.5,
+        onComplete: allowHover,
+      }
+    );
   }
 
   function allowHover() {
@@ -195,6 +209,15 @@ export const HomePage = () => {
           room = el;
         }}
         src="/images/whittles_mouse_house.jpg"
+        className="hiddenMobile"
+      />
+      <img
+        id="BGimageMobile"
+        ref={(el) => {
+          roomMobile = el;
+        }}
+        src="/images/whittles_mobile_mouse_house.jpg"
+        className="md:hidden"
       />
 
       <svg
@@ -263,7 +286,11 @@ export const HomePage = () => {
         /> */}
       </svg>
 
-      <svg className="rat" viewBox="0 0 1920 1080" fill="transparent">
+      <svg
+        className="rat hiddenMobile"
+        viewBox="0 0 1920 1080"
+        fill="transparent"
+      >
         <image
           id="studio1"
           ref={(el) => {
@@ -338,7 +365,11 @@ export const HomePage = () => {
         /> */}
       </svg>
 
-      <svg className="rat" viewBox="0 0 1920 1080" fill="transparent">
+      <svg
+        className="rat hiddenMobile"
+        viewBox="0 0 1920 1080"
+        fill="transparent"
+      >
         <a href="studio">
           <image
             id="studio2"
@@ -419,36 +450,92 @@ export const HomePage = () => {
           height="877"
           transform="translate(1134 972) scale(.11)"
           xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/vinyl.png"
+          className="hiddenMobile"
         />
+      </svg>
 
-        {/* <a href="services">
+      <svg className="rat md:hidden" viewBox="0 0 1920 1080" fill="transparent">
+        <a href="studio">
           <image
-            id="services2"
-            width="377"
-            height="381"
+            id="studio2Mobile"
             ref={(el) => {
-              services2 = el;
+              studio2Mob = el;
             }}
-            onMouseOver={() => servicesHover()}
-            onMouseLeave={() => servicesUnHover()}
-            transform="translate(1222.12 735) scale(.45)"
-            xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/services2-1.png"
+            onMouseOver={() => studioHover()}
+            // onMouseLeave={() => studioUnHover()}
+            width="1669"
+            height="1652"
+            transform="translate(1010 840.84) scale(.06)"
+            xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2024/03/studio_mobile_2.png"
+          />
+        </a>
+        <a href="portfolio">
+          <image
+            id="portfolio2Mobile"
+            ref={(el) => {
+              portfolio2Mob = el;
+            }}
+            onMouseOver={() => portfolioHover()}
+            // onMouseLeave={() => portfolioUnHover()}
+            width="1974"
+            height="1755"
+            transform="translate(778 888.22) scale(.08)"
+            xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/portfolio2.png"
           />
         </a>
         <a href="about">
           <image
-            id="about2"
-            width="431"
-            height="417"
+            id="about2Mobile"
             ref={(el) => {
-              about2 = el;
+              about2Mob = el;
             }}
             onMouseOver={() => aboutHover()}
-            onMouseLeave={() => aboutUnHover()}
-            transform="translate(880 759) scale(.49)"
+            // onMouseLeave={() => aboutUnHover()}
+            width="1550"
+            height="1499"
+            transform="translate(814 774) scale(.08)"
             xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/about2-1.png"
           />
-        </a> */}
+        </a>
+        <a href="services">
+          <image
+            id="services2Mobile"
+            ref={(el) => {
+              services2Mob = el;
+            }}
+            onMouseOver={() => servicesHover()}
+            // onMouseLeave={() => servicesUnHover()}
+            width="1196"
+            height="1209"
+            transform="translate(1024 944) scale(.09)"
+            xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/services2-1.png"
+          />
+        </a>
+        <a href="contact">
+          <image
+            id="contact2Mobile"
+            ref={(el) => {
+              contact2Mob = el;
+            }}
+            onMouseOver={() => contactHover()}
+            // onMouseLeave={() => contactUnHover()}
+            width="1722"
+            height="995"
+            transform="translate(868.2 995) scale(.08)"
+            xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/contact2.png"
+          />
+        </a>
+        <image
+          id="vinylMobile"
+          ref={(el) => {
+            vinylMob = el;
+          }}
+          onClick={playMusic}
+          width="1194"
+          height="877"
+          transform="translate(934 940) scale(.07)"
+          xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/vinyl.png"
+        />
       </svg>
     </div>
   );

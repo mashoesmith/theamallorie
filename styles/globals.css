@@ -147,6 +147,14 @@ a:hover {
   max-width: 1000%;
 }
 
+#BGimageMobile {
+  opacity: 0;
+  filter: blur(10px);
+  height: 100%;
+  width: auto;
+  max-width: 1000%;
+}
+
 .doors {
   height: 100%;
   width: auto;
@@ -196,9 +204,24 @@ a:hover {
   display: none;
 }
 
+#services2Mobile,
+#about2Mobile,
+#contact2Mobile,
+#studio2Mobile,
+#portfolio2Mobile {
+  opacity: 0;
+  /* display: none; */
+}
+
 #vinyl {
   cursor: pointer;
   filter: blur(120px);
+}
+
+#vinylMobile {
+  cursor: pointer;
+  filter: blur(120px);
+  opacity: 0;
 }
 
 /* #about1 {

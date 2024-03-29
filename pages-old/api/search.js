@@ -6,7 +6,7 @@ const handler = async (req, res) => {
     const filters = JSON.parse(req.body);
 
     let illustrationFilter = ``;
-    let dollsHouseFilter = ``;
+    let miniaturesFilter = ``;
     let stationeryFilter = ``;
 
     if (filters.illustration) {
@@ -18,12 +18,12 @@ const handler = async (req, res) => {
       },
       `;
     }
-    if (filters.dollsHouse) {
-      dollsHouseFilter = `
+    if (filters.miniatures) {
+      miniaturesFilter = `
       {
         key: "category", 
         compare: LIKE, 
-        value: "Dollshouse"
+        value: "miniatures"
       },
       `;
     }
@@ -47,7 +47,7 @@ const handler = async (req, res) => {
             relation: OR
             metaArray: [
               ${illustrationFilter}
-              ${dollsHouseFilter}
+              ${miniaturesFilter}
               ${stationeryFilter}
             ] 
             }

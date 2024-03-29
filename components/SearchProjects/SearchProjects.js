@@ -22,15 +22,15 @@ export const SearchProjects = () => {
   }, []);
 
   const search = async () => {
-    const { page, illustration, dollsHouse, stationery } = queryString.parse(
+    const { page, illustration, miniatures, stationery } = queryString.parse(
       window.location.search
     );
     const filters = {};
     if (illustration === "true") {
       filters.illustration = true;
     }
-    if (dollsHouse === "true") {
-      filters.dollsHouse = true;
+    if (miniatures === "true") {
+      filters.miniatures = true;
     }
     if (stationery === "true") {
       filters.stationery = true;
@@ -53,15 +53,13 @@ export const SearchProjects = () => {
 
   const handlePageClick = async (pageNumber) => {
     setCurrentPage(pageNumber);
-    const { illustration, dollsHouse, stationery } = queryString.parse(
+    const { illustration, miniatures, stationery } = queryString.parse(
       window.location.search
     );
     router.push(
       `${pathName}?page=${pageNumber}&illustrations=${
         illustration === "true"
-      }&dolls-houses=${dollsHouse === "true"}&stationery=${
-        stationery === "true"
-      }`
+      }&miniatures=${miniatures === "true"}&stationery=${stationery === "true"}`
     );
   };
 
@@ -69,11 +67,11 @@ export const SearchProjects = () => {
     search();
   }, []);
 
-  const handleSearch = async ({ illustration, dollsHouse, stationery }) => {
-    // console.log("FILTERS ", illustration, painting, dollsHouse, stationery);
+  const handleSearch = async ({ illustration, miniatures, stationery }) => {
+    // console.log("FILTERS ", illustration, painting, miniatures, stationery);
 
     router.push(
-      `${pathName}?page=1&illustrations=${!!illustration}&dolls-houses=${!!dollsHouse}&stationery=${!!stationery}`
+      `${pathName}?page=1&illustrations=${!!illustration}&miniatures=${!!miniatures}&stationery=${!!stationery}`
     );
   };
 
