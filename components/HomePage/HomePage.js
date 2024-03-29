@@ -522,7 +522,7 @@ export const HomePage = () => {
             // onMouseLeave={() => servicesUnHover()}
             width="1196"
             height="1209"
-            transform="translate(537.91 1104) scale(.22)"
+            transform="translate(537.91 1154) scale(.23)"
             xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/services2-1.png"
           />
         </a>
@@ -536,7 +536,7 @@ export const HomePage = () => {
             // onMouseLeave={() => contactUnHover()}
             width="1722"
             height="995"
-            transform="translate(491.04 1380) scale(.24)"
+            transform="translate(491.04 1470) scale(.24)"
             xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/contact2.png"
           />
         </a>
