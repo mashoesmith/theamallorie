@@ -209,8 +209,8 @@ export const BlockRenderer = ({ blocks }) => {
                 priority
                 key={block.id}
                 src={block.attributes?.url}
-                // height={block.attributes?.height}
-                // width={block.attributes?.width}
+                height={block.attributes?.height}
+                width={block.attributes?.width}
                 alt={block.attributes?.alt || ""}
                 classNames={block.attributes?.className}
                 style={{
