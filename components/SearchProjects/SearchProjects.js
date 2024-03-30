@@ -22,15 +22,15 @@ export const SearchProjects = () => {
   }, []);
 
   const search = async () => {
-    const { page, illustration, miniatures, stationery } = queryString.parse(
+    const { page, illustration, miniature, stationery } = queryString.parse(
       window.location.search
     );
     const filters = {};
     if (illustration === "true") {
       filters.illustration = true;
     }
-    if (miniatures === "true") {
-      filters.miniatures = true;
+    if (miniature === "true") {
+      filters.miniature = true;
     }
     if (stationery === "true") {
       filters.stationery = true;
@@ -53,13 +53,13 @@ export const SearchProjects = () => {
 
   const handlePageClick = async (pageNumber) => {
     setCurrentPage(pageNumber);
-    const { illustration, miniatures, stationery } = queryString.parse(
+    const { illustration, miniature, stationery } = queryString.parse(
       window.location.search
     );
     router.push(
       `${pathName}?page=${pageNumber}&illustrations=${
         illustration === "true"
-      }&miniatures=${miniatures === "true"}&stationery=${stationery === "true"}`
+      }&miniatures=${miniature === "true"}&stationery=${stationery === "true"}`
     );
   };
 
@@ -67,11 +67,11 @@ export const SearchProjects = () => {
     search();
   }, []);
 
-  const handleSearch = async ({ illustration, miniatures, stationery }) => {
+  const handleSearch = async ({ illustration, miniature, stationery }) => {
     // console.log("FILTERS ", illustration, painting, miniatures, stationery);
 
     router.push(
-      `${pathName}?page=1&illustrations=${!!illustration}&miniatures=${!!miniatures}&stationery=${!!stationery}`
+      `${pathName}?page=1&illustrations=${!!illustration}&miniatures=${!!miniature}&stationery=${!!stationery}`
     );
   };
 
