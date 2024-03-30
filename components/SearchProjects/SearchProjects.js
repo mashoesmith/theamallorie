@@ -71,7 +71,7 @@ export const SearchProjects = () => {
     // console.log("FILTERS ", illustration, painting, miniatures, stationery);
 
     router.push(
-      `${pathName}?page=1&illustrations=${!!illustration}&miniatures=${!!miniature}&stationery=${!!stationery}`
+      `${pathName}?page=1&illustration=${!!illustration}&miniature=${!!miniature}&stationery=${!!stationery}`
     );
   };
 
