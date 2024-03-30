@@ -203,6 +203,7 @@ export const BlockRenderer = ({ blocks }) => {
               // width: `${block.attributes?.width || "auto"}`,
               // height: `${block.attributes?.height || "auto"}`,
             }}
+            className="flex justify-center"
           >
             <a href={block.attributes?.href}>
               <Image
@@ -212,11 +213,11 @@ export const BlockRenderer = ({ blocks }) => {
                 height={block.attributes?.height}
                 width={block.attributes?.width}
                 alt={block.attributes?.alt || ""}
-                classNames={block.attributes?.className}
-                style={{
-                  width: `${block.attributes?.width || "auto"}`,
-                  height: `${block.attributes?.height || "auto"}`,
-                }}
+                className={block.attributes?.className}
+                // style={{
+                //   width: `${block.attributes?.width || "auto"}`,
+                //   height: `${block.attributes?.height || "auto"}`,
+                // }}
               />
             </a>
           </div>
