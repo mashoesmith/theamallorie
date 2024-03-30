@@ -3,13 +3,13 @@ import queryString from "query-string";
 
 export const Filters = ({ onSearch }) => {
   const [stationery, setStationery] = useState(false);
-  const [miniatures, setMiniatures] = useState(false);
+  const [miniature, setMiniature] = useState(false);
   const [illustration, setIllustration] = useState(false);
 
   const handleSearch = () => {
     onSearch({
       stationery,
-      miniatures,
+      miniature,
       illustration,
     });
   };
@@ -17,12 +17,12 @@ export const Filters = ({ onSearch }) => {
   useEffect(() => {
     const {
       illustration: illustrationInitial,
-      miniatures: miniaturesInitial,
+      miniature: miniatureInitial,
       stationery: stationeryInitial,
     } = queryString.parse(window.location.search);
 
     setIllustration(illustrationInitial === "true");
-    setMiniatures(miniaturesInitial === "true");
+    setMiniature(miniatureInitial === "true");
     setStationery(stationeryInitial === "true");
   }, []);
 
@@ -34,8 +34,8 @@ export const Filters = ({ onSearch }) => {
             <label className="cursor-pointer">
               <input
                 type="checkbox"
-                checked={miniatures}
-                onChange={() => setMiniatures((value) => !value)}
+                checked={miniature}
+                onChange={() => setMiniature((value) => !value)}
               />
               <span className="pl-2">Miniatures</span>
             </label>
