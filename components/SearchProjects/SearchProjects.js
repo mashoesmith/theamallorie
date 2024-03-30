@@ -57,9 +57,9 @@ export const SearchProjects = () => {
       window.location.search
     );
     router.push(
-      `${pathName}?page=${pageNumber}&illustrations=${
+      `${pathName}?page=${pageNumber}&illustration=${
         illustration === "true"
-      }&miniatures=${miniature === "true"}&stationery=${stationery === "true"}`
+      }&miniature=${miniature === "true"}&stationery=${stationery === "true"}`
     );
   };
 
