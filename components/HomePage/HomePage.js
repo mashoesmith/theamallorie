@@ -2,11 +2,8 @@
 import React, { useRef, useEffect, useState, useLayoutEffect } from "react";
 import gsap from "gsap";
 import { Circle } from "react-preloaders";
-// import mouseHouse from "/images/mouse_house_v3.jpg";
 import Link from "next/link";
 import { useGSAP } from "@gsap/react";
-import { Footer } from "components/Footer";
-// import music from "././public/creek.mp3";
 
 export const HomePage = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -42,6 +39,8 @@ export const HomePage = () => {
     image1.src = "/images/whittles_mouse_house.jpg"; // Replace with your large image path
     const image2 = new Image();
     image2.src = "/images/whittles_mobile_mouse_house.jpg"; // Replace with your mobile image path
+    const image3 = new Image();
+    image3.src = "/images/whittles_mysterious_mouse_house.png"; // Replace with your mobile image path
 
     const handleLoad = () => {
       setIsLoading(false); // Set loading to false after both images load
@@ -270,7 +269,7 @@ export const HomePage = () => {
                   playKnock();
               }}
               transform="translate(767.89 262.45) scale(.1009)"
-              xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/door_left_v2.png"
+              xlinkHref="/images/door_left.png"
             />
             <image
               id="door2"
@@ -287,21 +286,8 @@ export const HomePage = () => {
                   playKnock();
               }}
               transform="translate(958.77 262.45) scale(.1011)"
-              xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/door_right_v2.png"
+              xlinkHref="/images/door_right.png"
             />
-
-            {/* <image
-          width="1932"
-          height="7740"
-          transform="translate(745.5 132.5) scale(.11)"
-          xlink:href="../../../../../../../../../Users/markshoesmith/Desktop/THEA/assets for website NEW/door_left.png"
-        />
-        <image
-          width="1979"
-          height="7730"
-          transform="translate(957.5 133.5) scale(.11)"
-          xlink:href="../../../../../../../../../Users/markshoesmith/Desktop/THEA/assets for website NEW/door_right.png"
-        /> */}
           </svg>
 
           <svg
@@ -359,28 +345,6 @@ export const HomePage = () => {
               transform="translate(1318.39 946) scale(.11)"
               xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/contact1.png"
             />
-
-            {/* <image
-          id="services1"
-          width="281"
-          height="357"
-          ref={(el) => {
-            services1 = el;
-          }}
-          transform="translate(1268 747) scale(.47)"
-          xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/services1-1.png"
-        />
-        //{" "}
-        <image
-          id="about1"
-          width="411"
-          height="266"
-          ref={(el) => {
-            about1 = el;
-          }}
-          transform="translate(902 821) scale(.53)"
-          xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/about1-1.png"
-        /> */}
           </svg>
 
           <svg
