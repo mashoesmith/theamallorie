@@ -59,6 +59,12 @@ export const HomePage = () => {
       .then(() => setIsLoading(false)) // Set loading to false after all images load
       .catch((error) => console.error("Error loading images:", error));
 
+    // Preload background images (optional)
+    imageUrls.forEach((url) => {
+      const img = new Image();
+      img.src = url;
+    });
+
     // const handleImagesLoaded = () => {
     //   setIsLoading(false); // Set loading to false after images load
     //   gsap.to(".preloader".current, {
