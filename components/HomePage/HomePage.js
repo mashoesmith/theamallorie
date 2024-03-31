@@ -41,6 +41,10 @@ export const HomePage = () => {
     image2.src = "/images/whittles_mobile_mouse_house.jpg"; // Replace with your mobile image path
     const image3 = new Image();
     image3.src = "/images/whittles_mysterious_mouse_house.png"; // Replace with your mobile image path
+    const image4 = new Image();
+    image4.src = "/images/door_left.png"; // Replace with your mobile image path
+    const image5 = new Image();
+    image5.src = "/images/door_right.png"; // Replace with your mobile image path
 
     const handleLoad = () => {
       setIsLoading(false); // Set loading to false after both images load
@@ -48,6 +52,9 @@ export const HomePage = () => {
 
     image1.onload = handleLoad;
     image2.onload = handleLoad;
+    image3.onload = handleLoad;
+    image4.onload = handleLoad;
+    image5.onload = handleLoad;
 
     pauseSound.current = new Audio(
       "https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/record_stop.mp3"
