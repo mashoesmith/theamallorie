@@ -7,6 +7,13 @@ import { useGSAP } from "@gsap/react";
 
 export const HomePage = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const imageUrls = [
+    "/images/whittles_mouse_house.jpg",
+    "/images/whittles_mobile_mouse_house.jpg",
+    "/images/whittles_mysterious_mouse_house.png",
+    "/images/door_left.png",
+    "/images/door_right.png",
+  ];
   let services1 = useRef(null);
   let services2 = useRef(null);
   let services2Mob = useRef(null);
@@ -32,34 +39,93 @@ export const HomePage = () => {
   let room = useRef(null);
   let roomMobile = useRef(null);
   let doors = useRef(null);
+  const preloader = useRef(null); // Ref for the preloader element
   // var mouseHouse = require("././public/images/mouse_house_v3.jpg");
 
   useEffect(() => {
-    const image1 = new Image();
-    image1.src = "/images/whittles_mouse_house.jpg"; // Replace with your large image path
-    const image2 = new Image();
-    image2.src = "/images/whittles_mobile_mouse_house.jpg"; // Replace with your mobile image path
-    const image3 = new Image();
-    image3.src = "/images/whittles_mysterious_mouse_house.png"; // Replace with your mobile image path
-    const image4 = new Image();
-    image4.src = "/images/door_left.png"; // Replace with your mobile image path
-    const image5 = new Image();
-    image5.src = "/images/door_right.png"; // Replace with your mobile image path
+    const imagePromises = imageUrls.map((url) => fetch(url));
+    Promise.all(imagePromises);
+    gsap
+      .to(".preloader", {
+        opacity: 0,
+        duration: 0.5,
+      })
+      .then(() => setIsLoading(false)) // Set loading to false after all images load
+      .catch((error) => console.error("Error loading images:", error));
 
-    const handleLoad = () => {
-      setIsLoading(false); // Set loading to false after both images load
-    };
+    // const handleImagesLoaded = () => {
+    //   setIsLoading(false); // Set loading to false after images load
+    //   gsap.to(".preloader".current, {
+    //     opacity: 0,
+    //     duration: 1,
+    //     onComplete: initialAni,
+    //   }); // Fade out preloader, then animate doors
+    // };
 
-    image1.onload = handleLoad;
-    image2.onload = handleLoad;
-    image3.onload = handleLoad;
-    image4.onload = handleLoad;
-    image5.onload = handleLoad;
+    // const imagePromises = imageUrls.map((url) => fetch(url));
+    // Promise.all(imagePromises)
+    //   .then(handleImagesLoaded)
+    //   .catch((error) => console.error("Error loading images:", error));
+
+    // initialAni();
+
+    // const image1 = new Image();
+    // image1.src = "/images/whittles_mouse_house.jpg"; // Replace with your large image path
+    // const image2 = new Image();
+    // image2.src = "/images/whittles_mobile_mouse_house.jpg"; // Replace with your mobile image path
+    // const image3 = new Image();
+    // image3.src = "/images/whittles_mysterious_mouse_house.png"; // Replace with your mobile image path
+    // const image4 = new Image();
+    // image4.src = "/images/door_left.png"; // Replace with your mobile image path
+    // const image5 = new Image();
+    // image5.src = "/images/door_right.png"; // Replace with your mobile image path
+
+    // const handleLoad = () => {
+    //   setIsLoading(false); // Set loading to false after both images load
+    // };
+
+    // image1.onload = handleLoad;
+    // image2.onload = handleLoad;
+    // image3.onload = handleLoad;
+    // image4.onload = handleLoad;
+    // image5.onload = handleLoad;
 
     pauseSound.current = new Audio(
       "https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/record_stop.mp3"
     );
   }, []);
+
+  // useEffect(() => {
+  //   if (!isLoading) {
+  //     gsap.to(preloader, {
+  //       opacity: 0,
+  //       duration: 0.5,
+  //       onComplete: initialAni,
+  //     });
+  //   }
+  // }, [isLoading]);
+
+  const initialAni = async () => {
+    await new Promise((resolve) => setTimeout(resolve, 100)); // Delay for preloader visibility
+    gsap.to(".doors", { opacity: 1, duration: 1 }); // Animate doors to opacity:1
+  };
+
+  useLayoutEffect(() => {
+    if (!isLoading) {
+      gsap.to(".doors", {
+        opacity: 1,
+        duration: 1,
+        delay: 0.5,
+      });
+    }
+  }, [isLoading]);
+
+  // useEffect(() => {
+  //   // Check if both room and roomMobile images are loaded
+  //   if (room.current && roomMobile.current) {
+  //     initialAni();
+  //   }
+  // }, [room, roomMobile]); // Run the effect when room or roomMobile references change
 
   function playMusic() {
     if (!audio.current) {
@@ -98,8 +164,6 @@ export const HomePage = () => {
       "https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/door_open.mp3"
     ).play();
   }
-
-  console.log(services1, about1);
 
   useEffect(() => {
     console.log(door1);
@@ -221,12 +285,25 @@ export const HomePage = () => {
   //   gsap.to(portfolio1, { opacity: 1, duration: 0 });
   // }
 
+  // function initialAni() {
+  //   gsap.to(doors, { opacity: 1, duration: 1 });
+  // }
+
+  // useEffect(() => {
+  //   function initialAni() {
+  //     gsap.to(doors, { opacity: 1, duration: 1 });
+  //   }
+  // }, []);
+
   return (
     <div id="container">
       {isLoading ? (
-        <div className="preloader">Loading...</div>
+        <div className="preloader" ref={preloader}>
+          Loading...
+        </div>
       ) : (
         <>
+          {/* {initialAni()} */}
           <img
             id="BGimage"
             ref={(el) => {
@@ -234,6 +311,7 @@ export const HomePage = () => {
             }}
             src="/images/whittles_mouse_house.jpg"
             className="hiddenMobile"
+            loading="eager"
           />
           <img
             id="BGimageMobile"
@@ -242,8 +320,8 @@ export const HomePage = () => {
             }}
             src="/images/whittles_mobile_mouse_house.jpg"
             className="md:hidden"
+            loading="eager"
           />
-
           <svg
             className="doors"
             ref={(el) => {
@@ -260,6 +338,7 @@ export const HomePage = () => {
               width="1920"
               height="1080"
               xlinkHref="/images/whittles_mysterious_mouse_house.png"
+              loading="eager"
             />
             <image
               id="door1"
@@ -277,6 +356,7 @@ export const HomePage = () => {
               }}
               transform="translate(767.89 262.45) scale(.1009)"
               xlinkHref="/images/door_left.png"
+              loading="eager"
             />
             <image
               id="door2"
@@ -294,9 +374,9 @@ export const HomePage = () => {
               }}
               transform="translate(958.77 262.45) scale(.1011)"
               xlinkHref="/images/door_right.png"
+              loading="eager"
             />
           </svg>
-
           <svg
             className="rat hiddenMobile"
             viewBox="0 0 1920 1080"
@@ -353,7 +433,6 @@ export const HomePage = () => {
               xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/contact1.png"
             />
           </svg>
-
           <svg
             className="rat hiddenMobile"
             viewBox="0 0 1920 1080"
@@ -442,7 +521,6 @@ export const HomePage = () => {
               className="hiddenMobile"
             />
           </svg>
-
           <svg
             className="ratMobile md:hidden"
             viewBox="0 0 1080 1920"
