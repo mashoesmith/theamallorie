@@ -1,6 +1,7 @@
 "use client";
 import React, { useRef, useEffect, useState, useLayoutEffect } from "react";
 import gsap from "gsap";
+import { Circle } from "react-preloaders";
 // import mouseHouse from "/images/mouse_house_v3.jpg";
 import Link from "next/link";
 import { useGSAP } from "@gsap/react";
@@ -8,6 +9,7 @@ import { Footer } from "components/Footer";
 // import music from "././public/creek.mp3";
 
 export const HomePage = () => {
+  const [isLoading, setIsLoading] = useState(true);
   let services1 = useRef(null);
   let services2 = useRef(null);
   let services2Mob = useRef(null);
@@ -25,7 +27,7 @@ export const HomePage = () => {
   let studio2Mob = useRef(null);
   let vinyl = useRef(null);
   let vinylMob = useRef(null);
-  let audio = useRef(null); // Create a reference to store the audio object
+  let audio = useRef(null);
   const pauseSound = useRef(null);
   let door1 = useRef(null);
   let door2 = useRef(null);
@@ -36,6 +38,18 @@ export const HomePage = () => {
   // var mouseHouse = require("././public/images/mouse_house_v3.jpg");
 
   useEffect(() => {
+    const image1 = new Image();
+    image1.src = "/images/whittles_mouse_house.jpg"; // Replace with your large image path
+    const image2 = new Image();
+    image2.src = "/images/whittles_mobile_mouse_house.jpg"; // Replace with your mobile image path
+
+    const handleLoad = () => {
+      setIsLoading(false); // Set loading to false after both images load
+    };
+
+    image1.onload = handleLoad;
+    image2.onload = handleLoad;
+
     pauseSound.current = new Audio(
       "https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/record_stop.mp3"
     );
@@ -203,76 +217,80 @@ export const HomePage = () => {
 
   return (
     <div id="container">
-      <img
-        id="BGimage"
-        ref={(el) => {
-          room = el;
-        }}
-        src="/images/whittles_mouse_house.jpg"
-        className="hiddenMobile"
-      />
-      <img
-        id="BGimageMobile"
-        ref={(el) => {
-          roomMobile = el;
-        }}
-        src="/images/whittles_mobile_mouse_house.jpg"
-        className="md:hidden"
-      />
+      {isLoading ? (
+        <div className="preloader">Loading...</div>
+      ) : (
+        <>
+          <img
+            id="BGimage"
+            ref={(el) => {
+              room = el;
+            }}
+            src="/images/whittles_mouse_house.jpg"
+            className="hiddenMobile"
+          />
+          <img
+            id="BGimageMobile"
+            ref={(el) => {
+              roomMobile = el;
+            }}
+            src="/images/whittles_mobile_mouse_house.jpg"
+            className="md:hidden"
+          />
 
-      <svg
-        className="doors"
-        ref={(el) => {
-          doors = el;
-        }}
-        viewBox="0 0 1920 1080"
-        fill="transparent"
-      >
-        <image
-          id="frame"
-          ref={(el) => {
-            frame = el;
-          }}
-          width="1920"
-          height="1080"
-          xlinkHref="/images/whittles_mysterious_mouse_house.png"
-        />
-        <image
-          id="door1"
-          width="1932"
-          height="7740"
-          ref={(el) => {
-            door1 = el;
-          }}
-          onClick={() => {
-            setTimeout(() => {
-              animateDoors();
-              playCreek();
-            }, 700),
-              playKnock();
-          }}
-          transform="translate(767.89 262.45) scale(.1009)"
-          xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/door_left_v2.png"
-        />
-        <image
-          id="door2"
-          width="1979"
-          height="7730"
-          ref={(el) => {
-            door2 = el;
-          }}
-          onClick={() => {
-            setTimeout(() => {
-              animateDoors();
-              playCreek();
-            }, 700),
-              playKnock();
-          }}
-          transform="translate(958.77 262.45) scale(.1011)"
-          xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/door_right_v2.png"
-        />
+          <svg
+            className="doors"
+            ref={(el) => {
+              doors = el;
+            }}
+            viewBox="0 0 1920 1080"
+            fill="transparent"
+          >
+            <image
+              id="frame"
+              ref={(el) => {
+                frame = el;
+              }}
+              width="1920"
+              height="1080"
+              xlinkHref="/images/whittles_mysterious_mouse_house.png"
+            />
+            <image
+              id="door1"
+              width="1932"
+              height="7740"
+              ref={(el) => {
+                door1 = el;
+              }}
+              onClick={() => {
+                setTimeout(() => {
+                  animateDoors();
+                  playCreek();
+                }, 700),
+                  playKnock();
+              }}
+              transform="translate(767.89 262.45) scale(.1009)"
+              xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/door_left_v2.png"
+            />
+            <image
+              id="door2"
+              width="1979"
+              height="7730"
+              ref={(el) => {
+                door2 = el;
+              }}
+              onClick={() => {
+                setTimeout(() => {
+                  animateDoors();
+                  playCreek();
+                }, 700),
+                  playKnock();
+              }}
+              transform="translate(958.77 262.45) scale(.1011)"
+              xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/door_right_v2.png"
+            />
 
-        {/* <image
+            {/* <image
           width="1932"
           height="7740"
           transform="translate(745.5 132.5) scale(.11)"
@@ -284,65 +302,65 @@ export const HomePage = () => {
           transform="translate(957.5 133.5) scale(.11)"
           xlink:href="../../../../../../../../../Users/markshoesmith/Desktop/THEA/assets for website NEW/door_right.png"
         /> */}
-      </svg>
+          </svg>
 
-      <svg
-        className="rat hiddenMobile"
-        viewBox="0 0 1920 1080"
-        fill="transparent"
-      >
-        <image
-          id="studio1"
-          ref={(el) => {
-            studio1 = el;
-          }}
-          width="1264"
-          height="1857"
-          transform="translate(1378.87 227) scale(.1)"
-          xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/studio1.png"
-        />
-        <image
-          id="portfolio1"
-          ref={(el) => {
-            portfolio1 = el;
-          }}
-          width="1612"
-          height="1714"
-          transform="translate(351 769) scale(.11)"
-          xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/portfolio1.png"
-        />
-        <image
-          id="about1"
-          ref={(el) => {
-            about1 = el;
-          }}
-          width="1478"
-          height="956"
-          transform="translate(964 843.78) scale(.11)"
-          xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/about1-1.png"
-        />
-        <image
-          id="services1"
-          ref={(el) => {
-            services1 = el;
-          }}
-          width="898"
-          height="1142"
-          transform="translate(1328.5 804) scale(.11)"
-          xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/services1-2.png"
-        />
-        <image
-          id="contact1"
-          ref={(el) => {
-            contact1 = el;
-          }}
-          width="1613"
-          height="1030"
-          transform="translate(1318.39 946) scale(.11)"
-          xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/contact1.png"
-        />
+          <svg
+            className="rat hiddenMobile"
+            viewBox="0 0 1920 1080"
+            fill="transparent"
+          >
+            <image
+              id="studio1"
+              ref={(el) => {
+                studio1 = el;
+              }}
+              width="1264"
+              height="1857"
+              transform="translate(1378.87 227) scale(.1)"
+              xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/studio1.png"
+            />
+            <image
+              id="portfolio1"
+              ref={(el) => {
+                portfolio1 = el;
+              }}
+              width="1612"
+              height="1714"
+              transform="translate(351 769) scale(.11)"
+              xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/portfolio1.png"
+            />
+            <image
+              id="about1"
+              ref={(el) => {
+                about1 = el;
+              }}
+              width="1478"
+              height="956"
+              transform="translate(964 843.78) scale(.11)"
+              xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/about1-1.png"
+            />
+            <image
+              id="services1"
+              ref={(el) => {
+                services1 = el;
+              }}
+              width="898"
+              height="1142"
+              transform="translate(1328.5 804) scale(.11)"
+              xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/services1-2.png"
+            />
+            <image
+              id="contact1"
+              ref={(el) => {
+                contact1 = el;
+              }}
+              width="1613"
+              height="1030"
+              transform="translate(1318.39 946) scale(.11)"
+              xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/contact1.png"
+            />
 
-        {/* <image
+            {/* <image
           id="services1"
           width="281"
           height="357"
@@ -363,184 +381,186 @@ export const HomePage = () => {
           transform="translate(902 821) scale(.53)"
           xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/about1-1.png"
         /> */}
-      </svg>
+          </svg>
 
-      <svg
-        className="rat hiddenMobile"
-        viewBox="0 0 1920 1080"
-        fill="transparent"
-      >
-        <a href="studio">
-          <image
-            id="studio2"
-            ref={(el) => {
-              studio2 = el;
-            }}
-            onMouseOver={() => studioHover()}
-            // onMouseLeave={() => studioUnHover()}
-            width="1116"
-            height="2012"
-            transform="translate(1378.34 164.23) scale(.11)"
-            xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/studio2.png"
-          />
-        </a>
-        <a href="portfolio">
-          <image
-            id="portfolio2"
-            ref={(el) => {
-              portfolio2 = el;
-            }}
-            onMouseOver={() => portfolioHover()}
-            // onMouseLeave={() => portfolioUnHover()}
-            width="1974"
-            height="1755"
-            transform="translate(390 760) scale(.11)"
-            xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/portfolio2.png"
-          />
-        </a>
-        <a href="about">
-          <image
-            id="about2"
-            ref={(el) => {
-              about2 = el;
-            }}
-            onMouseOver={() => aboutHover()}
-            // onMouseLeave={() => aboutUnHover()}
-            width="1550"
-            height="1499"
-            transform="translate(947 791) scale(.11)"
-            xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/about2-1.png"
-          />
-        </a>
-        <a href="services">
-          <image
-            id="services2"
-            ref={(el) => {
-              services2 = el;
-            }}
-            onMouseOver={() => servicesHover()}
-            // onMouseLeave={() => servicesUnHover()}
-            width="1196"
-            height="1209"
-            transform="translate(1298.1 793) scale(.11)"
-            xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/services2-1.png"
-          />
-        </a>
-        <a href="contact">
-          <image
-            id="contact2"
-            ref={(el) => {
-              contact2 = el;
-            }}
-            onMouseOver={() => contactHover()}
-            // onMouseLeave={() => contactUnHover()}
-            width="1722"
-            height="995"
-            transform="translate(1338 904.37) scale(.11)"
-            xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/contact2.png"
-          />
-        </a>
-        <image
-          id="vinyl"
-          ref={(el) => {
-            vinyl = el;
-          }}
-          onClick={playMusic}
-          width="1194"
-          height="877"
-          transform="translate(1134 972) scale(.11)"
-          xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/vinyl.png"
-          className="hiddenMobile"
-        />
-      </svg>
+          <svg
+            className="rat hiddenMobile"
+            viewBox="0 0 1920 1080"
+            fill="transparent"
+          >
+            <a href="studio">
+              <image
+                id="studio2"
+                ref={(el) => {
+                  studio2 = el;
+                }}
+                onMouseOver={() => studioHover()}
+                // onMouseLeave={() => studioUnHover()}
+                width="1116"
+                height="2012"
+                transform="translate(1378.34 164.23) scale(.11)"
+                xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/studio2.png"
+              />
+            </a>
+            <a href="portfolio">
+              <image
+                id="portfolio2"
+                ref={(el) => {
+                  portfolio2 = el;
+                }}
+                onMouseOver={() => portfolioHover()}
+                // onMouseLeave={() => portfolioUnHover()}
+                width="1974"
+                height="1755"
+                transform="translate(390 760) scale(.11)"
+                xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/portfolio2.png"
+              />
+            </a>
+            <a href="about">
+              <image
+                id="about2"
+                ref={(el) => {
+                  about2 = el;
+                }}
+                onMouseOver={() => aboutHover()}
+                // onMouseLeave={() => aboutUnHover()}
+                width="1550"
+                height="1499"
+                transform="translate(947 791) scale(.11)"
+                xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/about2-1.png"
+              />
+            </a>
+            <a href="services">
+              <image
+                id="services2"
+                ref={(el) => {
+                  services2 = el;
+                }}
+                onMouseOver={() => servicesHover()}
+                // onMouseLeave={() => servicesUnHover()}
+                width="1196"
+                height="1209"
+                transform="translate(1298.1 793) scale(.11)"
+                xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/services2-1.png"
+              />
+            </a>
+            <a href="contact">
+              <image
+                id="contact2"
+                ref={(el) => {
+                  contact2 = el;
+                }}
+                onMouseOver={() => contactHover()}
+                // onMouseLeave={() => contactUnHover()}
+                width="1722"
+                height="995"
+                transform="translate(1338 904.37) scale(.11)"
+                xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/contact2.png"
+              />
+            </a>
+            <image
+              id="vinyl"
+              ref={(el) => {
+                vinyl = el;
+              }}
+              onClick={playMusic}
+              width="1194"
+              height="877"
+              transform="translate(1134 972) scale(.11)"
+              xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/vinyl.png"
+              className="hiddenMobile"
+            />
+          </svg>
 
-      <svg
-        className="ratMobile md:hidden"
-        viewBox="0 0 1080 1920"
-        fill="transparent"
-      >
-        <image
-          id="vinylMobile"
-          ref={(el) => {
-            vinylMob = el;
-          }}
-          onClick={playMusic}
-          width="1194"
-          height="877"
-          transform="translate(904 941) scale(.13)"
-          xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/vinyl.png"
-        />
-        <a href="studio">
-          <image
-            id="studio2Mobile"
-            ref={(el) => {
-              studio2Mob = el;
-            }}
-            onMouseOver={() => studioHover()}
-            // onMouseLeave={() => studioUnHover()}
-            width="1669"
-            height="1652"
-            transform="translate(690.19 857) scale(.15)"
-            xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2024/03/studio_mobile_2.png"
-          />
-        </a>
-        <a href="portfolio">
-          <image
-            id="portfolio2Mobile"
-            ref={(el) => {
-              portfolio2Mob = el;
-            }}
-            onMouseOver={() => portfolioHover()}
-            // onMouseLeave={() => portfolioUnHover()}
-            width="1974"
-            height="1755"
-            transform="translate(125 1166) scale(.215)"
-            xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/portfolio2.png"
-          />
-        </a>
-        <a href="about">
-          <image
-            id="about2Mobile"
-            ref={(el) => {
-              about2Mob = el;
-            }}
-            onMouseOver={() => aboutHover()}
-            // onMouseLeave={() => aboutUnHover()}
-            width="1550"
-            height="1499"
-            transform="translate(193.08 778.83) rotate(2.04) scale(.2)"
-            xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/about2-1.png"
-          />
-        </a>
-        <a href="services">
-          <image
-            id="services2Mobile"
-            ref={(el) => {
-              services2Mob = el;
-            }}
-            onMouseOver={() => servicesHover()}
-            // onMouseLeave={() => servicesUnHover()}
-            width="1196"
-            height="1209"
-            transform="translate(579 1129) scale(.26)"
-            xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/services2-1.png"
-          />
-        </a>
-        <a href="contact">
-          <image
-            id="contact2Mobile"
-            ref={(el) => {
-              contact2Mob = el;
-            }}
-            onMouseOver={() => contactHover()}
-            // onMouseLeave={() => contactUnHover()}
-            width="1722"
-            height="995"
-            transform="translate(491 1495) scale(.28)"
-            xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/contact2.png"
-          />
-        </a>
-      </svg>
+          <svg
+            className="ratMobile md:hidden"
+            viewBox="0 0 1080 1920"
+            fill="transparent"
+          >
+            <image
+              id="vinylMobile"
+              ref={(el) => {
+                vinylMob = el;
+              }}
+              onClick={playMusic}
+              width="1194"
+              height="877"
+              transform="translate(904 941) scale(.13)"
+              xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/vinyl.png"
+            />
+            <a href="studio">
+              <image
+                id="studio2Mobile"
+                ref={(el) => {
+                  studio2Mob = el;
+                }}
+                onMouseOver={() => studioHover()}
+                // onMouseLeave={() => studioUnHover()}
+                width="1669"
+                height="1652"
+                transform="translate(690.19 857) scale(.15)"
+                xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2024/03/studio_mobile_2.png"
+              />
+            </a>
+            <a href="portfolio">
+              <image
+                id="portfolio2Mobile"
+                ref={(el) => {
+                  portfolio2Mob = el;
+                }}
+                onMouseOver={() => portfolioHover()}
+                // onMouseLeave={() => portfolioUnHover()}
+                width="1974"
+                height="1755"
+                transform="translate(125 1166) scale(.215)"
+                xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/portfolio2.png"
+              />
+            </a>
+            <a href="about">
+              <image
+                id="about2Mobile"
+                ref={(el) => {
+                  about2Mob = el;
+                }}
+                onMouseOver={() => aboutHover()}
+                // onMouseLeave={() => aboutUnHover()}
+                width="1550"
+                height="1499"
+                transform="translate(193.08 778.83) rotate(2.04) scale(.2)"
+                xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/about2-1.png"
+              />
+            </a>
+            <a href="services">
+              <image
+                id="services2Mobile"
+                ref={(el) => {
+                  services2Mob = el;
+                }}
+                onMouseOver={() => servicesHover()}
+                // onMouseLeave={() => servicesUnHover()}
+                width="1196"
+                height="1209"
+                transform="translate(579 1129) scale(.26)"
+                xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/services2-1.png"
+              />
+            </a>
+            <a href="contact">
+              <image
+                id="contact2Mobile"
+                ref={(el) => {
+                  contact2Mob = el;
+                }}
+                onMouseOver={() => contactHover()}
+                // onMouseLeave={() => contactUnHover()}
+                width="1722"
+                height="995"
+                transform="translate(491 1495) scale(.28)"
+                xlinkHref="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/contact2.png"
+              />
+            </a>
+          </svg>
+        </>
+      )}
     </div>
   );
 };
