@@ -44,12 +44,18 @@ export const HomePage = () => {
 
   useEffect(() => {
     const imagePromises = imageUrls.map((url) => fetch(url));
-    Promise.all(imagePromises);
-    gsap
-      .to(".preloader", {
-        opacity: 0,
-        duration: 0.5,
-      })
+    Promise.all(imagePromises)
+      // gsap
+      //   .to(".preloader", {
+      //     opacity: 0,
+      //     duration: 0.5,
+      //   })
+      .then(() =>
+        gsap.to(".preloader", {
+          opacity: 0,
+          duration: 0.2,
+        })
+      )
       .then(() => setIsLoading(false)) // Set loading to false after all images load
       .catch((error) => console.error("Error loading images:", error));
 
