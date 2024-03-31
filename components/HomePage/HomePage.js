@@ -335,6 +335,7 @@ export const HomePage = () => {
             }}
             viewBox="0 0 1920 1080"
             fill="transparent"
+            loading="eager"
           >
             <image
               id="frame"
