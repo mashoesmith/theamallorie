@@ -41,7 +41,7 @@ export const HomePage = () => {
   let room = useRef(null);
   let roomMobile = useRef(null);
   let doors = useRef(null);
-  const preloader = useRef(null); // Ref for the preloader element
+  let preloader = useRef(null); // Ref for the preloader element
   // var mouseHouse = require("././public/images/mouse_house_v3.jpg");
 
   useEffect(() => {
@@ -53,10 +53,10 @@ export const HomePage = () => {
       //     duration: 0.5,
       //   })
       .then(() =>
-        gsap.to(".preloader", {
+        gsap.to(preloader, {
           opacity: 0,
           duration: 0.2,
-          delay: 0.5,
+          delay: 1,
         })
       )
       .then(() => setIsLoading(false)) // Set loading to false after all images load
@@ -127,10 +127,10 @@ export const HomePage = () => {
 
   useLayoutEffect(() => {
     if (!isLoading) {
-      gsap.to(".doors", {
+      gsap.to(doors, {
         opacity: 1,
         duration: 1,
-        delay: 0.5,
+        delay: 1,
       });
     }
   }, [isLoading]);
@@ -313,7 +313,12 @@ export const HomePage = () => {
   return (
     <div id="container">
       {isLoading ? (
-        <div className="preloader" ref={preloader}>
+        <div
+          className="preloader"
+          ref={(el) => {
+            preloader = el;
+          }}
+        >
           {/* <Circle color={"#000000"} /> */}
           {/* <Oval /> */}
           {/* <SVGLoaders.Oval /> */}
