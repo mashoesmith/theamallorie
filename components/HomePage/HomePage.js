@@ -42,7 +42,7 @@ export const HomePage = () => {
     const imagePromises = imageUrls.map((url) => fetch(url));
     Promise.all(imagePromises)
       .then(() =>
-        gsap.to(preloader, {
+        gsap.to(".preloader", {
           opacity: 0,
           duration: 0.2,
           delay: 1,
