@@ -1,11 +1,6 @@
 "use client";
 import React, { useRef, useEffect, useState, useLayoutEffect } from "react";
 import gsap from "gsap";
-import { Oval } from "svg-loaders-react";
-import * as SVGLoaders from "svg-loaders-react";
-import { Circle } from "react-preloaders";
-import Link from "next/link";
-import { useGSAP } from "@gsap/react";
 
 export const HomePage = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -42,16 +37,10 @@ export const HomePage = () => {
   let roomMobile = useRef(null);
   let doors = useRef(null);
   let preloader = useRef(null); // Ref for the preloader element
-  // var mouseHouse = require("././public/images/mouse_house_v3.jpg");
 
   useEffect(() => {
     const imagePromises = imageUrls.map((url) => fetch(url));
     Promise.all(imagePromises)
-      // gsap
-      //   .to(".preloader", {
-      //     opacity: 0,
-      //     duration: 0.5,
-      //   })
       .then(() =>
         gsap.to(preloader, {
           opacity: 0,
@@ -68,62 +57,10 @@ export const HomePage = () => {
       img.src = url;
     });
 
-    // const handleImagesLoaded = () => {
-    //   setIsLoading(false); // Set loading to false after images load
-    //   gsap.to(".preloader".current, {
-    //     opacity: 0,
-    //     duration: 1,
-    //     onComplete: initialAni,
-    //   }); // Fade out preloader, then animate doors
-    // };
-
-    // const imagePromises = imageUrls.map((url) => fetch(url));
-    // Promise.all(imagePromises)
-    //   .then(handleImagesLoaded)
-    //   .catch((error) => console.error("Error loading images:", error));
-
-    // initialAni();
-
-    // const image1 = new Image();
-    // image1.src = "/images/whittles_mouse_house.jpg"; // Replace with your large image path
-    // const image2 = new Image();
-    // image2.src = "/images/whittles_mobile_mouse_house.jpg"; // Replace with your mobile image path
-    // const image3 = new Image();
-    // image3.src = "/images/whittles_mysterious_mouse_house.png"; // Replace with your mobile image path
-    // const image4 = new Image();
-    // image4.src = "/images/door_left.png"; // Replace with your mobile image path
-    // const image5 = new Image();
-    // image5.src = "/images/door_right.png"; // Replace with your mobile image path
-
-    // const handleLoad = () => {
-    //   setIsLoading(false); // Set loading to false after both images load
-    // };
-
-    // image1.onload = handleLoad;
-    // image2.onload = handleLoad;
-    // image3.onload = handleLoad;
-    // image4.onload = handleLoad;
-    // image5.onload = handleLoad;
-
     pauseSound.current = new Audio(
       "https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/record_stop.mp3"
     );
   }, []);
-
-  // useEffect(() => {
-  //   if (!isLoading) {
-  //     gsap.to(preloader, {
-  //       opacity: 0,
-  //       duration: 0.5,
-  //       onComplete: initialAni,
-  //     });
-  //   }
-  // }, [isLoading]);
-
-  const initialAni = async () => {
-    await new Promise((resolve) => setTimeout(resolve, 100)); // Delay for preloader visibility
-    gsap.to(".doors", { opacity: 1, duration: 1 }); // Animate doors to opacity:1
-  };
 
   useLayoutEffect(() => {
     if (!isLoading) {
@@ -134,13 +71,6 @@ export const HomePage = () => {
       });
     }
   }, [isLoading]);
-
-  // useEffect(() => {
-  //   // Check if both room and roomMobile images are loaded
-  //   if (room.current && roomMobile.current) {
-  //     initialAni();
-  //   }
-  // }, [room, roomMobile]); // Run the effect when room or roomMobile references change
 
   function playMusic() {
     if (!audio.current) {
@@ -245,11 +175,6 @@ export const HomePage = () => {
     });
   }
 
-  // useEffect(() => {
-  //   console.log(services1, about1);
-  //   gsap.to([services1, about1], { opacity: 1, delay: 1, duration: 0.5 });
-  // }, []);
-
   function servicesHover() {
     gsap.to(services2, { opacity: 1, duration: 0 });
     gsap.to(services1, { opacity: 0, duration: 0 });
@@ -300,16 +225,6 @@ export const HomePage = () => {
   //   gsap.to(portfolio1, { opacity: 1, duration: 0 });
   // }
 
-  // function initialAni() {
-  //   gsap.to(doors, { opacity: 1, duration: 1 });
-  // }
-
-  // useEffect(() => {
-  //   function initialAni() {
-  //     gsap.to(doors, { opacity: 1, duration: 1 });
-  //   }
-  // }, []);
-
   return (
     <div id="container">
       {isLoading ? (
@@ -318,15 +233,9 @@ export const HomePage = () => {
           ref={(el) => {
             preloader = el;
           }}
-        >
-          {/* <Circle color={"#000000"} /> */}
-          {/* <Oval /> */}
-          {/* <SVGLoaders.Oval /> */}
-          {/* <span class="loader"></span> */}
-        </div>
+        ></div>
       ) : (
         <>
-          {/* {initialAni()} */}
           <img
             id="BGimage"
             ref={(el) => {
@@ -334,7 +243,6 @@ export const HomePage = () => {
             }}
             src="/images/whittles_mouse_house.jpg"
             className="hiddenMobile"
-            // loading="eager"
           />
           <img
             id="BGimageMobile"
@@ -343,7 +251,6 @@ export const HomePage = () => {
             }}
             src="/images/whittles_mobile_mouse_house.jpg"
             className="md:hidden"
-            // loading="eager"
           />
           <svg
             className="doors"
