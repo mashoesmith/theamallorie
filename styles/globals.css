@@ -324,6 +324,11 @@ a:hover {
   /* opacity: 1; */
 }
 
+/* .preloader {
+  width: 48px;
+  height: 48px;
+} */
+
 @keyframes rotation {
   0% {
     -webkit-transform: rotate(0deg);
@@ -333,4 +338,15 @@ a:hover {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spin {
+  transform-origin: center;
+  animation: spin 1s linear infinite;
 }

@@ -42,7 +42,7 @@ export const HomePage = () => {
     const imagePromises = imageUrls.map((url) => fetch(url));
     Promise.all(imagePromises)
       .then(() =>
-        gsap.to(".preloader", {
+        gsap.to(preloader, {
           opacity: 0,
           duration: 0.2,
           delay: 1,
@@ -228,12 +228,30 @@ export const HomePage = () => {
   return (
     <div id="container">
       {isLoading ? (
-        <div
-          className="preloader"
-          ref={(el) => {
-            preloader = el;
-          }}
-        ></div>
+        // <div
+        //   className="preloader"
+        //   ref={(el) => {
+        //     preloader = el;
+        //   }}
+        // ></div>
+        <svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+          <circle
+            ref={(el) => {
+              preloader = el;
+            }}
+            className="spin"
+            cx="400"
+            cy="400"
+            fill="none"
+            r="20"
+            stroke-width="2"
+            stroke="#cccccc"
+            stroke-dasharray="90 140"
+            stroke-linecap="round"
+            // width="40px"
+            // height="40px"
+          />
+        </svg>
       ) : (
         <>
           <img
