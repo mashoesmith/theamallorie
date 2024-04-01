@@ -1,6 +1,8 @@
 "use client";
 import React, { useRef, useEffect, useState, useLayoutEffect } from "react";
 import gsap from "gsap";
+import { Oval } from "svg-loaders-react";
+import * as SVGLoaders from "svg-loaders-react";
 import { Circle } from "react-preloaders";
 import Link from "next/link";
 import { useGSAP } from "@gsap/react";
@@ -54,6 +56,7 @@ export const HomePage = () => {
         gsap.to(".preloader", {
           opacity: 0,
           duration: 0.2,
+          delay: 0.5,
         })
       )
       .then(() => setIsLoading(false)) // Set loading to false after all images load
@@ -311,7 +314,10 @@ export const HomePage = () => {
     <div id="container">
       {isLoading ? (
         <div className="preloader" ref={preloader}>
-          Loading...
+          {/* <Circle color={"#000000"} /> */}
+          {/* <Oval /> */}
+          {/* <SVGLoaders.Oval /> */}
+          {/* <span class="loader"></span> */}
         </div>
       ) : (
         <>
@@ -323,7 +329,7 @@ export const HomePage = () => {
             }}
             src="/images/whittles_mouse_house.jpg"
             className="hiddenMobile"
-            loading="eager"
+            // loading="eager"
           />
           <img
             id="BGimageMobile"
@@ -332,7 +338,7 @@ export const HomePage = () => {
             }}
             src="/images/whittles_mobile_mouse_house.jpg"
             className="md:hidden"
-            loading="eager"
+            // loading="eager"
           />
           <svg
             className="doors"
@@ -352,6 +358,7 @@ export const HomePage = () => {
               height="1080"
               xlinkHref="/images/whittles_mysterious_mouse_house.png"
               loading="eager"
+              priority="true"
             />
             <image
               id="door1"
