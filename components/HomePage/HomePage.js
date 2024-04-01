@@ -311,7 +311,7 @@ export const HomePage = () => {
     <div id="container">
       {isLoading ? (
         <div className="preloader" ref={preloader}>
-          Loading...
+          <Circle />
         </div>
       ) : (
         <>
@@ -323,7 +323,7 @@ export const HomePage = () => {
             }}
             src="/images/whittles_mouse_house.jpg"
             className="hiddenMobile"
-            loading="eager"
+            // loading="eager"
           />
           <img
             id="BGimageMobile"
@@ -332,7 +332,7 @@ export const HomePage = () => {
             }}
             src="/images/whittles_mobile_mouse_house.jpg"
             className="md:hidden"
-            loading="eager"
+            // loading="eager"
           />
           <svg
             className="doors"
@@ -352,6 +352,7 @@ export const HomePage = () => {
               height="1080"
               xlinkHref="/images/whittles_mysterious_mouse_house.png"
               loading="eager"
+              priority="true"
             />
             <image
               id="door1"
