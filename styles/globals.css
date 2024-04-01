@@ -320,6 +320,7 @@ a:hover {
   display: inline-block;
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
+  -webkit-animation: rotation 1s linear infinite;
   /* opacity: 1; */
 }
 
