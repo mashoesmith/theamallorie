@@ -12,7 +12,7 @@ export const HomePage = () => {
   const imageUrls = [
     "/images/whittles_mouse_house.jpg",
     "/images/whittles_mobile_mouse_house.jpg",
-    "/images/whittles_mysterious_mouse_house.png",
+    "/images/whittles_mysterious_mouse_house.jpg",
     "/images/door_left.png",
     "/images/door_right.png",
   ];
@@ -353,6 +353,7 @@ export const HomePage = () => {
             viewBox="0 0 1920 1080"
             fill="transparent"
             loading="eager"
+            priority="true"
           >
             <image
               id="frame"
@@ -361,7 +362,7 @@ export const HomePage = () => {
               }}
               width="1920"
               height="1080"
-              xlinkHref="/images/whittles_mysterious_mouse_house.png"
+              xlinkHref="/images/whittles_mysterious_mouse_house.jpg"
               loading="eager"
               priority="true"
             />
@@ -382,6 +383,7 @@ export const HomePage = () => {
               transform="translate(767.89 262.45) scale(.1009)"
               xlinkHref="/images/door_left.png"
               loading="eager"
+              priority="true"
             />
             <image
               id="door2"
@@ -400,6 +402,7 @@ export const HomePage = () => {
               transform="translate(958.77 262.45) scale(.1011)"
               xlinkHref="/images/door_right.png"
               loading="eager"
+              priority="true"
             />
           </svg>
           <svg
