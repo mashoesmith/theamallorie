@@ -12,7 +12,7 @@ export default async function Home() {
   }
   return (
     <>
-      <HomePage />
+      <HomePage className="overflow-hidden" />
       <Analytics />
     </>
   );
