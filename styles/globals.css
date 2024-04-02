@@ -340,6 +340,11 @@ a:hover {
   }
 }
 
+#spinnerContainer {
+  width: 40px;
+  height: 40px;
+}
+
 @keyframes spin {
   to {
     transform: rotate(360deg);
@@ -349,4 +354,11 @@ a:hover {
 .spin {
   transform-origin: center;
   animation: spin 1s linear infinite;
+}
+
+.spinner {
+  fill: #fff;
+  stroke: #cccccb;
+  stroke-miterlimit: 10;
+  stroke-width: 5px;
 }
