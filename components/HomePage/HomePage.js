@@ -116,12 +116,12 @@ export const HomePage = () => {
 
   function animateDoors(delay) {
     gsap.to(door1, {
-      scaleX: 0.02,
+      scaleX: 0,
       ease: "Power1.out",
       duration: 1.5,
     });
     gsap.to(door2, {
-      scaleX: 0.02,
+      scaleX: 0,
       ease: "Power1.out",
       transformOrigin: "right",
       duration: 1.5,
