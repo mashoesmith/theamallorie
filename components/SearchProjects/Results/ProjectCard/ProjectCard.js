@@ -25,7 +25,7 @@ export const ProjectCard = ({
         />
       </div>
       <div className="flex h-[220px] md:h-[270px] w-full max-w-[480px] mx-5 absolute justify-center items-center">
-        <div className="absolute text-center my-3 text-white text-xl">
+        <div className="absolute text-center my-3 text-white text-xl w-9/12">
           {title}
         </div>
       </div>
