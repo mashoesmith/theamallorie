@@ -16,7 +16,7 @@ body {
   width: 100%;
   flex-direction: column;
   box-sizing: inherit;
-  overflow: scroll;
+  /* overflow: scroll; */
   overflow-x: hidden;
   text-size-adjust: none;
   -webkit-text-size-adjust: none;
