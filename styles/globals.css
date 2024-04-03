@@ -76,7 +76,7 @@ a:hover {
 
 .dropCap::first-letter {
   -webkit-initial-letter: 3;
-  initial-letter: 3;
+  initial-letter: 2;
   padding-right: 5px;
 }
 
