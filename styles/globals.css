@@ -362,3 +362,7 @@ a:hover {
   stroke-miterlimit: 10;
   stroke-width: 5px;
 }
+
+.noMargin {
+  margin-top: 0;
+}
