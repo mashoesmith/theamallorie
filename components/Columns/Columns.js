@@ -9,6 +9,7 @@ export const Columns = ({
   paddingBottom,
   paddingLeft,
   paddingRight,
+  classnames,
 }) => {
   const textColorStyle = textColor ? { color: textColor } : {};
   const backgroundColorStyle = backgroundColor ? { backgroundColor } : {};
@@ -22,7 +23,7 @@ export const Columns = ({
     <div
       className={`columns max-w-5xl mx-auto flex flex-col ${
         isStackedOnMobile ? "block md:flex-row my-4 md:my-8" : "flex"
-      }`}
+      } ${classnames || ""}`}
       style={{
         ...textColorStyle,
         ...backgroundColorStyle,
