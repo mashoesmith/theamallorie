@@ -266,6 +266,9 @@ a:hover {
   .hiddenMobile {
     display: none;
   }
+  h4 {
+    letter-spacing: 0.4rem;
+  }
 }
 
 .dynamicHeight {
