@@ -30,7 +30,6 @@ export const Gallery = ({ columns, cropImages, items, classNames }) => {
             height={maxHeight || item.attributes.height}
             width={maxWidth || item.attributes.width}
             alt={item.attributes.alt || ""}
-            loading="lazy"
           />
         </div>
       ))}
