@@ -12,6 +12,9 @@ module.exports = {
         heading: "var(--font-libreBaskerville)",
         body: "var(--font-libreBaskerville)",
       },
+      letterSpacing: {
+        widest: ".2em",
+      },
     },
   },
   plugins: [],
