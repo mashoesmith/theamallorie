@@ -74,10 +74,7 @@ export const MainMenu = ({ items }) => {
             href="/"
             className="absolute h-12 w-12 flex items-center justify-center"
           >
-            <img
-              src="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/services1-1.png"
-              className="h-12 absolute z-10"
-            />
+            <img src="/images/services1.png" className="h-12 absolute z-10" />
           </a>
         </div>
         <MdMenu
@@ -136,10 +133,7 @@ export const MainMenu = ({ items }) => {
             href="/"
             className="relative h-20 w-20 flex items-center justify-center"
           >
-            <img
-              src="https://theamallorie.flywheelsites.com/wp-content/uploads/2024/03/home_rat_2.png"
-              className="h-16 absolute z-10"
-            />
+            <img src="/images/home_rat_2.png" className="h-16 absolute z-10" />
           </a>
           <div className="flex flex-row gap-3 absolute bottom-4">
             <a href="https://www.instagram.com/thea_mallorie" target="blank">
@@ -171,7 +165,7 @@ export const MainMenu = ({ items }) => {
               home1 = el;
             }}
             id="home1"
-            src="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/services1-1.png"
+            src="/images/services1.png"
             className="h-20 absolute"
           />
           <a href="/" className="absolute">
@@ -182,7 +176,7 @@ export const MainMenu = ({ items }) => {
               id="home2"
               onMouseOver={() => homeHover()}
               onMouseLeave={() => homeUnHover()}
-              src="https://theamallorie.flywheelsites.com/wp-content/uploads/2024/03/home_rat_2.png"
+              src="/images/home_rat_2.png"
               className="h-20 absolute"
             />
           </a>
