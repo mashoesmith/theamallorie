@@ -134,13 +134,13 @@ export const HomePage = () => {
       webkitFilter: "blur(10px)",
       opacity: 0,
       zIndex: 0,
-      duration: 0.5,
+      duration: 1,
       delay: 0.5,
     });
     gsap.to([room, roomMobile, vinyl, vinylMob], {
       webkitFilter: "blur(0px)",
       opacity: 1,
-      duration: 0.5,
+      duration: 1,
       delay: 1,
       onComplete: animateRats,
     });
