@@ -77,7 +77,7 @@ export const SearchProjects = () => {
 
   return (
     <div>
-      <Filters onSearch={handleSearch} />
+      {/* <Filters onSearch={handleSearch} /> */}
       <Results projects={projects} />
       <Pagination
         onPageClick={handlePageClick}
