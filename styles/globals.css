@@ -373,3 +373,7 @@ a:hover {
   margin-top: 0;
   margin-bottom: 0;
 }
+
+.marginNormal {
+  margin-top: 1.25rem;
+}
