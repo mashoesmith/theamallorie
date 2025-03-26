@@ -11,7 +11,7 @@ export const Paragraph = ({
   if (dropCap) {
     return (
       <p
-        className={`max-w-5xl mx-auto dropCap text-sm md:text-base leading-6 ${getTextAlign(
+        className={`max-w-5xl mx-4 dropCap text-sm md:text-base leading-6 ${getTextAlign(
           textAlign
         )} ${classNames || ""}`}
         style={{ color: textColor }}
@@ -21,7 +21,7 @@ export const Paragraph = ({
   } else {
     return (
       <p
-        className={`max-w-5xl mx-auto text-sm md:text-base leading-6 ${getTextAlign(
+        className={`max-w-5xl mx-4 text-sm md:text-base leading-6 ${getTextAlign(
           textAlign
         )} ${classNames || ""}`}
         style={{ color: textColor }}
