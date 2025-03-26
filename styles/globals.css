@@ -375,5 +375,5 @@ a:hover {
 }
 
 .marginNormal {
-  margin-top: 1.25rem;
+  margin-top: 1.25rem !important;
 }
