@@ -21,7 +21,7 @@ export const Gallery = ({ columns, cropImages, items, classNames }) => {
         <div
           key={item.id}
           style={{ width: `${columnWidth}%` }}
-          className={`p-1 flex-grow h-full stackGallery ${classNames || ""}`}
+          className={`p-1 flex-grow w-full stackGallery ${classNames || ""}`}
         >
           <Image
             priority
