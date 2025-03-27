@@ -11,7 +11,7 @@ export const SearchProjects = () => {
   const [totalResults, setTotalResults] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
   const router = useRouter();
-  const pageSize = 6;
+  const pageSize = 12;
   const pathName = usePathname();
 
   useEffect(() => {
