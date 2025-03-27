@@ -267,7 +267,8 @@ a:hover {
   .hiddenMobile {
     display: none;
   }
-  h4 {
+  h4,
+  h5 {
     letter-spacing: 0.4rem;
   }
 }
@@ -280,7 +281,8 @@ a:hover {
   .hiddenDesktop {
     display: none;
   }
-  h4 {
+  h4,
+  h5 {
     letter-spacing: 0.7rem;
   }
 }
