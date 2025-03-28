@@ -5,12 +5,14 @@ export const Filters = ({ onSearch }) => {
   const [stationery, setStationery] = useState(false);
   const [miniature, setMiniature] = useState(false);
   const [illustration, setIllustration] = useState(false);
+  const [product, setProduct] = useState(false);
 
   const handleSearch = () => {
     onSearch({
       stationery,
       miniature,
       illustration,
+      product,
     });
   };
 
@@ -19,11 +21,13 @@ export const Filters = ({ onSearch }) => {
       illustration: illustrationInitial,
       miniature: miniatureInitial,
       stationery: stationeryInitial,
+      product: productInitial,
     } = queryString.parse(window.location.search);
 
     setIllustration(illustrationInitial === "true");
     setMiniature(miniatureInitial === "true");
     setStationery(stationeryInitial === "true");
+    setProduct(productInitial === "true");
   }, []);
 
   return (
@@ -58,6 +62,16 @@ export const Filters = ({ onSearch }) => {
                 onChange={() => setIllustration((value) => !value)}
               />
               <span className="pl-2">Illustrations</span>
+            </label>
+          </div>
+          <div>
+            <label className="cursor-pointer">
+              <input
+                type="checkbox"
+                checked={product}
+                onChange={() => setProduct((value) => !value)}
+              />
+              <span className="pl-2">Products</span>
             </label>
           </div>
           <div className="btn button" onClick={handleSearch}>

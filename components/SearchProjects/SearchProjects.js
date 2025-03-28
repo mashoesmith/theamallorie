@@ -22,9 +22,8 @@ export const SearchProjects = () => {
   }, []);
 
   const search = async () => {
-    const { page, illustration, miniature, stationery } = queryString.parse(
-      window.location.search
-    );
+    const { page, illustration, miniature, stationery, product } =
+      queryString.parse(window.location.search);
     const filters = {};
     if (illustration === "true") {
       filters.illustration = true;
@@ -34,6 +33,9 @@ export const SearchProjects = () => {
     }
     if (stationery === "true") {
       filters.stationery = true;
+    }
+    if (product === "true") {
+      filters.product = true;
     }
     const response = await fetch("/api/search", {
       method: "POST",
@@ -53,13 +55,15 @@ export const SearchProjects = () => {
 
   const handlePageClick = async (pageNumber) => {
     setCurrentPage(pageNumber);
-    const { illustration, miniature, stationery } = queryString.parse(
+    const { illustration, miniature, stationery, product } = queryString.parse(
       window.location.search
     );
     router.push(
       `${pathName}?page=${pageNumber}&illustration=${
         illustration === "true"
-      }&miniature=${miniature === "true"}&stationery=${stationery === "true"}`
+      }&miniature=${miniature === "true"}&stationery=${
+        stationery === "true"
+      }&product=${product === "true"}`
     );
   };
 
@@ -67,11 +71,16 @@ export const SearchProjects = () => {
     search();
   }, []);
 
-  const handleSearch = async ({ illustration, miniature, stationery }) => {
+  const handleSearch = async ({
+    illustration,
+    miniature,
+    stationery,
+    product,
+  }) => {
     // console.log("FILTERS ", illustration, painting, miniatures, stationery);
 
     router.push(
-      `${pathName}?page=1&illustration=${!!illustration}&miniature=${!!miniature}&stationery=${!!stationery}`
+      `${pathName}?page=1&illustration=${!!illustration}&miniature=${!!miniature}&stationery=${!!stationery}&product=${!!product}`
     );
   };
 
