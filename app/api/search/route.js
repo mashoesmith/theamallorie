@@ -7,6 +7,7 @@ export async function POST(request) {
     let illustrationFilter = ``;
     let miniatureFilter = ``;
     let stationeryFilter = ``;
+    let productFilter = ``;
 
     if (filters.illustration) {
       illustrationFilter = `
@@ -34,6 +35,15 @@ export async function POST(request) {
         value: "Stationery"
       },
       `;
+      if (filters.product) {
+        productFilter = `
+        {
+          key: "category", 
+          compare: LIKE, 
+          value: "Product"
+        },
+        `;
+      }
     }
 
     const response = await fetch(process.env.WP_GRAPHQL_URL, {
@@ -53,6 +63,7 @@ export async function POST(request) {
               ${illustrationFilter}
               ${miniatureFilter}
               ${stationeryFilter}
+                            ${productFilter}
             ] 
             }
           }) {

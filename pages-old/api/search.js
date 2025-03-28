@@ -8,6 +8,7 @@ const handler = async (req, res) => {
     let illustrationFilter = ``;
     let miniatureFilter = ``;
     let stationeryFilter = ``;
+    let productFilter = ``;
 
     if (filters.illustration) {
       illustrationFilter = `
@@ -36,6 +37,15 @@ const handler = async (req, res) => {
       },
       `;
     }
+    if (filters.product) {
+      productFilter = `
+      {
+        key: "category", 
+        compare: LIKE, 
+        value: "Product"
+      },
+      `;
+    }
 
     const { data } = await client.query({
       query: gql`
@@ -49,6 +59,7 @@ const handler = async (req, res) => {
               ${illustrationFilter}
               ${miniatureFilter}
               ${stationeryFilter}
+                            ${productFilter}
             ] 
             }
           }) {
