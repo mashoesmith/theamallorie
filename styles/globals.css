@@ -200,7 +200,7 @@ a:hover {
 #services1,
 #about1,
 #contact1,
-#studio1,
+#shop1,
 #portfolio1,
 #vinyl {
   opacity: 0;
@@ -209,7 +209,7 @@ a:hover {
 #services2,
 #about2,
 #contact2,
-#studio2,
+#shop2,
 #portfolio2 {
   opacity: 0;
   display: none;
@@ -218,7 +218,7 @@ a:hover {
 #services2Mobile,
 #about2Mobile,
 #contact2Mobile,
-#studio2Mobile,
+#shop2Mobile,
 #portfolio2Mobile {
   opacity: 0;
   /* display: none; */
