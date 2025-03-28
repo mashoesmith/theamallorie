@@ -23,9 +23,9 @@ export const HomePage = () => {
   let portfolio1 = useRef(null);
   let portfolio2 = useRef(null);
   let portfolio2Mob = useRef(null);
-  let studio1 = useRef(null);
-  let studio2 = useRef(null);
-  let studio2Mob = useRef(null);
+  let shop1 = useRef(null);
+  let shop2 = useRef(null);
+  let shop2Mob = useRef(null);
   let vinyl = useRef(null);
   let vinylMob = useRef(null);
   let audio = useRef(null);
@@ -36,7 +36,7 @@ export const HomePage = () => {
   let room = useRef(null);
   let roomMobile = useRef(null);
   let doors = useRef(null);
-  let preloader = useRef(null); // Ref for the preloader element
+  let preloader = useRef(null);
 
   useEffect(() => {
     const imagePromises = imageUrls.map((url) => fetch(url));
@@ -48,10 +48,9 @@ export const HomePage = () => {
           delay: 1,
         })
       )
-      .then(() => setIsLoading(false)) // Set loading to false after all images load
+      .then(() => setIsLoading(false))
       .catch((error) => console.error("Error loading images:", error));
 
-    // Preload background images (optional)
     imageUrls.forEach((url) => {
       const img = new Image();
       img.src = url;
@@ -74,12 +73,12 @@ export const HomePage = () => {
     if (!audio.current) {
       // Check if audio object exists
       const audioInstance = new Audio("audio/jazz.mp3");
-      audio.current = audioInstance; // Store audio object in ref
+      audio.current = audioInstance;
     }
 
     if (!audio.current.paused) {
       audio.current.pause();
-      pauseSound.current.play(); // Play the sound effect
+      pauseSound.current.play();
     } else {
       audio.current.play();
     }
@@ -89,7 +88,7 @@ export const HomePage = () => {
     if (audio.current && !audio.current.paused) {
       audio.current.pause();
       if (pauseSound.current) {
-        pauseSound.current.play(); // Play the sound effect
+        pauseSound.current.play();
       }
     }
   }
@@ -144,12 +143,12 @@ export const HomePage = () => {
         services1,
         about1,
         contact1,
-        studio1,
+        shop1,
         portfolio1,
         services2Mob,
         about2Mob,
         contact2Mob,
-        studio2Mob,
+        shop2Mob,
         portfolio2Mob,
       ],
       {
@@ -162,7 +161,7 @@ export const HomePage = () => {
   }
 
   function allowHover() {
-    gsap.to([services2, about2, contact2, studio2, portfolio2], {
+    gsap.to([services2, about2, contact2, shop2, portfolio2], {
       display: "block",
     });
   }
@@ -197,14 +196,14 @@ export const HomePage = () => {
   //   gsap.to(contact1, { opacity: 1, duration: 0 });
   // }
 
-  function studioHover() {
-    gsap.to(studio2, { opacity: 1, duration: 0 });
-    gsap.to(studio1, { opacity: 0, duration: 0 });
+  function shopHover() {
+    gsap.to(shop2, { opacity: 1, duration: 0 });
+    gsap.to(shop1, { opacity: 0, duration: 0 });
   }
 
-  // function studioUnHover() {
-  //   gsap.to(studio2, { opacity: 0, duration: 0 });
-  //   gsap.to(studio1, { opacity: 1, duration: 0 });
+  // function shopUnHover() {
+  //   gsap.to(shop2, { opacity: 0, duration: 0 });
+  //   gsap.to(shop1, { opacity: 1, duration: 0 });
   // }
 
   function portfolioHover() {
@@ -342,14 +341,14 @@ export const HomePage = () => {
             fill="transparent"
           >
             <image
-              id="studio1"
+              id="shop1"
               ref={(el) => {
-                studio1 = el;
+                shop1 = el;
               }}
               width="1264"
               height="1857"
               transform="translate(1378.87 227) scale(.1)"
-              xlinkHref="/images/studio1.png"
+              xlinkHref="/images/shop1.png"
             />
             <image
               id="portfolio1"
@@ -397,18 +396,18 @@ export const HomePage = () => {
             viewBox="0 0 1920 1080"
             fill="transparent"
           >
-            <a href="studio">
+            <a href="shop">
               <image
-                id="studio2"
+                id="shop2"
                 ref={(el) => {
-                  studio2 = el;
+                  shop2 = el;
                 }}
-                onMouseOver={() => studioHover()}
-                // onMouseLeave={() => studioUnHover()}
+                onMouseOver={() => shopHover()}
+                // onMouseLeave={() => shopUnHover()}
                 width="1116"
                 height="2012"
                 transform="translate(1378.34 164.23) scale(.11)"
-                xlinkHref="/images/studio2.png"
+                xlinkHref="/images/shop2.png"
               />
             </a>
             <a href="portfolio">
@@ -496,18 +495,18 @@ export const HomePage = () => {
               transform="translate(904 941) scale(.13)"
               xlinkHref="/images/vinyl.png"
             />
-            <a href="studio">
+            <a href="shop">
               <image
-                id="studio2Mobile"
+                id="shop2Mobile"
                 ref={(el) => {
-                  studio2Mob = el;
+                  shop2Mob = el;
                 }}
-                onMouseOver={() => studioHover()}
-                // onMouseLeave={() => studioUnHover()}
+                onMouseOver={() => shopHover()}
+                // onMouseLeave={() => shopUnHover()}
                 width="1669"
                 height="1652"
                 transform="translate(690.19 857) scale(.15)"
-                xlinkHref="/images/studio_mobile_2.png"
+                xlinkHref="/images/shop_mobile_2.png"
               />
             </a>
             <a href="portfolio">

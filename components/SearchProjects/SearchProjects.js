@@ -11,7 +11,7 @@ export const SearchProjects = () => {
   const [totalResults, setTotalResults] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
   const router = useRouter();
-  const pageSize = 12;
+  const pageSize = 100;
   const pathName = usePathname();
 
   useEffect(() => {
@@ -79,11 +79,11 @@ export const SearchProjects = () => {
     <div>
       {/* <Filters onSearch={handleSearch} /> */}
       <Results projects={projects} />
-      <Pagination
+      {/* <Pagination
         onPageClick={handlePageClick}
         totalPages={Math.ceil(totalResults / pageSize)}
         activePage={currentPage}
-      />
+      /> */}
     </div>
   );
 };

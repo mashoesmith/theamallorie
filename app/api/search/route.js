@@ -44,8 +44,8 @@ export async function POST(request) {
       body: JSON.stringify({
         query: `
         query AllProjectsQuery {
-          projects(where: { offsetPagination: { size: 6, offset: ${
-            ((filters.page || 1) - 1) * 6
+          projects(where: { offsetPagination: { size: 100, offset: ${
+            ((filters.page || 1) - 1) * 100
           } }
           metaQuery: {
             relation: OR
