@@ -37,6 +37,8 @@ export const HomePage = () => {
   let roomMobile = useRef(null);
   let doors = useRef(null);
   let preloader = useRef(null);
+  const knockSound = useRef(null);
+  const creekSound = useRef(null);
 
   useEffect(() => {
     const imagePromises = imageUrls.map((url) => fetch(url));
@@ -59,6 +61,16 @@ export const HomePage = () => {
     pauseSound.current = new Audio("audio/record_stop.mp3");
   }, []);
 
+  useEffect(() => {
+    knockSound.current = new Audio("audio/knock.mp3");
+    creekSound.current = new Audio("audio/door_open.mp3");
+
+    knockSound.current.load();
+    creekSound.current.load();
+
+    pauseSound.current = new Audio("audio/record_stop.mp3");
+  }, []);
+
   useLayoutEffect(() => {
     if (!isLoading) {
       gsap.to(doors, {
@@ -71,7 +83,6 @@ export const HomePage = () => {
 
   function playMusic() {
     if (!audio.current) {
-      // Check if audio object exists
       const audioInstance = new Audio("audio/jazz.mp3");
       audio.current = audioInstance;
     }
@@ -84,21 +95,18 @@ export const HomePage = () => {
     }
   }
 
-  function stopMusic() {
-    if (audio.current && !audio.current.paused) {
-      audio.current.pause();
-      if (pauseSound.current) {
-        pauseSound.current.play();
-      }
+  function playKnock() {
+    if (knockSound.current) {
+      knockSound.current.currentTime = 0;
+      knockSound.current.play();
     }
   }
 
-  function playKnock() {
-    new Audio("audio/knock.mp3").play();
-  }
-
   function playCreek() {
-    new Audio("audio/door_open.mp3").play();
+    if (creekSound.current) {
+      creekSound.current.currentTime = 0;
+      creekSound.current.play();
+    }
   }
 
   useEffect(() => {
@@ -171,78 +179,29 @@ export const HomePage = () => {
     gsap.to(services1, { opacity: 0, duration: 0 });
   }
 
-  // function servicesUnHover() {
-  //   gsap.to(services2, { opacity: 0, duration: 0 });
-  //   gsap.to(services1, { opacity: 1, duration: 0 });
-  // }
-
   function aboutHover() {
     gsap.to(about2, { opacity: 1, duration: 0 });
     gsap.to(about1, { opacity: 0, duration: 0 });
   }
-
-  // function aboutUnHover() {
-  //   gsap.to(about2, { opacity: 0, duration: 0 });
-  //   gsap.to(about1, { opacity: 1, duration: 0 });
-  // }
 
   function contactHover() {
     gsap.to(contact2, { opacity: 1, duration: 0 });
     gsap.to(contact1, { opacity: 0, duration: 0 });
   }
 
-  // function contactUnHover() {
-  //   gsap.to(contact2, { opacity: 0, duration: 0 });
-  //   gsap.to(contact1, { opacity: 1, duration: 0 });
-  // }
-
   function shopHover() {
     gsap.to(shop2, { opacity: 1, duration: 0 });
     gsap.to(shop1, { opacity: 0, duration: 0 });
   }
-
-  // function shopUnHover() {
-  //   gsap.to(shop2, { opacity: 0, duration: 0 });
-  //   gsap.to(shop1, { opacity: 1, duration: 0 });
-  // }
 
   function portfolioHover() {
     gsap.to(portfolio2, { opacity: 1, duration: 0 });
     gsap.to(portfolio1, { opacity: 0, duration: 0 });
   }
 
-  // function portfolioUnHover() {
-  //   gsap.to(portfolio2, { opacity: 0, duration: 0 });
-  //   gsap.to(portfolio1, { opacity: 1, duration: 0 });
-  // }
-
   return (
     <div id="container">
       {isLoading ? (
-        // <div
-        //   className="preloader"
-        //   ref={(el) => {
-        //     preloader = el;
-        //   }}
-        // ></div>
-        // <svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
-        //   <circle
-        //     ref={(el) => {
-        //       preloader = el;
-        //     }}
-        //     className="spin"
-        //     cx="400"
-        //     cy="400"
-        //     fill="none"
-        //     r="20"
-        //     stroke-width="2"
-        //     stroke="#cccccc"
-        //     stroke-dasharray="90 140"
-        //     stroke-linecap="round"
-        //     // width="40px"
-        //     // height="40px"
-        //   />
-        // </svg>
         <div id="spinnerContainer">
           <svg
             ref={(el) => {
@@ -304,11 +263,11 @@ export const HomePage = () => {
                 door1 = el;
               }}
               onClick={() => {
+                playKnock();
                 setTimeout(() => {
-                  animateDoors();
                   playCreek();
-                }, 700),
-                  playKnock();
+                  animateDoors();
+                }, 700);
               }}
               transform="translate(767.89 262.45) scale(.1009)"
               xlinkHref="/images/door_left.png"
@@ -323,11 +282,11 @@ export const HomePage = () => {
                 door2 = el;
               }}
               onClick={() => {
+                playKnock();
                 setTimeout(() => {
-                  animateDoors();
                   playCreek();
-                }, 700),
-                  playKnock();
+                  animateDoors();
+                }, 700);
               }}
               transform="translate(958.77 262.45) scale(.1011)"
               xlinkHref="/images/door_right.png"
@@ -403,7 +362,6 @@ export const HomePage = () => {
                   shop2 = el;
                 }}
                 onMouseOver={() => shopHover()}
-                // onMouseLeave={() => shopUnHover()}
                 width="1116"
                 height="2012"
                 transform="translate(1378.34 164.23) scale(.11)"
@@ -417,7 +375,6 @@ export const HomePage = () => {
                   portfolio2 = el;
                 }}
                 onMouseOver={() => portfolioHover()}
-                // onMouseLeave={() => portfolioUnHover()}
                 width="1974"
                 height="1755"
                 transform="translate(390 760) scale(.11)"
@@ -431,7 +388,6 @@ export const HomePage = () => {
                   about2 = el;
                 }}
                 onMouseOver={() => aboutHover()}
-                // onMouseLeave={() => aboutUnHover()}
                 width="1550"
                 height="1499"
                 transform="translate(947 791) scale(.11)"
@@ -445,7 +401,6 @@ export const HomePage = () => {
                   services2 = el;
                 }}
                 onMouseOver={() => servicesHover()}
-                // onMouseLeave={() => servicesUnHover()}
                 width="1196"
                 height="1209"
                 transform="translate(1298.1 793) scale(.11)"
@@ -459,7 +414,6 @@ export const HomePage = () => {
                   contact2 = el;
                 }}
                 onMouseOver={() => contactHover()}
-                // onMouseLeave={() => contactUnHover()}
                 width="1722"
                 height="995"
                 transform="translate(1338 904.37) scale(.11)"
@@ -502,7 +456,6 @@ export const HomePage = () => {
                   shop2Mob = el;
                 }}
                 onMouseOver={() => shopHover()}
-                // onMouseLeave={() => shopUnHover()}
                 width="1669"
                 height="1652"
                 transform="translate(690.19 857) scale(.15)"
@@ -516,7 +469,6 @@ export const HomePage = () => {
                   portfolio2Mob = el;
                 }}
                 onMouseOver={() => portfolioHover()}
-                // onMouseLeave={() => portfolioUnHover()}
                 width="1974"
                 height="1755"
                 transform="translate(125 1166) scale(.215)"
@@ -530,7 +482,6 @@ export const HomePage = () => {
                   about2Mob = el;
                 }}
                 onMouseOver={() => aboutHover()}
-                // onMouseLeave={() => aboutUnHover()}
                 width="1550"
                 height="1499"
                 transform="translate(193.08 778.83) rotate(2.04) scale(.2)"
@@ -544,7 +495,6 @@ export const HomePage = () => {
                   services2Mob = el;
                 }}
                 onMouseOver={() => servicesHover()}
-                // onMouseLeave={() => servicesUnHover()}
                 width="1196"
                 height="1209"
                 transform="translate(579 1129) scale(.26)"
@@ -558,7 +508,6 @@ export const HomePage = () => {
                   contact2Mob = el;
                 }}
                 onMouseOver={() => contactHover()}
-                // onMouseLeave={() => contactUnHover()}
                 width="1722"
                 height="995"
                 transform="translate(491 1495) scale(.28)"
