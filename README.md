@@ -1,1 +1,1 @@
-Thea Mallorie Freelance Artist
+Thea Mallorie - Freelance Artist
