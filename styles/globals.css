@@ -47,8 +47,8 @@ a:hover {
 }
 
 .socialIcon {
-  width: 30px;
-  height: 30px;
+  width: 36px;
+  height: 36px;
   background: linear-gradient(to left, rgba(255, 255, 255, 0) 50%, #fbdae7 50%)
     right;
   background-size: 200%;
