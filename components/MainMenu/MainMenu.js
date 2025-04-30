@@ -92,7 +92,7 @@ export const MainMenu = ({ items }) => {
             mobileNavFull = el;
           }}
           id="mobileNavFull"
-          className="w-full z-30 fixed overflow-auto bg-black text-white left-0 top-0 flex flex-col items-center justify-center"
+          className="uppercase tracking-widest text-xs w-full z-30 fixed overflow-auto bg-black text-white left-0 top-0 flex flex-col items-center justify-center"
         >
           <IoCloseSharp
             className="cursor-pointer absolute top-6 right-6"
