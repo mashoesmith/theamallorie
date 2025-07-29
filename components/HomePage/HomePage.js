@@ -1,6 +1,7 @@
 "use client";
 import React, { useRef, useEffect, useState, useLayoutEffect } from "react";
 import gsap from "gsap";
+import { LoadSpinner } from "components/LoadSpinner";
 
 export const HomePage = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -109,10 +110,6 @@ export const HomePage = () => {
     }
   }
 
-  useEffect(() => {
-    console.log(door1);
-  }, []);
-
   function animateDoors(delay) {
     gsap.to(door1, {
       scaleX: 0,
@@ -129,6 +126,9 @@ export const HomePage = () => {
   }
 
   function animateRoom() {
+    if (room) {
+      room.style.transform = "translateZ(0)";
+    }
     gsap.to([doors, frame], {
       webkitFilter: "blur(10px)",
       opacity: 0,
@@ -202,19 +202,8 @@ export const HomePage = () => {
   return (
     <div id="container">
       {isLoading ? (
-        <div id="spinnerContainer">
-          <svg
-            ref={(el) => {
-              preloader = el;
-            }}
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 179.44 179.44"
-          >
-            <path
-              className="spinner spin"
-              d="M165.26,46.11c7.43,12.83,11.68,27.72,11.68,43.61,0,48.18-39.05,87.23-87.22,87.23S2.5,137.9,2.5,89.72,41.55,2.5,89.72,2.5"
-            />
-          </svg>
+        <div id="spinnerContainer spin">
+          <LoadSpinner />
         </div>
       ) : (
         <>
