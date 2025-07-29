@@ -42,6 +42,12 @@ export const HomePage = () => {
   const creekSound = useRef(null);
 
   useEffect(() => {
+    if (isLoading && preloader) {
+      gsap.fromTo(preloader, { opacity: 0 }, { opacity: 1, duration: 0.2 });
+    }
+  }, [isLoading]);
+
+  useEffect(() => {
     const imagePromises = imageUrls.map((url) => fetch(url));
     Promise.all(imagePromises)
       .then(() =>
@@ -202,7 +208,25 @@ export const HomePage = () => {
   return (
     <div id="container">
       {isLoading ? (
-        <div id="spinnerContainer spin">
+        <div
+          ref={(el) => {
+            preloader = el;
+          }}
+          id="spinnerContainer spin"
+          style={{ opacity: 0 }}
+        >
+          {/* <svg
+            ref={(el) => {
+              preloader = el;
+            }}
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 179.44 179.44"
+          >
+            <path
+              className="spinner"
+              d="M165.26,46.11c7.43,12.83,11.68,27.72,11.68,43.61,0,48.18-39.05,87.23-87.22,87.23S2.5,137.9,2.5,89.72,41.55,2.5,89.72,2.5"
+            />
+          </svg> */}
           <LoadSpinner />
         </div>
       ) : (
