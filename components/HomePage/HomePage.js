@@ -2,6 +2,7 @@
 import React, { useRef, useEffect, useState, useLayoutEffect } from "react";
 import gsap from "gsap";
 import { LoadSpinner } from "components/LoadSpinner";
+import Link from "next/link";
 
 export const HomePage = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -368,7 +369,7 @@ export const HomePage = () => {
             viewBox="0 0 1920 1080"
             fill="transparent"
           >
-            <a href="shop">
+            <Link href="https://thekeepsakepress.co.uk" target="_blank">
               <image
                 id="shop2"
                 ref={(el) => {
@@ -380,8 +381,8 @@ export const HomePage = () => {
                 transform="translate(1378.34 164.23) scale(.11)"
                 xlinkHref="/images/shop2.png"
               />
-            </a>
-            <a href="portfolio">
+            </Link>
+            <Link href="portfolio">
               <image
                 id="portfolio2"
                 ref={(el) => {
@@ -393,8 +394,8 @@ export const HomePage = () => {
                 transform="translate(390 760) scale(.11)"
                 xlinkHref="/images/portfolio2.png"
               />
-            </a>
-            <a href="about">
+            </Link>
+            <Link href="about">
               <image
                 id="about2"
                 ref={(el) => {
@@ -406,8 +407,8 @@ export const HomePage = () => {
                 transform="translate(947 791) scale(.11)"
                 xlinkHref="/images/about2.png"
               />
-            </a>
-            <a href="services">
+            </Link>
+            <Link href="services">
               <image
                 id="services2"
                 ref={(el) => {
@@ -419,8 +420,8 @@ export const HomePage = () => {
                 transform="translate(1298.1 793) scale(.11)"
                 xlinkHref="/images/services2.png"
               />
-            </a>
-            <a href="contact">
+            </Link>
+            <Link href="contact">
               <image
                 id="contact2"
                 ref={(el) => {
@@ -432,7 +433,7 @@ export const HomePage = () => {
                 transform="translate(1338 904.37) scale(.11)"
                 xlinkHref="/images/contact2.png"
               />
-            </a>
+            </Link>
             <image
               id="vinyl"
               ref={(el) => {
@@ -462,7 +463,7 @@ export const HomePage = () => {
               transform="translate(904 941) scale(.13)"
               xlinkHref="/images/vinyl.png"
             />
-            <a href="shop">
+            <Link href="https://thekeepsakepress.co.uk" target="_blank">
               <image
                 id="shop2Mobile"
                 ref={(el) => {
@@ -474,8 +475,8 @@ export const HomePage = () => {
                 transform="translate(690.19 857) scale(.15)"
                 xlinkHref="/images/shop_mobile_2.png"
               />
-            </a>
-            <a href="portfolio">
+            </Link>
+            <Link href="portfolio">
               <image
                 id="portfolio2Mobile"
                 ref={(el) => {
@@ -487,8 +488,8 @@ export const HomePage = () => {
                 transform="translate(125 1166) scale(.215)"
                 xlinkHref="/images/portfolio2.png"
               />
-            </a>
-            <a href="about">
+            </Link>
+            <Link href="about">
               <image
                 id="about2Mobile"
                 ref={(el) => {
@@ -500,8 +501,8 @@ export const HomePage = () => {
                 transform="translate(193.08 778.83) rotate(2.04) scale(.2)"
                 xlinkHref="/images/about2.png"
               />
-            </a>
-            <a href="services">
+            </Link>
+            <Link href="services">
               <image
                 id="services2Mobile"
                 ref={(el) => {
@@ -513,8 +514,8 @@ export const HomePage = () => {
                 transform="translate(579 1129) scale(.26)"
                 xlinkHref="/images/services2.png"
               />
-            </a>
-            <a href="contact">
+            </Link>
+            <Link href="contact">
               <image
                 id="contact2Mobile"
                 ref={(el) => {
@@ -526,7 +527,7 @@ export const HomePage = () => {
                 transform="translate(491 1495) scale(.28)"
                 xlinkHref="/images/contact2.png"
               />
-            </a>
+            </Link>
           </svg>
         </>
       )}

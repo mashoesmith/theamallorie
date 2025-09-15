@@ -5,6 +5,7 @@ import { useState } from "react";
 import React from "react";
 import { IoCloseSharp } from "react-icons/io5";
 import { MdMenu } from "react-icons/md";
+import Link from "next/link";
 
 export const MainMenu = ({ items }) => {
   console.log("MAIN MENU: ", items);
@@ -70,12 +71,12 @@ export const MainMenu = ({ items }) => {
         className="flex z-20 flex-1 justify-end md:hidden top-0 fixed h-20 w-full bg-white border-b-2 border-black"
       >
         <div className="w-full h-full flex items-center justify-center">
-          <a
+          <Link
             href="/"
             className="absolute h-12 w-12 flex items-center justify-center"
           >
             <img src="/images/services1.png" className="h-12 absolute z-10" />
-          </a>
+          </Link>
         </div>
         <MdMenu
           id="burger"
@@ -110,48 +111,48 @@ export const MainMenu = ({ items }) => {
           {(items || []).map((item) => (
             <div key={item.id} className="cursor-pointer relative group">
               <div>
-                <a href={item.destination} className="p-5 block">
+                <Link href={item.destination} className="p-5 block">
                   {item.label}
-                </a>
+                </Link>
               </div>
               {!!item.subMenuItems?.length && (
                 <div className="pl-10">
                   {item.subMenuItems.map((subMenuItem) => (
-                    <a
+                    <Link
                       key={subMenuItem.id}
                       href={subMenuItem.destination}
                       className="block whitespace-nowrap p-5 "
                     >
                       {subMenuItem.label}
-                    </a>
+                    </Link>
                   ))}
                 </div>
               )}
             </div>
           ))}
-          <a
+          <Link
             href="/"
             className="relative h-20 w-20 flex items-center justify-center"
           >
             <img src="/images/home_rat_2.png" className="h-16 absolute z-10" />
-          </a>
+          </Link>
           <div className="flex flex-row gap-3 absolute bottom-4">
-            <a href="https://www.instagram.com/thea_mallorie" target="blank">
+            <Link href="https://www.instagram.com/thea_mallorie" target="blank">
               <div className="socialIcon">
                 <img
                   className="icon"
                   src="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/instagram-white.png"
                 />
               </div>
-            </a>
-            <a href="tel:07495685568">
+            </Link>
+            <Link href="tel:07495685568">
               <div className="socialIcon">
                 <img
                   className="icon"
                   src="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/whatsapp-white.png"
                 />
               </div>
-            </a>
+            </Link>
           </div>
         </div>
       )}
@@ -168,7 +169,7 @@ export const MainMenu = ({ items }) => {
             src="/images/services1.png"
             className="h-20 absolute"
           />
-          <a href="/" className="absolute">
+          <Link href="/" className="absolute">
             <img
               ref={(el) => {
                 home2 = el;
@@ -179,26 +180,26 @@ export const MainMenu = ({ items }) => {
               src="/images/home_rat_2.png"
               className="h-20 absolute"
             />
-          </a>
+          </Link>
         </div>
         <div className="flex flex-1 justify-around h-8 items-center gap-20 max-w-5xl">
           {(items || []).map((item) => (
             <div key={item.id} className="cursor-pointer relative group">
               <div>
-                <a href={item.destination} className="p-5 block">
+                <Link href={item.destination} className="p-5 block">
                   {item.label}
-                </a>
+                </Link>
               </div>
               {!!item.subMenuItems?.length && (
                 <div className="group-hover:block hidden bg-slate-800 text-right absolute right-0 top-full -mt-3">
                   {item.subMenuItems.map((subMenuItem) => (
-                    <a
+                    <Link
                       key={subMenuItem.id}
                       href={subMenuItem.destination}
                       className="block whitespace-nowrap p-5 hover:bg-slate-700"
                     >
                       {subMenuItem.label}
-                    </a>
+                    </Link>
                   ))}
                 </div>
               )}
