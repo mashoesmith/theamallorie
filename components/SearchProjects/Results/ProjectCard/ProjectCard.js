@@ -10,7 +10,7 @@ export const ProjectCard = ({
   date,
 }) => {
   return (
-    <a
+    <Link
       className="flex flex-col items-center justify-start w-full h-[250px] md:h-[300px] bg-black bg-opacity-30 hover:no-underline border border-solid border-black"
       style={{ willChange: "transform" }}
       href={destination}
@@ -43,6 +43,6 @@ export const ProjectCard = ({
           </div>
         </div>
       </div>
-    </a>
+    </Link>
   );
 };
