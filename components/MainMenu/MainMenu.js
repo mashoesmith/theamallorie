@@ -111,7 +111,11 @@ export const MainMenu = ({ items }) => {
           {(items || []).map((item) => (
             <div key={item.id} className="cursor-pointer relative group">
               <div>
-                <Link href={item.destination} className="p-5 block">
+                <Link
+                  href={item.destination}
+                  target={item.target || undefined}
+                  className="p-5 block"
+                >
                   {item.label}
                 </Link>
               </div>
@@ -186,7 +190,11 @@ export const MainMenu = ({ items }) => {
           {(items || []).map((item) => (
             <div key={item.id} className="cursor-pointer relative group">
               <div>
-                <Link href={item.destination} className="p-5 block">
+                <Link
+                  href={item.destination}
+                  target={item.target || undefined}
+                  className="p-5 block"
+                >
                   {item.label}
                 </Link>
               </div>

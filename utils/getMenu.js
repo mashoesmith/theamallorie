@@ -10,7 +10,8 @@ export const getMenu = async () => {
             menuItem {
               destination {
                 ... on Page {
-                  uri
+                  url
+                  target
                   id
                 }
               }
