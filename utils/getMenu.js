@@ -4,28 +4,31 @@ export const getMenu = async () => {
   const params = {
     query: `
     query MenuQuery {
-        acfOptionsMainMenu {
-          mainMenu {
-            menuItems {
-              menuItem {
-                destination {
-                  url
-                  title
-                  target
+      acfOptionsMainMenu {
+        mainMenu {
+          menuItems {
+            menuItem {
+              destination {
+                ... on Page {
+                  uri
+                  id
                 }
-                label
               }
-              items {
-                destination {
-                  url
-                  target
+              label
+            }
+            items {
+              destination {
+                ... on Page {
+                  uri
+                  id
                 }
-                label
               }
+              label
             }
           }
         }
       }
+    }
   `,
   };
 
@@ -37,8 +40,6 @@ export const getMenu = async () => {
     body: JSON.stringify(params),
   });
   const { data } = await response.json();
-  console.log(JSON.stringify(data, null, 2));
-
   return {
     mainMenuItems: mapMainMenuItems(data.acfOptionsMainMenu.mainMenu.menuItems),
   };

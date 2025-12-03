@@ -111,11 +111,7 @@ export const MainMenu = ({ items }) => {
           {(items || []).map((item) => (
             <div key={item.id} className="cursor-pointer relative group">
               <div>
-                <Link
-                  href={item.destination?.url}
-                  target={item.destination?.target || undefined}
-                  className="p-5 block"
-                >
+                <Link href={item.destination} className="p-5 block">
                   {item.label}
                 </Link>
               </div>
@@ -124,8 +120,7 @@ export const MainMenu = ({ items }) => {
                   {item.subMenuItems.map((subMenuItem) => (
                     <Link
                       key={subMenuItem.id}
-                      href={subMenuItem.destination?.url}
-                      target={subMenuItem.destination?.target || undefined}
+                      href={subMenuItem.destination}
                       className="block whitespace-nowrap p-5 "
                     >
                       {subMenuItem.label}
@@ -191,11 +186,7 @@ export const MainMenu = ({ items }) => {
           {(items || []).map((item) => (
             <div key={item.id} className="cursor-pointer relative group">
               <div>
-                <Link
-                  href={item.destination?.url}
-                  target={item.destination?.target || undefined}
-                  className="p-5 block"
-                >
+                <Link href={item.destination} className="p-5 block">
                   {item.label}
                 </Link>
               </div>
@@ -204,8 +195,7 @@ export const MainMenu = ({ items }) => {
                   {item.subMenuItems.map((subMenuItem) => (
                     <Link
                       key={subMenuItem.id}
-                      href={subMenuItem.destination?.url}
-                      target={subMenuItem.destination?.target || undefined}
+                      href={subMenuItem.destination}
                       className="block whitespace-nowrap p-5 hover:bg-slate-700"
                     >
                       {subMenuItem.label}
