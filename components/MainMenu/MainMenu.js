@@ -112,8 +112,8 @@ export const MainMenu = ({ items }) => {
             <div key={item.id} className="cursor-pointer relative group">
               <div>
                 <Link
-                  href={item.destination}
-                  target={item.target || undefined}
+                  href={item.destination?.url}
+                  target={item.destination?.target || undefined}
                   className="p-5 block"
                 >
                   {item.label}
@@ -124,7 +124,8 @@ export const MainMenu = ({ items }) => {
                   {item.subMenuItems.map((subMenuItem) => (
                     <Link
                       key={subMenuItem.id}
-                      href={subMenuItem.destination}
+                      href={subMenuItem.destination?.url}
+                      target={subMenuItem.destination?.target || undefined}
                       className="block whitespace-nowrap p-5 "
                     >
                       {subMenuItem.label}
@@ -191,8 +192,8 @@ export const MainMenu = ({ items }) => {
             <div key={item.id} className="cursor-pointer relative group">
               <div>
                 <Link
-                  href={item.destination}
-                  target={item.target || undefined}
+                  href={item.destination?.url}
+                  target={item.destination?.target || undefined}
                   className="p-5 block"
                 >
                   {item.label}
@@ -203,7 +204,8 @@ export const MainMenu = ({ items }) => {
                   {item.subMenuItems.map((subMenuItem) => (
                     <Link
                       key={subMenuItem.id}
-                      href={subMenuItem.destination}
+                      href={subMenuItem.destination?.url}
+                      target={subMenuItem.destination?.target || undefined}
                       className="block whitespace-nowrap p-5 hover:bg-slate-700"
                     >
                       {subMenuItem.label}
