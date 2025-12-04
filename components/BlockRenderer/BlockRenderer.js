@@ -44,7 +44,8 @@ export const BlockRenderer = ({ blocks }) => {
           <CallToActionButton
             key={block.id}
             buttonLabel={block.attributes?.data.label}
-            destination={block.attributes?.data.destination || "/"}
+            destination={block.attributes?.data.destination?.url || "/"}
+            target={block.attributes?.data.destination?.target || "/"}
             align={block.attributes?.data.align}
             classNames={block.attributes?.className}
           />
