@@ -40,33 +40,30 @@ export const BlockRenderer = ({ blocks }) => {
         );
       }
       case "acf/ctabutton": {
-        const data = block.attributes?.data || {};
-        const dest = data.destination;
+        // const data = block.attributes?.data || {};
+        // const dest = data.destination;
 
-        // Determine URL and target safely
-        let url = "/";
-        let target = null;
+        // // Determine URL and target safely
+        // let url = "/";
+        // let target = null;
 
-        if (dest) {
-          if (typeof dest === "object") {
-            url =
-              typeof dest.url === "string" && dest.url.length ? dest.url : "/";
-            target =
-              dest.target === "_blank" || dest.target === "_self"
-                ? dest.target
-                : null;
-          } else if (typeof dest === "string" && dest.length) {
-            url = dest;
-          }
-        }
+        // if (dest) {
+        //   if (typeof dest === "object") {
+        //     url =
+        //       typeof dest.url === "string" && dest.url.length ? dest.url : "/";
+        //     target =
+        //       dest.target === "_blank" || dest.target === "_self"
+        //         ? dest.target
+        //         : null;
+        //   } else if (typeof dest === "string" && dest.length) {
+        //     url = dest;
+        //   }
+        // }
         return (
           <CallToActionButton
-            key={block.id}
-            buttonLabel={data.label || "Click here"}
-            destination={url.toString()} // ensure string
-            target={target}
-            align={data.align || "left"}
-            classNames={block.attributes?.className}
+            buttonLabel="Shop"
+            destination="https://thekeepsakepress.co.uk/"
+            target="_blank"
           />
         );
       }

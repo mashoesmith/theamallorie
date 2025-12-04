@@ -13,7 +13,7 @@ export const CallToActionButton = ({
   };
 
   return (
-    <div className={alignMap[align]}>
+    <div className="flex items-center justify-center">
       <ButtonLink
         destination={destination}
         target={target}
