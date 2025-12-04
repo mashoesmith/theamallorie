@@ -40,17 +40,21 @@ export const BlockRenderer = ({ blocks }) => {
         );
       }
       case "acf/ctabutton": {
+        const data = block.attributes?.data || {};
+        const destination = data.destination || {};
+
         return (
           <CallToActionButton
             key={block.id}
-            buttonLabel={block.attributes?.data.label}
-            destination={block.attributes?.data.destination?.url || "/"}
-            target={block.attributes?.data.destination?.target || "/"}
-            align={block.attributes?.data.align}
+            buttonLabel={data.label}
+            destination={destination.url ?? "/"}
+            target={destination.target ?? null}
+            align={data.align}
             classNames={block.attributes?.className}
           />
         );
       }
+
       case "core/paragraph": {
         console.log("PARAGRAPH: ", block.attributes);
         return (
