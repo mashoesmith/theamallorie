@@ -111,13 +111,22 @@ export const MainMenu = ({ items }) => {
           {(items || []).map((item) => (
             <div key={item.id} className="cursor-pointer relative group">
               <div>
-                <SmartLink
-                  destination={item.destination}
-                  label={item.label}
-                  target={item.target}
-                />
+                {item.destination?.startsWith("/") ? (
+                  <Link href={item.destination} className="p-5 block">
+                    {item.label}
+                  </Link>
+                ) : (
+                  <a
+                    href={item.destination}
+                    target={item.target || "_blank"}
+                    rel="noopener noreferrer"
+                    className="p-5 block"
+                  >
+                    {item.label}
+                  </a>
+                )}
               </div>
-              {/* {!!item.subMenuItems?.length && (
+              {!!item.subMenuItems?.length && (
                 <div className="pl-10">
                   {item.subMenuItems.map((subMenuItem) => (
                     <Link
@@ -129,7 +138,7 @@ export const MainMenu = ({ items }) => {
                     </Link>
                   ))}
                 </div>
-              )} */}
+              )}
             </div>
           ))}
           <Link
@@ -188,13 +197,22 @@ export const MainMenu = ({ items }) => {
           {(items || []).map((item) => (
             <div key={item.id} className="cursor-pointer relative group">
               <div>
-                <SmartLink
-                  destination={item.destination}
-                  label={item.label}
-                  target={item.target}
-                />
+                {item.destination?.startsWith("/") ? (
+                  <Link href={item.destination} className="p-5 block">
+                    {item.label}
+                  </Link>
+                ) : (
+                  <a
+                    href={item.destination}
+                    target={item.target || "_blank"}
+                    rel="noopener noreferrer"
+                    className="p-5 block"
+                  >
+                    {item.label}
+                  </a>
+                )}
               </div>
-              {/* {!!item.subMenuItems?.length && (
+              {!!item.subMenuItems?.length && (
                 <div className="group-hover:block hidden bg-slate-800 text-right absolute right-0 top-full -mt-3">
                   {item.subMenuItems.map((subMenuItem) => (
                     <Link
@@ -206,7 +224,7 @@ export const MainMenu = ({ items }) => {
                     </Link>
                   ))}
                 </div>
-              )} */}
+              )}
             </div>
           ))}
         </div>
