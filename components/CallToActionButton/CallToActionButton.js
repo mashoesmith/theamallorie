@@ -7,10 +7,11 @@ export const CallToActionButton = ({
   target,
 }) => {
   const alignMap = {
-    left: "text-align",
+    left: "text-left",
     center: "text-center",
     right: "text-right",
   };
+
   return (
     <div className={alignMap[align]}>
       <ButtonLink
