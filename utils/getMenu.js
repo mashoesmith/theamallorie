@@ -27,6 +27,7 @@ export const getMenu = async () => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(params),
+    next: { revalidate: 60 },
   });
 
   console.log("GraphQL endpoint:", process.env.WP_GRAPHQL_URL);
