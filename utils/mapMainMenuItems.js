@@ -1,22 +1,15 @@
-export const mapMainMenuItems = (menuItems = []) => {
-  return menuItems.map((menuItem = {}) => {
-    const dest = menuItem?.menuItem?.destination || {};
-    return {
-      id: dest.url || dest.title || "menu-item",
-      destination: dest.url || null,
-      label: dest.title || "",
-      target: dest.target || "_self",
-      // subMenuItems: Array.isArray(menuItem.items)
-      //   ? menuItem.items.map((subMenuItem = {}) => {
-      //       const subDest = subMenuItem?.destination || {};
-      //       return {
-      //         id: subDest.url || subMenuItem?.label || "submenu-item",
-      //         destination: subDest.url || null,
-      //         label: subMenuItem?.label || "",
-      //         target: subDest.target || "_self",
-      //       };
-      //     })
-      //   : [],
-    };
-  });
+import { v4 as uuid } from "uuid";
+
+export const mapMainMenuItems = (menuItems) => {
+  return menuItems.map((menuItem) => ({
+    id: uuid(),
+    destination: menuItem.menuItem.destination?.url || null,
+    label: menuItem.menuItem.destination?.title,
+    target: menuItem.menuItem.destination?.target,
+    // subMenuItems: (menuItem?.items || []).map((subMenuItem) => ({
+    //   id: uuid(),
+    //   destination: subMenuItem?.destination?.uri,
+    //   label: subMenuItem?.label,
+    // })),
+  }));
 };
