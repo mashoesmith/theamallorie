@@ -8,16 +8,21 @@ import { getMenu } from "utils/getMenu";
 import { Analytics } from "@vercel/analytics/react";
 
 export default async function Page({ params }) {
-  const data = await getPage(params.slug.join("/"));
+  // ADD LOGGING TO SEE WHAT'S HAPPENING
+  console.log("PARAMS:", params);
+  console.log("SLUG:", params.slug);
+  console.log("JOINED SLUG:", params.slug.join("/"));
 
-  // Add fallback menu with error handling
-  let menu = { mainMenuItems: [] };
-  // try {
-  //   menu = await getMenu();
-  // } catch (error) {
-  // console.error("Failed to load menu:", error);
-  // Hardcoded fallback menu
-  menu = {
+  let data;
+  try {
+    data = await getPage(params.slug.join("/"));
+    console.log("PAGE DATA:", data);
+  } catch (error) {
+    console.error("getPage ERROR:", error);
+    return <div>Error loading page: {error.message}</div>;
+  }
+
+  const menu = {
     mainMenuItems: [
       { id: "1", destination: "/about", label: "About", target: "" },
       { id: "2", destination: "/contact", label: "Contact", target: "" },
@@ -31,13 +36,10 @@ export default async function Page({ params }) {
       },
     ],
   };
-  // }
 
   if (!data) {
     notFound();
   }
-
-  console.log("data", data);
 
   return (
     <>
@@ -54,9 +56,18 @@ export default async function Page({ params }) {
 }
 
 export async function generateMetadata({ params }) {
-  const seo = await getSeo(params.slug.join("/"));
-  return {
-    title: seo?.title || "",
-    description: seo?.description || "",
-  };
+  try {
+    console.log("METADATA PARAMS:", params);
+    const seo = await getSeo(params.slug.join("/"));
+    return {
+      title: seo?.title || "Thea Mallorie",
+      description: seo?.description || "",
+    };
+  } catch (error) {
+    console.error("getSeo ERROR:", error);
+    return {
+      title: "Thea Mallorie",
+      description: "",
+    };
+  }
 }
