@@ -1,6 +1,8 @@
 export const ButtonLink = ({ destination, label, target }) => {
   const href = typeof destination === "string" ? destination : destination?.url;
 
+  console.log("ButtonLink props:", { destination, label, target });
+
   return (
     <a
       href={href}
