@@ -12,26 +12,26 @@ export default async function Page({ params }) {
 
   // Add fallback menu with error handling
   let menu = { mainMenuItems: [] };
-  try {
-    menu = await getMenu();
-  } catch (error) {
-    console.error("Failed to load menu:", error);
-    // Hardcoded fallback menu
-    menu = {
-      mainMenuItems: [
-        { id: "1", destination: "/about", label: "About", target: "" },
-        { id: "2", destination: "/contact", label: "Contact", target: "" },
-        { id: "3", destination: "/services", label: "Services", target: "" },
-        { id: "4", destination: "/portfolio", label: "Portfolio", target: "" },
-        {
-          id: "5",
-          destination: "https://thekeepsakepress.co.uk/",
-          label: "Shop",
-          target: "_blank",
-        },
-      ],
-    };
-  }
+  // try {
+  //   menu = await getMenu();
+  // } catch (error) {
+  // console.error("Failed to load menu:", error);
+  // Hardcoded fallback menu
+  menu = {
+    mainMenuItems: [
+      { id: "1", destination: "/about", label: "About", target: "" },
+      { id: "2", destination: "/contact", label: "Contact", target: "" },
+      { id: "3", destination: "/services", label: "Services", target: "" },
+      { id: "4", destination: "/portfolio", label: "Portfolio", target: "" },
+      {
+        id: "5",
+        destination: "https://thekeepsakepress.co.uk/",
+        label: "Shop",
+        target: "_blank",
+      },
+    ],
+  };
+  // }
 
   if (!data) {
     notFound();
