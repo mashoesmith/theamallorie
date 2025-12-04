@@ -25,7 +25,6 @@ export const getPage = async (uri) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(params),
-    next: { revalidate: 60 },
   });
   const { data } = await response.json();
   if (!data.nodeByUri) {
