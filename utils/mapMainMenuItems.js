@@ -6,10 +6,10 @@ export const mapMainMenuItems = (menuItems) => {
     destination: menuItem.menuItem.destination?.url || null,
     label: menuItem.menuItem.destination?.title,
     target: menuItem.menuItem.destination?.target,
-    subMenuItems: (menuItem.items || []).map((subMenuItem) => ({
+    subMenuItems: (menuItem?.items || []).map((subMenuItem) => ({
       id: uuid(),
-      destination: subMenuItem.destination?.uri,
-      label: subMenuItem.label,
+      destination: subMenuItem?.destination?.uri,
+      label: subMenuItem?.label,
     })),
   }));
 };
