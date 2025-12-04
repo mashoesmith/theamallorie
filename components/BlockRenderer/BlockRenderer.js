@@ -40,19 +40,13 @@ export const BlockRenderer = ({ blocks }) => {
         );
       }
       case "acf/ctabutton": {
-        const data = block.attributes?.data || {};
-        const dest = data.destination || {};
-
-        const url = typeof dest === "object" ? dest.url : dest;
-        const target = typeof dest === "object" ? dest.target : null;
-
         return (
           <CallToActionButton
             key={block.id}
-            buttonLabel={data.label}
-            destination={url}
-            target={target}
-            align={data.align}
+            buttonLabel={block.attributes?.data.label}
+            destination={block.attributes?.data.destination.url || "/"}
+            tab={block.attributes?.data.destination.target}
+            align={block.attributes?.data.align}
             classNames={block.attributes?.className}
           />
         );
