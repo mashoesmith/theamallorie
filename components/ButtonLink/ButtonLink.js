@@ -1,16 +1,23 @@
 export const ButtonLink = ({ destination, label, target }) => {
-  const href = typeof destination === "string" ? destination : destination?.url;
+  // Force href to a string, fallback to #
+  const safeHref =
+    typeof destination === "string"
+      ? destination
+      : destination?.url
+      ? destination.url
+      : "#";
 
-  console.log("ButtonLink props:", { destination, label, target });
+  const safeTarget =
+    target === "_blank" || target === "_self" ? target : "_self";
 
   return (
     <a
-      href={href}
-      target={target || undefined}
-      rel={target === "_blank" ? "noopener noreferrer" : undefined}
+      href={safeHref}
+      target={safeTarget}
+      rel={safeTarget === "_blank" ? "noopener noreferrer" : undefined}
       className="btn button"
     >
-      {label}
+      {label || "Click here"}
     </a>
   );
 };

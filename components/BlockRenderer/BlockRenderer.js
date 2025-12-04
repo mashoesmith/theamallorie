@@ -40,33 +40,37 @@ export const BlockRenderer = ({ blocks }) => {
         );
       }
       case "acf/ctabutton": {
-        // const data = block.attributes?.data || {};
-        // const dest = data.destination;
+        const data = block.attributes?.data || {};
+        const dest = data.destination;
 
-        // // Determine URL and target safely
-        // let url = "/";
-        // let target = null;
+        let url = "/";
+        let target = "_self";
 
-        // if (dest) {
-        //   if (typeof dest === "object") {
-        //     url =
-        //       typeof dest.url === "string" && dest.url.length ? dest.url : "/";
-        //     target =
-        //       dest.target === "_blank" || dest.target === "_self"
-        //         ? dest.target
-        //         : null;
-        //   } else if (typeof dest === "string" && dest.length) {
-        //     url = dest;
-        //   }
-        // }
+        if (dest) {
+          if (typeof dest === "object") {
+            url =
+              typeof dest.url === "string" && dest.url.length ? dest.url : "/";
+            target =
+              dest.target === "_blank" || dest.target === "_self"
+                ? dest.target
+                : "_self";
+          } else if (typeof dest === "string" && dest.length) {
+            url = dest;
+          }
+        }
+
         return (
           <CallToActionButton
-            buttonLabel="Shop"
-            destination="https://thekeepsakepress.co.uk/"
-            target="_blank"
+            key={block.id}
+            buttonLabel={data.label || "Click here"}
+            destination={url}
+            target={target}
+            align={data.align || "left"}
+            classNames={block.attributes?.className}
           />
         );
       }
+
       case "core/paragraph": {
         console.log("PARAGRAPH: ", block.attributes);
         return (

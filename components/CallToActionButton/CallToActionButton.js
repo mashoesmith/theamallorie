@@ -1,10 +1,10 @@
 import { ButtonLink } from "components/ButtonLink";
 
 export const CallToActionButton = ({
-  align = "left",
   buttonLabel,
   destination,
   target,
+  align = "left",
 }) => {
   const alignMap = {
     left: "text-left",
@@ -13,11 +13,11 @@ export const CallToActionButton = ({
   };
 
   return (
-    <div className="flex items-center justify-center">
+    <div className={alignMap[align] || "text-left"}>
       <ButtonLink
+        label={buttonLabel || "Click here"}
         destination={destination}
         target={target}
-        label={buttonLabel}
       />
     </div>
   );
