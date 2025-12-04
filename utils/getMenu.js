@@ -14,15 +14,6 @@ export const getMenu = async () => {
                 url
               }
             }
-            items {
-              destination {
-                ... on Page {
-                  uri
-                  id
-                }
-              }
-              label
-            }
           }
         }
       }
@@ -37,6 +28,9 @@ export const getMenu = async () => {
     },
     body: JSON.stringify(params),
   });
+
+  console.log("GraphQL endpoint:", process.env.WP_GRAPHQL_URL);
+
   const { data } = await response.json();
   return {
     mainMenuItems: mapMainMenuItems(data.acfOptionsMainMenu.mainMenu.menuItems),
