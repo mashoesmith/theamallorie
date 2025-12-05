@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "WP_IMAGES_URL=theamallorie.flywheelsites.com WP_GRAPHQL_URL=https://theamallorie.flywheelsites.com/graphql NEXT_PUBLIC_WP_URL=https://theamallorie.flywheelsites.com next dev",
-    "build": "WP_IMAGES_URL=theamallorie.flywheelsites.com WP_GRAPHQL_URL=https://theamallorie.flywheelsites.com/graphql NEXT_PUBLIC_WP_URL=https://theamallorie.flywheelsites.com next build",
-    "start": "WP_IMAGES_URL=theamallorie.flywheelsites.com WP_GRAPHQL_URL=https://theamallorie.flywheelsites.com/graphql NEXT_PUBLIC_WP_URL=https://theamallorie.flywheelsites.com next start",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {

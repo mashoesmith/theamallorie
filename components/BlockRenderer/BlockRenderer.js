@@ -44,12 +44,36 @@ export const BlockRenderer = ({ blocks }) => {
           <CallToActionButton
             key={block.id}
             buttonLabel={block.attributes?.data.label}
-            destination={block.attributes?.data.destination || "/"}
+            destination={block.attributes?.data.destination.url || "/"}
+            tab={block.attributes?.data.destination.target}
             align={block.attributes?.data.align}
             classNames={block.attributes?.className}
           />
         );
       }
+
+      // case "core/buttons": {
+      //   return (
+      //     <div className={block.attributes?.className}>
+      //       {block.innerBlocks?.map((inner) => {
+      //         if (inner.name === "core/button") {
+      //           return (
+      //             <CallToActionButton
+      //               key={inner.id}
+      //               buttonLabel={inner.attributes?.content}
+      //               destination={inner.attributes?.url || "/"}
+      //               tab={inner.attributes?.linkTarget || "_blank"}
+      //               align={inner.attributes?.align || "center"}
+      //               classNames={inner.attributes?.className}
+      //             />
+      //           );
+      //         }
+      //         return null;
+      //       })}
+      //     </div>
+      //   );
+      // }
+
       case "core/paragraph": {
         console.log("PARAGRAPH: ", block.attributes);
         return (

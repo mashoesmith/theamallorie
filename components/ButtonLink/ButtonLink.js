@@ -1,8 +1,8 @@
 import Link from "next/link";
 
-export const ButtonLink = ({ destination, label }) => {
+export const ButtonLink = ({ destination, label, tab }) => {
   return (
-    <a href={destination} className="btn button">
+    <a href={destination} target={tab} className="btn button">
       {label}
     </a>
   );
