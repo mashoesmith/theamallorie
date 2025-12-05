@@ -8,7 +8,7 @@ import { MdMenu } from "react-icons/md";
 import Link from "next/link";
 
 export const MainMenu = ({ items }) => {
-  console.log("MAIN MENU: ", items);
+  // console.log("MAIN MENU: ", items);
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
