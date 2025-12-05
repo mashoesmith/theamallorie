@@ -9,12 +9,10 @@ export const getMenu = async () => {
           menuItems {
             menuItem {
               destination {
-                ... on Page {
-                  uri
-                  id
-                }
+                url
+                title
+                target
               }
-              label
             }
             items {
               destination {
