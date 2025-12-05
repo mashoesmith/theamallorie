@@ -2,7 +2,6 @@
 import { ValidationError, useForm } from "@formspree/react";
 
 export const FormspreeForm = ({ formId }) => {
-  console.log("FORM ID: ", formId);
   const [state, handleSubmit] = useForm(formId);
   if (state.succeeded) {
     return (
