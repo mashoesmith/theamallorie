@@ -12,6 +12,8 @@ export const MainMenu = ({ items }) => {
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  const isInternal = (url) => url?.startsWith("/");
+
   let home1 = useRef(null);
   let home2 = useRef(null);
   let mobileNavFull = useRef(null);
@@ -111,9 +113,20 @@ export const MainMenu = ({ items }) => {
           {(items || []).map((item) => (
             <div key={item.id} className="cursor-pointer relative group">
               <div>
-                <Link href={item.destination} className="p-5 block">
-                  {item.label}
-                </Link>
+                {isInternal(item.url) ? (
+                  <Link href={item.url} className="p-5 block">
+                    {item.label}
+                  </Link>
+                ) : (
+                  <a
+                    href={item.url}
+                    target={item.target || "_blank"}
+                    rel="noopener noreferrer"
+                    className="p-5 block"
+                  >
+                    {item.label}
+                  </a>
+                )}
               </div>
               {!!item.subMenuItems?.length && (
                 <div className="pl-10">
@@ -186,9 +199,20 @@ export const MainMenu = ({ items }) => {
           {(items || []).map((item) => (
             <div key={item.id} className="cursor-pointer relative group">
               <div>
-                <Link href={item.destination} className="p-5 block">
-                  {item.label}
-                </Link>
+                {isInternal(item.url) ? (
+                  <Link href={item.url} className="p-5 block">
+                    {item.label}
+                  </Link>
+                ) : (
+                  <a
+                    href={item.url}
+                    target={item.target || "_blank"}
+                    rel="noopener noreferrer"
+                    className="p-5 block"
+                  >
+                    {item.label}
+                  </a>
+                )}
               </div>
               {!!item.subMenuItems?.length && (
                 <div className="group-hover:block hidden bg-slate-800 text-right absolute right-0 top-full -mt-3">
