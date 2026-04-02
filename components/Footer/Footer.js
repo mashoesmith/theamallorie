@@ -7,7 +7,10 @@ export const Footer = () => {
         &copy; {new Date().getFullYear()} Thea Mallorie
       </p>
       <div className="flex flex-row gap-3">
-        <a href="https://www.instagram.com/thea_mallorie" target="blank">
+        <a
+          href="https://www.instagram.com/the_keepsake_press_shop/"
+          target="_blank"
+        >
           <div className="socialIcon">
             <img
               className="icon"
@@ -15,7 +18,11 @@ export const Footer = () => {
             />
           </div>
         </a>
-        <a href="tel:07495685568">
+        <a
+          href="https://wa.me/447495685568"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <div className="socialIcon">
             <img
               className="icon"
