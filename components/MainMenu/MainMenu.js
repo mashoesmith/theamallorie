@@ -102,10 +102,10 @@ export const MainMenu = ({ items }) => {
             size={30}
             onClick={() => {
               {
-                setTimeout(() => {
+                (setTimeout(() => {
                   setIsMobileMenuOpen(false);
                 }, 400),
-                  animateNavOut();
+                  animateNavOut());
                 document.body.style.overflowY = "scroll";
               }
             }}
@@ -150,22 +150,29 @@ export const MainMenu = ({ items }) => {
             <img src="/images/home_rat_2.png" className="h-16 absolute z-10" />
           </Link>
           <div className="flex flex-row gap-3 absolute bottom-4">
-            <Link href="https://www.instagram.com/thea_mallorie" target="blank">
+            <a
+              href="https://www.instagram.com/the_keepsake_press_shop/"
+              target="_blank"
+            >
               <div className="socialIcon">
                 <img
                   className="icon"
                   src="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/instagram-white.png"
                 />
               </div>
-            </Link>
-            <Link href="tel:07495685568">
+            </a>
+            <a
+              href="https://wa.me/447495685568"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <div className="socialIcon">
                 <img
                   className="icon"
                   src="https://theamallorie.flywheelsites.com/wp-content/uploads/2023/12/whatsapp-white.png"
                 />
               </div>
-            </Link>
+            </a>
           </div>
         </div>
       )}
